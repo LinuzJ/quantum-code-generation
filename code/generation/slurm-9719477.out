@@ -1,0 +1,806 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) triton/2024.1-gcc
+Requirement already satisfied: datasets in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (4.0.0)
+Requirement already satisfied: numpy in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (2.2.6)
+Collecting numpy (from -r requirements.txt (line 2))
+  Using cached numpy-2.3.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: pandas in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (2.3.1)
+Requirement already satisfied: torch in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 4)) (2.7.1)
+Collecting torch (from -r requirements.txt (line 4))
+  Using cached torch-2.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (30 kB)
+Requirement already satisfied: transformers in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 5)) (4.55.0)
+Requirement already satisfied: trl in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (0.21.0)
+Requirement already satisfied: wandb in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (0.21.0)
+Requirement already satisfied: accelerate in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 8)) (1.9.0)
+Requirement already satisfied: pillow in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 9)) (11.3.0)
+Requirement already satisfied: sentencepiece in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 10)) (0.2.0)
+Requirement already satisfied: vllm in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 11)) (0.10.0)
+Requirement already satisfied: filelock in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (3.18.0)
+Requirement already satisfied: pyarrow>=15.0.0 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (21.0.0)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (0.3.8)
+Requirement already satisfied: requests>=2.32.2 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (2.32.4)
+Requirement already satisfied: tqdm>=4.66.3 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (4.67.1)
+Requirement already satisfied: xxhash in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (3.5.0)
+Requirement already satisfied: multiprocess<0.70.17 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (0.70.16)
+Requirement already satisfied: fsspec<=2025.3.0,>=2023.1.0 in ./.venv/lib/python3.12/site-packages (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (2025.3.0)
+Requirement already satisfied: huggingface-hub>=0.24.0 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (0.34.3)
+Requirement already satisfied: packaging in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (25.0)
+Requirement already satisfied: pyyaml>=5.1 in ./.venv/lib/python3.12/site-packages (from datasets->-r requirements.txt (line 1)) (6.0.2)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in ./.venv/lib/python3.12/site-packages (from fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (3.12.15)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./.venv/lib/python3.12/site-packages (from pandas->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./.venv/lib/python3.12/site-packages (from pandas->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in ./.venv/lib/python3.12/site-packages (from pandas->-r requirements.txt (line 3)) (2025.2)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (4.14.1)
+Requirement already satisfied: setuptools in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (79.0.1)
+Requirement already satisfied: sympy>=1.13.3 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: networkx in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (3.5)
+Requirement already satisfied: jinja2 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (3.1.6)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.93 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.90 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.90 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.10.2.21 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.4.1 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.83 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand-cu12==10.3.9.90 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver-cu12==11.7.3.90 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse-cu12==12.5.8.93 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparselt-cu12==0.7.1 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cusparselt_cu12-0.7.1-py3-none-manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting nvidia-nccl-cu12==2.27.3 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_nccl_cu12-2.27.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvtx-cu12==12.8.90 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.93 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.1.3 (from torch->-r requirements.txt (line 4))
+  Using cached nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting triton==3.4.0 (from torch->-r requirements.txt (line 4))
+  Using cached triton-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.7 kB)
+Requirement already satisfied: regex!=2019.12.17 in ./.venv/lib/python3.12/site-packages (from transformers->-r requirements.txt (line 5)) (2025.7.34)
+Requirement already satisfied: tokenizers<0.22,>=0.21 in ./.venv/lib/python3.12/site-packages (from transformers->-r requirements.txt (line 5)) (0.21.4)
+Requirement already satisfied: safetensors>=0.4.3 in ./.venv/lib/python3.12/site-packages (from transformers->-r requirements.txt (line 5)) (0.6.1)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in ./.venv/lib/python3.12/site-packages (from huggingface-hub>=0.24.0->datasets->-r requirements.txt (line 1)) (1.1.7)
+Requirement already satisfied: click!=8.0.0,>=7.1 in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (8.2.1)
+Requirement already satisfied: gitpython!=3.1.29,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (3.1.45)
+Requirement already satisfied: platformdirs in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (4.3.8)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<7,>=3.19.0 in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (5.29.5)
+Requirement already satisfied: pydantic<3 in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (2.11.7)
+Requirement already satisfied: sentry-sdk>=2.0.0 in ./.venv/lib/python3.12/site-packages (from wandb->-r requirements.txt (line 7)) (2.34.1)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydantic<3->wandb->-r requirements.txt (line 7)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in ./.venv/lib/python3.12/site-packages (from pydantic<3->wandb->-r requirements.txt (line 7)) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./.venv/lib/python3.12/site-packages (from pydantic<3->wandb->-r requirements.txt (line 7)) (0.4.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests>=2.32.2->datasets->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.12/site-packages (from requests>=2.32.2->datasets->-r requirements.txt (line 1)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./.venv/lib/python3.12/site-packages (from requests>=2.32.2->datasets->-r requirements.txt (line 1)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./.venv/lib/python3.12/site-packages (from requests>=2.32.2->datasets->-r requirements.txt (line 1)) (2025.8.3)
+Requirement already satisfied: psutil in ./.venv/lib/python3.12/site-packages (from accelerate->-r requirements.txt (line 8)) (7.0.0)
+Requirement already satisfied: cachetools in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (6.1.0)
+Requirement already satisfied: blake3 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.0.5)
+Requirement already satisfied: py-cpuinfo in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (9.0.0)
+Requirement already satisfied: fastapi>=0.115.0 in ./.venv/lib/python3.12/site-packages (from fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.116.1)
+Requirement already satisfied: openai<=1.90.0,>=1.87.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.90.0)
+Requirement already satisfied: prometheus_client>=0.18.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.22.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (7.1.0)
+Requirement already satisfied: tiktoken>=0.6.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.10.0)
+Requirement already satisfied: lm-format-enforcer<0.11,>=0.10.11 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.10.12)
+Requirement already satisfied: llguidance<0.8.0,>=0.7.11 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.7.30)
+Requirement already satisfied: outlines_core==0.2.10 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.2.10)
+Requirement already satisfied: diskcache==5.6.3 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (5.6.3)
+Requirement already satisfied: lark==1.2.2 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.2.2)
+Requirement already satisfied: xgrammar==0.1.21 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.1.21)
+Requirement already satisfied: partial-json-parser in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.2.1.1.post6)
+Requirement already satisfied: pyzmq>=25.0.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (27.0.1)
+Requirement already satisfied: msgspec in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.19.0)
+Requirement already satisfied: gguf>=0.13.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.17.1)
+Requirement already satisfied: mistral_common>=1.8.2 in ./.venv/lib/python3.12/site-packages (from mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (1.8.3)
+Requirement already satisfied: opencv-python-headless>=4.11.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (4.12.0.88)
+Requirement already satisfied: six>=1.16.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.17.0)
+Requirement already satisfied: einops in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.8.1)
+Requirement already satisfied: compressed-tensors==0.10.2 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.10.2)
+Requirement already satisfied: depyf==0.19.0 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.19.0)
+Requirement already satisfied: cloudpickle in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (3.1.1)
+Requirement already satisfied: watchfiles in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.1.0)
+Requirement already satisfied: python-json-logger in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (3.3.0)
+Requirement already satisfied: scipy in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.16.1)
+Requirement already satisfied: ninja in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.11.1.4)
+Requirement already satisfied: pybase64 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (1.4.2)
+Requirement already satisfied: cbor2 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (5.6.5)
+Requirement already satisfied: numba==0.61.2 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.61.2)
+Requirement already satisfied: ray!=2.44.*,>=2.43.0 in ./.venv/lib/python3.12/site-packages (from ray[cgraph]!=2.44.*,>=2.43.0->vllm->-r requirements.txt (line 11)) (2.48.0)
+Requirement already satisfied: torchaudio==2.7.1 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (2.7.1)
+Requirement already satisfied: torchvision==0.22.1 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.22.1)
+Requirement already satisfied: xformers==0.0.31 in ./.venv/lib/python3.12/site-packages (from vllm->-r requirements.txt (line 11)) (0.0.31)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (12.6.77)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (12.6.77)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (12.6.80)
+Requirement already satisfied: nvidia-cudnn-cu12==9.5.1.17 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (9.5.1.17)
+Requirement already satisfied: nvidia-cublas-cu12 in ./.venv/lib/python3.12/site-packages (from nvidia-cudnn-cu12==9.10.2.21->torch->-r requirements.txt (line 4)) (12.6.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (11.3.0.4)
+Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (10.3.7.77)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (11.7.1.2)
+Requirement already satisfied: nvidia-cusparse-cu12 in ./.venv/lib/python3.12/site-packages (from nvidia-cusolver-cu12==11.7.3.90->torch->-r requirements.txt (line 4)) (12.5.4.2)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.3 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (0.6.3)
+Requirement already satisfied: nvidia-nccl-cu12==2.26.2 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (2.26.2)
+Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (12.6.77)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in ./.venv/lib/python3.12/site-packages (from nvidia-cufft-cu12==11.3.3.83->torch->-r requirements.txt (line 4)) (12.6.85)
+Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (1.11.1.6)
+Requirement already satisfied: triton==3.3.1 in ./.venv/lib/python3.12/site-packages (from torch->-r requirements.txt (line 4)) (3.3.1)
+Requirement already satisfied: astor in ./.venv/lib/python3.12/site-packages (from depyf==0.19.0->vllm->-r requirements.txt (line 11)) (0.8.1)
+Requirement already satisfied: llvmlite<0.45,>=0.44.0dev0 in ./.venv/lib/python3.12/site-packages (from numba==0.61.2->vllm->-r requirements.txt (line 11)) (0.44.0)
+Requirement already satisfied: interegular>=0.3.2 in ./.venv/lib/python3.12/site-packages (from lm-format-enforcer<0.11,>=0.10.11->vllm->-r requirements.txt (line 11)) (0.3.3)
+Requirement already satisfied: anyio<5,>=3.5.0 in ./.venv/lib/python3.12/site-packages (from openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (4.10.0)
+Requirement already satisfied: distro<2,>=1.7.0 in ./.venv/lib/python3.12/site-packages (from openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (1.9.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in ./.venv/lib/python3.12/site-packages (from openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (0.28.1)
+Requirement already satisfied: jiter<1,>=0.4.0 in ./.venv/lib/python3.12/site-packages (from openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (0.10.0)
+Requirement already satisfied: sniffio in ./.venv/lib/python3.12/site-packages (from openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (1.3.1)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.12/site-packages (from httpx<1,>=0.23.0->openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.12/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai<=1.90.0,>=1.87.0->vllm->-r requirements.txt (line 11)) (0.16.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (1.7.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (6.6.3)
+Requirement already satisfied: propcache>=0.2.0 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (0.3.2)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in ./.venv/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.3.0,>=2023.1.0->datasets->-r requirements.txt (line 1)) (1.20.1)
+Requirement already satisfied: starlette<0.48.0,>=0.40.0 in ./.venv/lib/python3.12/site-packages (from fastapi>=0.115.0->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.47.2)
+Requirement already satisfied: fastapi-cli>=0.0.8 in ./.venv/lib/python3.12/site-packages (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.0.8)
+Requirement already satisfied: python-multipart>=0.0.18 in ./.venv/lib/python3.12/site-packages (from fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.0.20)
+Requirement already satisfied: email-validator>=2.0.0 in ./.venv/lib/python3.12/site-packages (from fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (2.2.0)
+Requirement already satisfied: uvicorn>=0.12.0 in ./.venv/lib/python3.12/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.35.0)
+Requirement already satisfied: dnspython>=2.0.0 in ./.venv/lib/python3.12/site-packages (from email-validator>=2.0.0->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (2.7.0)
+Requirement already satisfied: typer>=0.15.1 in ./.venv/lib/python3.12/site-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.16.0)
+Requirement already satisfied: rich-toolkit>=0.14.8 in ./.venv/lib/python3.12/site-packages (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.14.9)
+Requirement already satisfied: fastapi-cloud-cli>=0.1.1 in ./.venv/lib/python3.12/site-packages (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.1.5)
+Requirement already satisfied: rignore>=0.5.1 in ./.venv/lib/python3.12/site-packages (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.6.4)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./.venv/lib/python3.12/site-packages (from gitpython!=3.1.29,>=1.0.0->wandb->-r requirements.txt (line 7)) (4.0.12)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./.venv/lib/python3.12/site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->-r requirements.txt (line 7)) (5.0.2)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.venv/lib/python3.12/site-packages (from jinja2->torch->-r requirements.txt (line 4)) (3.0.2)
+Requirement already satisfied: jsonschema>=4.21.1 in ./.venv/lib/python3.12/site-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (4.25.0)
+Requirement already satisfied: pydantic-extra-types>=2.10.5 in ./.venv/lib/python3.12/site-packages (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (2.10.5)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.venv/lib/python3.12/site-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (2025.4.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.venv/lib/python3.12/site-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in ./.venv/lib/python3.12/site-packages (from jsonschema>=4.21.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (0.26.0)
+Requirement already satisfied: pycountry>=23 in ./.venv/lib/python3.12/site-packages (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (24.6.1)
+Requirement already satisfied: msgpack<2.0.0,>=1.0.0 in ./.venv/lib/python3.12/site-packages (from ray!=2.44.*,>=2.43.0->ray[cgraph]!=2.44.*,>=2.43.0->vllm->-r requirements.txt (line 11)) (1.1.1)
+Requirement already satisfied: cupy-cuda12x in ./.venv/lib/python3.12/site-packages (from ray[cgraph]!=2.44.*,>=2.43.0->vllm->-r requirements.txt (line 11)) (13.5.1)
+Requirement already satisfied: rich>=13.7.1 in ./.venv/lib/python3.12/site-packages (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (14.1.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.12/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.12/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.1.2)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./.venv/lib/python3.12/site-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 4)) (1.3.0)
+Requirement already satisfied: shellingham>=1.3.0 in ./.venv/lib/python3.12/site-packages (from typer>=0.15.1->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (1.5.4)
+Requirement already satisfied: httptools>=0.6.3 in ./.venv/lib/python3.12/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.6.4)
+Requirement already satisfied: python-dotenv>=0.13 in ./.venv/lib/python3.12/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (1.1.1)
+Requirement already satisfied: uvloop>=0.15.1 in ./.venv/lib/python3.12/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (0.21.0)
+Requirement already satisfied: websockets>=10.4 in ./.venv/lib/python3.12/site-packages (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard]>=0.115.0->vllm->-r requirements.txt (line 11)) (15.0.1)
+Requirement already satisfied: fastrlock>=0.5 in ./.venv/lib/python3.12/site-packages (from cupy-cuda12x->ray[cgraph]!=2.44.*,>=2.43.0->vllm->-r requirements.txt (line 11)) (0.8.3)
+Requirement already satisfied: soundfile>=0.12.1 in ./.venv/lib/python3.12/site-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (0.13.1)
+Requirement already satisfied: cffi>=1.0 in ./.venv/lib/python3.12/site-packages (from soundfile>=0.12.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (1.17.1)
+Requirement already satisfied: pycparser in ./.venv/lib/python3.12/site-packages (from cffi>=1.0->soundfile>=0.12.1->mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (2.22)
+Requirement already satisfied: soxr>=0.5.0 in ./.venv/lib/python3.12/site-packages (from mistral_common>=1.8.2->mistral_common[audio,image]>=1.8.2->vllm->-r requirements.txt (line 11)) (0.5.0.post1)
+INFO 08-07 10:46:59 [__init__.py:235] Automatically detected platform cuda.
+Using full dataset with 580 samples.
+INFO 08-07 10:47:38 [config.py:1604] Using max model len 32768
+INFO 08-07 10:47:43 [config.py:2434] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 08-07 10:47:45 [core.py:572] Waiting for init message from front-end.
+INFO 08-07 10:47:45 [core.py:71] Initializing a V1 LLM engine (v0.10.0) with config: model='Benyucong/quantum_3b', speculative_config=None, tokenizer='Benyucong/quantum_3b', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config={}, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_backend=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=Benyucong/quantum_3b, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"max_capture_size":512,"local_cache_dir":null}
+INFO 08-07 10:47:57 [parallel_state.py:1102] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+WARNING 08-07 10:47:57 [topk_topp_sampler.py:59] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+INFO 08-07 10:47:58 [gpu_model_runner.py:1843] Starting to load model Benyucong/quantum_3b...
+INFO 08-07 10:47:58 [gpu_model_runner.py:1875] Loading model from scratch...
+INFO 08-07 10:48:02 [cuda.py:290] Using Flash Attention backend on V1 engine.
+INFO 08-07 10:48:02 [weight_utils.py:296] Using model weights format ['*.safetensors']
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:15<00:15, 15.57s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:18<00:00,  8.19s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:18<00:00,  9.30s/it]
+
+INFO 08-07 10:48:21 [default_loader.py:262] Loading weights took 18.62 seconds
+INFO 08-07 10:48:22 [gpu_model_runner.py:1892] Model loading took 5.7916 GiB and 23.136577 seconds
+INFO 08-07 10:48:36 [backends.py:530] Using cache directory: /home/yuc10/.cache/vllm/torch_compile_cache/aa45779989/rank_0_0/backbone for vLLM's torch.compile
+INFO 08-07 10:48:36 [backends.py:541] Dynamo bytecode transform time: 14.11 s
+INFO 08-07 10:48:40 [backends.py:194] Cache the graph for dynamic shape for later use
+INFO 08-07 10:49:00 [backends.py:215] Compiling a graph for dynamic shape takes 23.42 s
+INFO 08-07 10:49:09 [monitor.py:34] torch.compile takes 37.54 s in total
+INFO 08-07 10:49:15 [gpu_worker.py:255] Available KV cache memory: 114.36 GiB
+INFO 08-07 10:49:15 [kv_cache_utils.py:833] GPU KV cache size: 3,331,040 tokens
+INFO 08-07 10:49:15 [kv_cache_utils.py:837] Maximum concurrency for 32,768 tokens per request: 101.66x
+Capturing CUDA graph shapes:   0%|          | 0/67 [00:00<?, ?it/s]Capturing CUDA graph shapes:   1%|▏         | 1/67 [00:00<00:29,  2.25it/s]Capturing CUDA graph shapes:   7%|▋         | 5/67 [00:00<00:05, 11.32it/s]Capturing CUDA graph shapes:  12%|█▏        | 8/67 [00:00<00:05, 10.24it/s]Capturing CUDA graph shapes:  18%|█▊        | 12/67 [00:00<00:03, 15.36it/s]Capturing CUDA graph shapes:  24%|██▍       | 16/67 [00:01<00:02, 20.07it/s]Capturing CUDA graph shapes:  30%|██▉       | 20/67 [00:01<00:01, 23.78it/s]Capturing CUDA graph shapes:  36%|███▌      | 24/67 [00:01<00:01, 26.35it/s]Capturing CUDA graph shapes:  42%|████▏     | 28/67 [00:01<00:01, 27.50it/s]Capturing CUDA graph shapes:  48%|████▊     | 32/67 [00:01<00:01, 28.51it/s]Capturing CUDA graph shapes:  54%|█████▎    | 36/67 [00:01<00:01, 29.13it/s]Capturing CUDA graph shapes:  60%|█████▉    | 40/67 [00:01<00:00, 29.21it/s]Capturing CUDA graph shapes:  66%|██████▌   | 44/67 [00:01<00:00, 29.36it/s]Capturing CUDA graph shapes:  72%|███████▏  | 48/67 [00:02<00:00, 29.68it/s]Capturing CUDA graph shapes:  78%|███████▊  | 52/67 [00:02<00:00, 29.01it/s]Capturing CUDA graph shapes:  82%|████████▏ | 55/67 [00:02<00:00, 28.63it/s]Capturing CUDA graph shapes:  87%|████████▋ | 58/67 [00:02<00:00, 28.39it/s]Capturing CUDA graph shapes:  91%|█████████ | 61/67 [00:02<00:00, 27.90it/s]Capturing CUDA graph shapes:  96%|█████████▌| 64/67 [00:02<00:00, 27.02it/s]Capturing CUDA graph shapes: 100%|██████████| 67/67 [00:02<00:00, 23.84it/s]
+INFO 08-07 10:49:18 [gpu_model_runner.py:2485] Graph capturing finished in 3 secs, took 0.72 GiB
+INFO 08-07 10:49:18 [core.py:193] init engine (profile, create kv cache, warmup model) took 56.28 seconds
+Running vLLM generation...
+Adding requests:   0%|          | 0/580 [00:00<?, ?it/s]Adding requests:  18%|█▊        | 104/580 [00:00<00:00, 1030.41it/s]Adding requests:  47%|████▋     | 273/580 [00:00<00:00, 1414.67it/s]Adding requests:  76%|███████▌  | 439/580 [00:00<00:00, 1523.44it/s]Adding requests: 100%|██████████| 580/580 [00:00<00:00, 1512.73it/s]
+Processed prompts:   0%|          | 0/580 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:   0%|          | 1/580 [00:04<45:57,  4.76s/it, est. speed input: 42.00 toks/s, output: 17.85 toks/s]Processed prompts:   0%|          | 2/580 [00:05<21:31,  2.23s/it, est. speed input: 79.95 toks/s, output: 37.87 toks/s]Processed prompts:   1%|          | 3/580 [00:05<12:11,  1.27s/it, est. speed input: 118.96 toks/s, output: 58.17 toks/s]Processed prompts:   1%|          | 4/580 [00:05<08:49,  1.09it/s, est. speed input: 152.20 toks/s, output: 78.72 toks/s]Processed prompts:   1%|          | 5/580 [00:05<06:17,  1.52it/s, est. speed input: 192.05 toks/s, output: 100.67 toks/s]Processed prompts:   1%|          | 7/580 [00:06<03:34,  2.67it/s, est. speed input: 269.44 toks/s, output: 146.89 toks/s]Processed prompts:   1%|▏         | 8/580 [00:06<02:58,  3.20it/s, est. speed input: 303.84 toks/s, output: 170.36 toks/s]Processed prompts:   2%|▏         | 9/580 [00:06<02:37,  3.62it/s, est. speed input: 328.20 toks/s, output: 193.35 toks/s]Processed prompts:   2%|▏         | 10/580 [00:06<02:15,  4.19it/s, est. speed input: 353.28 toks/s, output: 216.34 toks/s]Processed prompts:   2%|▏         | 12/580 [00:07<02:15,  4.19it/s, est. speed input: 406.23 toks/s, output: 258.03 toks/s]Processed prompts:   3%|▎         | 15/580 [00:07<02:02,  4.63it/s, est. speed input: 487.83 toks/s, output: 326.22 toks/s]Processed prompts:   4%|▍         | 24/580 [00:07<00:48, 11.53it/s, est. speed input: 804.77 toks/s, output: 597.19 toks/s]Processed prompts:   5%|▍         | 27/580 [00:08<00:46, 11.77it/s, est. speed input: 883.13 toks/s, output: 674.62 toks/s]Processed prompts:   5%|▌         | 29/580 [00:08<00:54, 10.10it/s, est. speed input: 905.69 toks/s, output: 715.29 toks/s]Processed prompts:   5%|▌         | 31/580 [00:08<00:49, 11.08it/s, est. speed input: 973.89 toks/s, output: 773.18 toks/s]Processed prompts:   6%|▌         | 33/580 [00:08<00:46, 11.77it/s, est. speed input: 1022.16 toks/s, output: 828.72 toks/s]Processed prompts:   6%|▌         | 36/580 [00:08<00:40, 13.60it/s, est. speed input: 1092.92 toks/s, output: 917.43 toks/s]Processed prompts:   7%|▋         | 40/580 [00:08<00:31, 17.19it/s, est. speed input: 1209.72 toks/s, output: 1040.45 toks/s]Processed prompts:   8%|▊         | 44/580 [00:09<00:27, 19.21it/s, est. speed input: 1313.12 toks/s, output: 1160.70 toks/s]Processed prompts:   8%|▊         | 47/580 [00:09<00:26, 20.17it/s, est. speed input: 1413.06 toks/s, output: 1250.24 toks/s]Processed prompts:   9%|▉         | 53/580 [00:09<00:19, 27.24it/s, est. speed input: 1612.02 toks/s, output: 1445.36 toks/s]Processed prompts:  10%|█         | 58/580 [00:09<00:16, 31.50it/s, est. speed input: 1751.27 toks/s, output: 1605.53 toks/s]Processed prompts:  11%|█         | 62/580 [00:09<00:15, 32.73it/s, est. speed input: 1846.51 toks/s, output: 1730.46 toks/s]Processed prompts:  13%|█▎        | 74/580 [00:09<00:09, 51.45it/s, est. speed input: 2200.69 toks/s, output: 2140.22 toks/s]Processed prompts:  14%|█▍        | 80/580 [00:09<00:12, 39.19it/s, est. speed input: 2357.37 toks/s, output: 2304.00 toks/s]Processed prompts:  15%|█▍        | 85/580 [00:10<00:12, 39.90it/s, est. speed input: 2509.49 toks/s, output: 2460.91 toks/s]Processed prompts:  16%|█▌        | 90/580 [00:10<00:11, 41.97it/s, est. speed input: 2659.48 toks/s, output: 2622.97 toks/s]Processed prompts:  17%|█▋        | 99/580 [00:10<00:09, 51.59it/s, est. speed input: 2959.79 toks/s, output: 2929.41 toks/s]Processed prompts:  18%|█▊        | 105/580 [00:10<00:19, 24.98it/s, est. speed input: 3003.71 toks/s, output: 2996.71 toks/s]Processed prompts:  19%|█▉        | 110/580 [00:10<00:17, 27.54it/s, est. speed input: 3131.25 toks/s, output: 3145.26 toks/s]Processed prompts:  21%|██        | 122/580 [00:11<00:11, 41.06it/s, est. speed input: 3427.44 toks/s, output: 3551.84 toks/s]Processed prompts:  22%|██▏       | 128/580 [00:11<00:12, 36.73it/s, est. speed input: 3534.45 toks/s, output: 3708.73 toks/s]Processed prompts:  23%|██▎       | 133/580 [00:11<00:11, 37.57it/s, est. speed input: 3670.46 toks/s, output: 3857.10 toks/s]Processed prompts:  24%|██▍       | 138/580 [00:11<00:11, 36.92it/s, est. speed input: 3773.12 toks/s, output: 4000.15 toks/s]Processed prompts:  25%|██▍       | 143/580 [00:11<00:12, 34.52it/s, est. speed input: 3867.44 toks/s, output: 4133.38 toks/s]Processed prompts:  26%|██▌       | 151/580 [00:11<00:10, 42.18it/s, est. speed input: 4040.31 toks/s, output: 4401.26 toks/s]Processed prompts:  27%|██▋       | 156/580 [00:12<00:10, 38.65it/s, est. speed input: 4127.16 toks/s, output: 4537.62 toks/s]Processed prompts:  28%|██▊       | 161/580 [00:12<00:13, 31.58it/s, est. speed input: 4170.88 toks/s, output: 4646.65 toks/s]Processed prompts:  28%|██▊       | 165/580 [00:12<00:13, 31.04it/s, est. speed input: 4207.35 toks/s, output: 4754.92 toks/s]Processed prompts:  29%|██▉       | 169/580 [00:12<00:13, 29.72it/s, est. speed input: 4247.56 toks/s, output: 4857.52 toks/s]Processed prompts:  30%|██▉       | 173/580 [00:12<00:15, 26.56it/s, est. speed input: 4281.63 toks/s, output: 4944.41 toks/s]Processed prompts:  30%|███       | 176/580 [00:13<00:18, 21.54it/s, est. speed input: 4291.87 toks/s, output: 4978.51 toks/s]Processed prompts:  31%|███       | 179/580 [00:13<00:17, 22.47it/s, est. speed input: 4343.77 toks/s, output: 5060.13 toks/s]Processed prompts:  33%|███▎      | 190/580 [00:13<00:09, 39.76it/s, est. speed input: 4661.54 toks/s, output: 5477.92 toks/s]Processed prompts:  34%|███▎      | 195/580 [00:13<00:11, 34.55it/s, est. speed input: 4733.09 toks/s, output: 5607.34 toks/s]Processed prompts:  36%|███▌      | 206/580 [00:13<00:07, 49.18it/s, est. speed input: 4982.63 toks/s, output: 6026.73 toks/s]Processed prompts:  37%|███▋      | 212/580 [00:13<00:08, 41.45it/s, est. speed input: 5065.48 toks/s, output: 6189.53 toks/s]Processed prompts:  37%|███▋      | 217/580 [00:13<00:10, 35.64it/s, est. speed input: 5112.35 toks/s, output: 6314.28 toks/s]Processed prompts:  38%|███▊      | 222/580 [00:14<00:12, 28.32it/s, est. speed input: 5128.73 toks/s, output: 6407.41 toks/s]Processed prompts:  39%|███▉      | 229/580 [00:14<00:10, 34.28it/s, est. speed input: 5214.79 toks/s, output: 6662.20 toks/s]Processed prompts:  41%|████      | 235/580 [00:14<00:09, 35.01it/s, est. speed input: 5288.90 toks/s, output: 6853.16 toks/s]Processed prompts:  41%|████▏     | 240/580 [00:14<00:12, 28.00it/s, est. speed input: 5301.79 toks/s, output: 6945.10 toks/s]Processed prompts:  43%|████▎     | 247/580 [00:14<00:09, 34.84it/s, est. speed input: 5423.01 toks/s, output: 7213.05 toks/s]Processed prompts:  43%|████▎     | 252/580 [00:15<00:08, 36.58it/s, est. speed input: 5503.55 toks/s, output: 7384.32 toks/s]Processed prompts:  44%|████▍     | 257/580 [00:15<00:08, 36.26it/s, est. speed input: 5595.36 toks/s, output: 7544.05 toks/s]Processed prompts:  45%|████▌     | 262/580 [00:15<00:08, 37.00it/s, est. speed input: 5701.39 toks/s, output: 7710.18 toks/s]Processed prompts:  46%|████▌     | 267/580 [00:15<00:08, 34.96it/s, est. speed input: 5766.91 toks/s, output: 7860.29 toks/s]Processed prompts:  47%|████▋     | 271/580 [00:15<00:10, 29.51it/s, est. speed input: 5790.76 toks/s, output: 7945.97 toks/s]Processed prompts:  48%|████▊     | 278/580 [00:15<00:08, 35.85it/s, est. speed input: 5896.98 toks/s, output: 8211.97 toks/s]Processed prompts:  50%|█████     | 290/580 [00:15<00:05, 51.10it/s, est. speed input: 6095.80 toks/s, output: 8711.59 toks/s]Processed prompts:  51%|█████     | 296/580 [00:16<00:06, 42.18it/s, est. speed input: 6126.08 toks/s, output: 8880.06 toks/s]Processed prompts:  53%|█████▎    | 306/580 [00:16<00:05, 48.84it/s, est. speed input: 6295.56 toks/s, output: 9276.59 toks/s]Processed prompts:  54%|█████▍    | 312/580 [00:16<00:05, 48.50it/s, est. speed input: 6357.32 toks/s, output: 9494.74 toks/s]Processed prompts:  55%|█████▍    | 318/580 [00:16<00:05, 45.96it/s, est. speed input: 6456.71 toks/s, output: 9702.01 toks/s]Processed prompts:  57%|█████▋    | 329/580 [00:16<00:04, 59.12it/s, est. speed input: 6660.81 toks/s, output: 10177.79 toks/s]Processed prompts:  59%|█████▊    | 340/580 [00:16<00:03, 62.58it/s, est. speed input: 6832.93 toks/s, output: 10624.80 toks/s]Processed prompts:  60%|█████▉    | 347/580 [00:17<00:04, 50.47it/s, est. speed input: 6868.15 toks/s, output: 10836.96 toks/s]Processed prompts:  61%|██████    | 353/580 [00:17<00:06, 37.04it/s, est. speed input: 6874.77 toks/s, output: 10949.20 toks/s]Processed prompts:  62%|██████▏   | 358/580 [00:17<00:06, 35.03it/s, est. speed input: 6909.51 toks/s, output: 11098.36 toks/s]Processed prompts:  64%|██████▍   | 370/580 [00:17<00:04, 49.91it/s, est. speed input: 7133.71 toks/s, output: 11650.71 toks/s]Processed prompts:  65%|██████▌   | 377/580 [00:17<00:04, 43.01it/s, est. speed input: 7203.63 toks/s, output: 11864.78 toks/s]Processed prompts:  66%|██████▌   | 383/580 [00:18<00:05, 34.87it/s, est. speed input: 7213.52 toks/s, output: 11999.24 toks/s]Processed prompts:  67%|██████▋   | 388/580 [00:18<00:06, 29.89it/s, est. speed input: 7211.91 toks/s, output: 12102.11 toks/s]Processed prompts:  68%|██████▊   | 397/580 [00:18<00:04, 37.58it/s, est. speed input: 7313.61 toks/s, output: 12498.33 toks/s]Processed prompts:  70%|███████   | 406/580 [00:18<00:04, 39.53it/s, est. speed input: 7426.60 toks/s, output: 12845.72 toks/s]Processed prompts:  71%|███████   | 411/580 [00:18<00:05, 31.13it/s, est. speed input: 7410.59 toks/s, output: 12924.79 toks/s]Processed prompts:  72%|███████▏  | 418/580 [00:19<00:04, 36.75it/s, est. speed input: 7471.69 toks/s, output: 13240.58 toks/s]Processed prompts:  73%|███████▎  | 423/580 [00:19<00:05, 27.49it/s, est. speed input: 7441.33 toks/s, output: 13295.02 toks/s]Processed prompts:  74%|███████▎  | 427/580 [00:19<00:05, 28.91it/s, est. speed input: 7466.71 toks/s, output: 13447.00 toks/s]Processed prompts:  74%|███████▍  | 431/580 [00:19<00:05, 27.55it/s, est. speed input: 7475.78 toks/s, output: 13562.82 toks/s]Processed prompts:  75%|███████▌  | 435/580 [00:19<00:05, 26.49it/s, est. speed input: 7490.85 toks/s, output: 13679.67 toks/s]Processed prompts:  76%|███████▌  | 438/580 [00:20<00:06, 22.83it/s, est. speed input: 7479.59 toks/s, output: 13719.22 toks/s]Processed prompts:  76%|███████▌  | 441/580 [00:20<00:06, 21.93it/s, est. speed input: 7477.96 toks/s, output: 13792.00 toks/s]Processed prompts:  77%|███████▋  | 445/580 [00:20<00:05, 24.88it/s, est. speed input: 7506.97 toks/s, output: 13954.59 toks/s]Processed prompts:  78%|███████▊  | 451/580 [00:20<00:04, 31.80it/s, est. speed input: 7565.70 toks/s, output: 14240.01 toks/s]Processed prompts:  79%|███████▉  | 460/580 [00:20<00:02, 42.37it/s, est. speed input: 7663.25 toks/s, output: 14691.34 toks/s]Processed prompts:  80%|████████  | 465/580 [00:20<00:04, 27.43it/s, est. speed input: 7640.87 toks/s, output: 14742.50 toks/s]Processed prompts:  81%|████████  | 471/580 [00:21<00:03, 28.84it/s, est. speed input: 7693.55 toks/s, output: 14984.51 toks/s]Processed prompts:  82%|████████▏ | 475/580 [00:21<00:05, 18.49it/s, est. speed input: 7596.89 toks/s, output: 14907.32 toks/s]Processed prompts:  82%|████████▏ | 478/580 [00:21<00:05, 17.88it/s, est. speed input: 7599.23 toks/s, output: 14970.22 toks/s]Processed prompts:  83%|████████▎ | 481/580 [00:21<00:05, 18.80it/s, est. speed input: 7606.10 toks/s, output: 15076.70 toks/s]Processed prompts:  84%|████████▍ | 489/580 [00:22<00:03, 27.92it/s, est. speed input: 7742.63 toks/s, output: 15516.16 toks/s]Processed prompts:  85%|████████▌ | 493/580 [00:22<00:03, 25.16it/s, est. speed input: 7745.54 toks/s, output: 15636.25 toks/s]Processed prompts:  86%|████████▌ | 497/580 [00:22<00:03, 22.97it/s, est. speed input: 7736.73 toks/s, output: 15752.46 toks/s]Processed prompts:  86%|████████▌ | 500/580 [00:22<00:05, 14.59it/s, est. speed input: 7635.91 toks/s, output: 15627.28 toks/s]Processed prompts:  87%|████████▋ | 503/580 [00:23<00:04, 16.23it/s, est. speed input: 7654.11 toks/s, output: 15753.73 toks/s]Processed prompts:  87%|████████▋ | 507/580 [00:23<00:04, 17.80it/s, est. speed input: 7674.50 toks/s, output: 15910.77 toks/s]Processed prompts:  88%|████████▊ | 510/580 [00:23<00:04, 15.67it/s, est. speed input: 7640.78 toks/s, output: 15945.76 toks/s]Processed prompts:  88%|████████▊ | 512/580 [00:23<00:04, 13.62it/s, est. speed input: 7592.00 toks/s, output: 15935.42 toks/s]Processed prompts:  89%|████████▊ | 514/580 [00:24<00:06, 10.62it/s, est. speed input: 7507.25 toks/s, output: 15853.62 toks/s]Processed prompts:  89%|████████▉ | 516/580 [00:24<00:05, 10.80it/s, est. speed input: 7506.20 toks/s, output: 15885.09 toks/s]Processed prompts:  89%|████████▉ | 518/580 [00:24<00:06,  9.91it/s, est. speed input: 7453.40 toks/s, output: 15868.80 toks/s]Processed prompts:  90%|████████▉ | 520/580 [00:24<00:07,  8.11it/s, est. speed input: 7368.23 toks/s, output: 15781.79 toks/s]Processed prompts:  91%|█████████▏| 530/580 [00:24<00:02, 19.80it/s, est. speed input: 7525.91 toks/s, output: 16458.53 toks/s]Processed prompts:  92%|█████████▏| 534/580 [00:25<00:04, 10.20it/s, est. speed input: 7335.77 toks/s, output: 16193.20 toks/s]Processed prompts: 100%|██████████| 580/580 [00:25<00:00, 10.20it/s, est. speed input: 8032.79 toks/s, output: 19767.35 toks/s]Processed prompts: 100%|██████████| 580/580 [00:25<00:00, 22.34it/s, est. speed input: 8032.79 toks/s, output: 19767.35 toks/s]
+Sample 0: generated in 0.05s
+Sample 1: generated in 0.05s
+Sample 2: generated in 0.05s
+Sample 3: generated in 0.05s
+Sample 4: generated in 0.05s
+Sample 5: generated in 0.05s
+Sample 6: generated in 0.05s
+Sample 7: generated in 0.05s
+Sample 8: generated in 0.05s
+Sample 9: generated in 0.05s
+Sample 10: generated in 0.05s
+Sample 11: generated in 0.05s
+Sample 12: generated in 0.05s
+Sample 13: generated in 0.05s
+Sample 14: generated in 0.05s
+Sample 15: generated in 0.05s
+Sample 16: generated in 0.05s
+Sample 17: generated in 0.05s
+Sample 18: generated in 0.05s
+Sample 19: generated in 0.05s
+Sample 20: generated in 0.05s
+Sample 21: generated in 0.05s
+Sample 22: generated in 0.05s
+Sample 23: generated in 0.05s
+Sample 24: generated in 0.05s
+Sample 25: generated in 0.05s
+Sample 26: generated in 0.05s
+Sample 27: generated in 0.05s
+Sample 28: generated in 0.05s
+Sample 29: generated in 0.05s
+Sample 30: generated in 0.05s
+Sample 31: generated in 0.05s
+Sample 32: generated in 0.05s
+Sample 33: generated in 0.05s
+Sample 34: generated in 0.05s
+Sample 35: generated in 0.05s
+Sample 36: generated in 0.05s
+Sample 37: generated in 0.05s
+Sample 38: generated in 0.05s
+Sample 39: generated in 0.05s
+Sample 40: generated in 0.05s
+Sample 41: generated in 0.05s
+Sample 42: generated in 0.05s
+Sample 43: generated in 0.05s
+Sample 44: generated in 0.05s
+Sample 45: generated in 0.05s
+Sample 46: generated in 0.05s
+Sample 47: generated in 0.05s
+Sample 48: generated in 0.05s
+Sample 49: generated in 0.05s
+Sample 50: generated in 0.05s
+Sample 51: generated in 0.05s
+Sample 52: generated in 0.05s
+Sample 53: generated in 0.05s
+Sample 54: generated in 0.05s
+Sample 55: generated in 0.05s
+Sample 56: generated in 0.05s
+Sample 57: generated in 0.05s
+Sample 58: generated in 0.05s
+Sample 59: generated in 0.05s
+Sample 60: generated in 0.05s
+Sample 61: generated in 0.05s
+Sample 62: generated in 0.05s
+Sample 63: generated in 0.05s
+Sample 64: generated in 0.05s
+Sample 65: generated in 0.05s
+Sample 66: generated in 0.05s
+Sample 67: generated in 0.05s
+Sample 68: generated in 0.05s
+Sample 69: generated in 0.05s
+Sample 70: generated in 0.05s
+Sample 71: generated in 0.05s
+Sample 72: generated in 0.05s
+Sample 73: generated in 0.05s
+Sample 74: generated in 0.05s
+Sample 75: generated in 0.05s
+Sample 76: generated in 0.05s
+Sample 77: generated in 0.05s
+Sample 78: generated in 0.05s
+Sample 79: generated in 0.05s
+Sample 80: generated in 0.05s
+Sample 81: generated in 0.05s
+Sample 82: generated in 0.05s
+Sample 83: generated in 0.05s
+Sample 84: generated in 0.05s
+Sample 85: generated in 0.05s
+Sample 86: generated in 0.05s
+Sample 87: generated in 0.05s
+Sample 88: generated in 0.05s
+Sample 89: generated in 0.05s
+Sample 90: generated in 0.05s
+Sample 91: generated in 0.05s
+Sample 92: generated in 0.05s
+Sample 93: generated in 0.05s
+Sample 94: generated in 0.05s
+Sample 95: generated in 0.05s
+Sample 96: generated in 0.05s
+Sample 97: generated in 0.05s
+Sample 98: generated in 0.05s
+Sample 99: generated in 0.05s
+Sample 100: generated in 0.05s
+Sample 101: generated in 0.05s
+Sample 102: generated in 0.05s
+Sample 103: generated in 0.05s
+Sample 104: generated in 0.05s
+Sample 105: generated in 0.05s
+Sample 106: generated in 0.05s
+Sample 107: generated in 0.05s
+Sample 108: generated in 0.05s
+Sample 109: generated in 0.05s
+Sample 110: generated in 0.05s
+Sample 111: generated in 0.05s
+Sample 112: generated in 0.05s
+Sample 113: generated in 0.05s
+Sample 114: generated in 0.05s
+Sample 115: generated in 0.05s
+Sample 116: generated in 0.05s
+Sample 117: generated in 0.05s
+Sample 118: generated in 0.05s
+Sample 119: generated in 0.05s
+Sample 120: generated in 0.05s
+Sample 121: generated in 0.05s
+Sample 122: generated in 0.05s
+Sample 123: generated in 0.05s
+Sample 124: generated in 0.05s
+Sample 125: generated in 0.05s
+Sample 126: generated in 0.05s
+Sample 127: generated in 0.05s
+Sample 128: generated in 0.05s
+Sample 129: generated in 0.05s
+Sample 130: generated in 0.05s
+Sample 131: generated in 0.05s
+Sample 132: generated in 0.05s
+Sample 133: generated in 0.05s
+Sample 134: generated in 0.05s
+Sample 135: generated in 0.05s
+Sample 136: generated in 0.05s
+Sample 137: generated in 0.05s
+Sample 138: generated in 0.05s
+Sample 139: generated in 0.05s
+Sample 140: generated in 0.05s
+Sample 141: generated in 0.05s
+Sample 142: generated in 0.05s
+Sample 143: generated in 0.05s
+Sample 144: generated in 0.05s
+Sample 145: generated in 0.05s
+Sample 146: generated in 0.05s
+Sample 147: generated in 0.05s
+Sample 148: generated in 0.05s
+Sample 149: generated in 0.05s
+Sample 150: generated in 0.05s
+Sample 151: generated in 0.05s
+Sample 152: generated in 0.05s
+Sample 153: generated in 0.05s
+Sample 154: generated in 0.05s
+Sample 155: generated in 0.05s
+Sample 156: generated in 0.05s
+Sample 157: generated in 0.05s
+Sample 158: generated in 0.05s
+Sample 159: generated in 0.05s
+Sample 160: generated in 0.05s
+Sample 161: generated in 0.05s
+Sample 162: generated in 0.05s
+Sample 163: generated in 0.05s
+Sample 164: generated in 0.05s
+Sample 165: generated in 0.05s
+Sample 166: generated in 0.05s
+Sample 167: generated in 0.05s
+Sample 168: generated in 0.05s
+Sample 169: generated in 0.05s
+Sample 170: generated in 0.05s
+Sample 171: generated in 0.05s
+Sample 172: generated in 0.05s
+Sample 173: generated in 0.05s
+Sample 174: generated in 0.05s
+Sample 175: generated in 0.05s
+Sample 176: generated in 0.05s
+Sample 177: generated in 0.05s
+Sample 178: generated in 0.05s
+Sample 179: generated in 0.05s
+Sample 180: generated in 0.05s
+Sample 181: generated in 0.05s
+Sample 182: generated in 0.05s
+Sample 183: generated in 0.05s
+Sample 184: generated in 0.05s
+Sample 185: generated in 0.05s
+Sample 186: generated in 0.05s
+Sample 187: generated in 0.05s
+Sample 188: generated in 0.05s
+Sample 189: generated in 0.05s
+Sample 190: generated in 0.05s
+Sample 191: generated in 0.05s
+Sample 192: generated in 0.05s
+Sample 193: generated in 0.05s
+Sample 194: generated in 0.05s
+Sample 195: generated in 0.05s
+Sample 196: generated in 0.05s
+Sample 197: generated in 0.05s
+Sample 198: generated in 0.05s
+Sample 199: generated in 0.05s
+Sample 200: generated in 0.05s
+Sample 201: generated in 0.05s
+Sample 202: generated in 0.05s
+Sample 203: generated in 0.05s
+Sample 204: generated in 0.05s
+Sample 205: generated in 0.05s
+Sample 206: generated in 0.05s
+Sample 207: generated in 0.05s
+Sample 208: generated in 0.05s
+Sample 209: generated in 0.05s
+Sample 210: generated in 0.05s
+Sample 211: generated in 0.05s
+Sample 212: generated in 0.05s
+Sample 213: generated in 0.05s
+Sample 214: generated in 0.05s
+Sample 215: generated in 0.05s
+Sample 216: generated in 0.05s
+Sample 217: generated in 0.05s
+Sample 218: generated in 0.05s
+Sample 219: generated in 0.05s
+Sample 220: generated in 0.05s
+Sample 221: generated in 0.05s
+Sample 222: generated in 0.05s
+Sample 223: generated in 0.05s
+Sample 224: generated in 0.05s
+Sample 225: generated in 0.05s
+Sample 226: generated in 0.05s
+Sample 227: generated in 0.05s
+Sample 228: generated in 0.05s
+Sample 229: generated in 0.05s
+Sample 230: generated in 0.05s
+Sample 231: generated in 0.05s
+Sample 232: generated in 0.05s
+Sample 233: generated in 0.05s
+Sample 234: generated in 0.05s
+Sample 235: generated in 0.05s
+Sample 236: generated in 0.05s
+Sample 237: generated in 0.05s
+Sample 238: generated in 0.05s
+Sample 239: generated in 0.05s
+Sample 240: generated in 0.05s
+Sample 241: generated in 0.05s
+Sample 242: generated in 0.05s
+Sample 243: generated in 0.05s
+Sample 244: generated in 0.05s
+Sample 245: generated in 0.05s
+Sample 246: generated in 0.05s
+Sample 247: generated in 0.05s
+Sample 248: generated in 0.05s
+Sample 249: generated in 0.05s
+Sample 250: generated in 0.05s
+Sample 251: generated in 0.05s
+Sample 252: generated in 0.05s
+Sample 253: generated in 0.05s
+Sample 254: generated in 0.05s
+Sample 255: generated in 0.05s
+Sample 256: generated in 0.05s
+Sample 257: generated in 0.05s
+Sample 258: generated in 0.05s
+Sample 259: generated in 0.05s
+Sample 260: generated in 0.05s
+Sample 261: generated in 0.05s
+Sample 262: generated in 0.05s
+Sample 263: generated in 0.05s
+Sample 264: generated in 0.05s
+Sample 265: generated in 0.05s
+Sample 266: generated in 0.05s
+Sample 267: generated in 0.05s
+Sample 268: generated in 0.05s
+Sample 269: generated in 0.05s
+Sample 270: generated in 0.05s
+Sample 271: generated in 0.05s
+Sample 272: generated in 0.05s
+Sample 273: generated in 0.05s
+Sample 274: generated in 0.05s
+Sample 275: generated in 0.05s
+Sample 276: generated in 0.05s
+Sample 277: generated in 0.05s
+Sample 278: generated in 0.05s
+Sample 279: generated in 0.05s
+Sample 280: generated in 0.05s
+Sample 281: generated in 0.05s
+Sample 282: generated in 0.05s
+Sample 283: generated in 0.05s
+Sample 284: generated in 0.05s
+Sample 285: generated in 0.05s
+Sample 286: generated in 0.05s
+Sample 287: generated in 0.05s
+Sample 288: generated in 0.05s
+Sample 289: generated in 0.05s
+Sample 290: generated in 0.05s
+Sample 291: generated in 0.05s
+Sample 292: generated in 0.05s
+Sample 293: generated in 0.05s
+Sample 294: generated in 0.05s
+Sample 295: generated in 0.05s
+Sample 296: generated in 0.05s
+Sample 297: generated in 0.05s
+Sample 298: generated in 0.05s
+Sample 299: generated in 0.05s
+Sample 300: generated in 0.05s
+Sample 301: generated in 0.05s
+Sample 302: generated in 0.05s
+Sample 303: generated in 0.05s
+Sample 304: generated in 0.05s
+Sample 305: generated in 0.05s
+Sample 306: generated in 0.05s
+Sample 307: generated in 0.05s
+Sample 308: generated in 0.05s
+Sample 309: generated in 0.05s
+Sample 310: generated in 0.05s
+Sample 311: generated in 0.05s
+Sample 312: generated in 0.05s
+Sample 313: generated in 0.05s
+Sample 314: generated in 0.05s
+Sample 315: generated in 0.05s
+Sample 316: generated in 0.05s
+Sample 317: generated in 0.05s
+Sample 318: generated in 0.05s
+Sample 319: generated in 0.05s
+Sample 320: generated in 0.05s
+Sample 321: generated in 0.05s
+Sample 322: generated in 0.05s
+Sample 323: generated in 0.05s
+Sample 324: generated in 0.05s
+Sample 325: generated in 0.05s
+Sample 326: generated in 0.05s
+Sample 327: generated in 0.05s
+Sample 328: generated in 0.05s
+Sample 329: generated in 0.05s
+Sample 330: generated in 0.05s
+Sample 331: generated in 0.05s
+Sample 332: generated in 0.05s
+Sample 333: generated in 0.05s
+Sample 334: generated in 0.05s
+Sample 335: generated in 0.05s
+Sample 336: generated in 0.05s
+Sample 337: generated in 0.05s
+Sample 338: generated in 0.05s
+Sample 339: generated in 0.05s
+Sample 340: generated in 0.05s
+Sample 341: generated in 0.05s
+Sample 342: generated in 0.05s
+Sample 343: generated in 0.05s
+Sample 344: generated in 0.05s
+Sample 345: generated in 0.05s
+Sample 346: generated in 0.05s
+Sample 347: generated in 0.05s
+Sample 348: generated in 0.05s
+Sample 349: generated in 0.05s
+Sample 350: generated in 0.05s
+Sample 351: generated in 0.05s
+Sample 352: generated in 0.05s
+Sample 353: generated in 0.05s
+Sample 354: generated in 0.05s
+Sample 355: generated in 0.05s
+Sample 356: generated in 0.05s
+Sample 357: generated in 0.05s
+Sample 358: generated in 0.05s
+Sample 359: generated in 0.05s
+Sample 360: generated in 0.05s
+Sample 361: generated in 0.05s
+Sample 362: generated in 0.05s
+Sample 363: generated in 0.05s
+Sample 364: generated in 0.05s
+Sample 365: generated in 0.05s
+Sample 366: generated in 0.05s
+Sample 367: generated in 0.05s
+Sample 368: generated in 0.05s
+Sample 369: generated in 0.05s
+Sample 370: generated in 0.05s
+Sample 371: generated in 0.05s
+Sample 372: generated in 0.05s
+Sample 373: generated in 0.05s
+Sample 374: generated in 0.05s
+Sample 375: generated in 0.05s
+Sample 376: generated in 0.05s
+Sample 377: generated in 0.05s
+Sample 378: generated in 0.05s
+Sample 379: generated in 0.05s
+Sample 380: generated in 0.05s
+Sample 381: generated in 0.05s
+Sample 382: generated in 0.05s
+Sample 383: generated in 0.05s
+Sample 384: generated in 0.05s
+Sample 385: generated in 0.05s
+Sample 386: generated in 0.05s
+Sample 387: generated in 0.05s
+Sample 388: generated in 0.05s
+Sample 389: generated in 0.05s
+Sample 390: generated in 0.05s
+Sample 391: generated in 0.05s
+Sample 392: generated in 0.05s
+Sample 393: generated in 0.05s
+Sample 394: generated in 0.05s
+Sample 395: generated in 0.05s
+Sample 396: generated in 0.05s
+Sample 397: generated in 0.05s
+Sample 398: generated in 0.05s
+Sample 399: generated in 0.05s
+Sample 400: generated in 0.05s
+Sample 401: generated in 0.05s
+Sample 402: generated in 0.05s
+Sample 403: generated in 0.05s
+Sample 404: generated in 0.05s
+Sample 405: generated in 0.05s
+Sample 406: generated in 0.05s
+Sample 407: generated in 0.05s
+Sample 408: generated in 0.05s
+Sample 409: generated in 0.05s
+Sample 410: generated in 0.05s
+Sample 411: generated in 0.05s
+Sample 412: generated in 0.05s
+Sample 413: generated in 0.05s
+Sample 414: generated in 0.05s
+Sample 415: generated in 0.05s
+Sample 416: generated in 0.05s
+Sample 417: generated in 0.05s
+Sample 418: generated in 0.05s
+Sample 419: generated in 0.05s
+Sample 420: generated in 0.05s
+Sample 421: generated in 0.05s
+Sample 422: generated in 0.05s
+Sample 423: generated in 0.05s
+Sample 424: generated in 0.05s
+Sample 425: generated in 0.05s
+Sample 426: generated in 0.05s
+Sample 427: generated in 0.05s
+Sample 428: generated in 0.05s
+Sample 429: generated in 0.05s
+Sample 430: generated in 0.05s
+Sample 431: generated in 0.05s
+Sample 432: generated in 0.05s
+Sample 433: generated in 0.05s
+Sample 434: generated in 0.05s
+Sample 435: generated in 0.05s
+Sample 436: generated in 0.05s
+Sample 437: generated in 0.05s
+Sample 438: generated in 0.05s
+Sample 439: generated in 0.05s
+Sample 440: generated in 0.05s
+Sample 441: generated in 0.05s
+Sample 442: generated in 0.05s
+Sample 443: generated in 0.05s
+Sample 444: generated in 0.05s
+Sample 445: generated in 0.05s
+Sample 446: generated in 0.05s
+Sample 447: generated in 0.05s
+Sample 448: generated in 0.05s
+Sample 449: generated in 0.05s
+Sample 450: generated in 0.05s
+Sample 451: generated in 0.05s
+Sample 452: generated in 0.05s
+Sample 453: generated in 0.05s
+Sample 454: generated in 0.05s
+Sample 455: generated in 0.05s
+Sample 456: generated in 0.05s
+Sample 457: generated in 0.05s
+Sample 458: generated in 0.05s
+Sample 459: generated in 0.05s
+Sample 460: generated in 0.05s
+Sample 461: generated in 0.05s
+Sample 462: generated in 0.05s
+Sample 463: generated in 0.05s
+Sample 464: generated in 0.05s
+Sample 465: generated in 0.05s
+Sample 466: generated in 0.05s
+Sample 467: generated in 0.05s
+Sample 468: generated in 0.05s
+Sample 469: generated in 0.05s
+Sample 470: generated in 0.05s
+Sample 471: generated in 0.05s
+Sample 472: generated in 0.05s
+Sample 473: generated in 0.05s
+Sample 474: generated in 0.05s
+Sample 475: generated in 0.05s
+Sample 476: generated in 0.05s
+Sample 477: generated in 0.05s
+Sample 478: generated in 0.05s
+Sample 479: generated in 0.05s
+Sample 480: generated in 0.05s
+Sample 481: generated in 0.05s
+Sample 482: generated in 0.05s
+Sample 483: generated in 0.05s
+Sample 484: generated in 0.05s
+Sample 485: generated in 0.05s
+Sample 486: generated in 0.05s
+Sample 487: generated in 0.05s
+Sample 488: generated in 0.05s
+Sample 489: generated in 0.05s
+Sample 490: generated in 0.05s
+Sample 491: generated in 0.05s
+Sample 492: generated in 0.05s
+Sample 493: generated in 0.05s
+Sample 494: generated in 0.05s
+Sample 495: generated in 0.05s
+Sample 496: generated in 0.05s
+Sample 497: generated in 0.05s
+Sample 498: generated in 0.05s
+Sample 499: generated in 0.05s
+Sample 500: generated in 0.05s
+Sample 501: generated in 0.05s
+Sample 502: generated in 0.05s
+Sample 503: generated in 0.05s
+Sample 504: generated in 0.05s
+Sample 505: generated in 0.05s
+Sample 506: generated in 0.05s
+Sample 507: generated in 0.05s
+Sample 508: generated in 0.05s
+Sample 509: generated in 0.05s
+Sample 510: generated in 0.05s
+Sample 511: generated in 0.05s
+Sample 512: generated in 0.05s
+Sample 513: generated in 0.05s
+Sample 514: generated in 0.05s
+Sample 515: generated in 0.05s
+Sample 516: generated in 0.05s
+Sample 517: generated in 0.05s
+Sample 518: generated in 0.05s
+Sample 519: generated in 0.05s
+Sample 520: generated in 0.05s
+Sample 521: generated in 0.05s
+Sample 522: generated in 0.05s
+Sample 523: generated in 0.05s
+Sample 524: generated in 0.05s
+Sample 525: generated in 0.05s
+Sample 526: generated in 0.05s
+Sample 527: generated in 0.05s
+Sample 528: generated in 0.05s
+Sample 529: generated in 0.05s
+Sample 530: generated in 0.05s
+Sample 531: generated in 0.05s
+Sample 532: generated in 0.05s
+Sample 533: generated in 0.05s
+Sample 534: generated in 0.05s
+Sample 535: generated in 0.05s
+Sample 536: generated in 0.05s
+Sample 537: generated in 0.05s
+Sample 538: generated in 0.05s
+Sample 539: generated in 0.05s
+Sample 540: generated in 0.05s
+Sample 541: generated in 0.05s
+Sample 542: generated in 0.05s
+Sample 543: generated in 0.05s
+Sample 544: generated in 0.05s
+Sample 545: generated in 0.05s
+Sample 546: generated in 0.05s
+Sample 547: generated in 0.05s
+Sample 548: generated in 0.05s
+Sample 549: generated in 0.05s
+Sample 550: generated in 0.05s
+Sample 551: generated in 0.05s
+Sample 552: generated in 0.05s
+Sample 553: generated in 0.05s
+Sample 554: generated in 0.05s
+Sample 555: generated in 0.05s
+Sample 556: generated in 0.05s
+Sample 557: generated in 0.05s
+Sample 558: generated in 0.05s
+Sample 559: generated in 0.05s
+Sample 560: generated in 0.05s
+Sample 561: generated in 0.05s
+Sample 562: generated in 0.05s
+Sample 563: generated in 0.05s
+Sample 564: generated in 0.05s
+Sample 565: generated in 0.05s
+Sample 566: generated in 0.05s
+Sample 567: generated in 0.05s
+Sample 568: generated in 0.05s
+Sample 569: generated in 0.05s
+Sample 570: generated in 0.05s
+Sample 571: generated in 0.05s
+Sample 572: generated in 0.05s
+Sample 573: generated in 0.05s
+Sample 574: generated in 0.05s
+Sample 575: generated in 0.05s
+Sample 576: generated in 0.05s
+Sample 577: generated in 0.05s
+Sample 578: generated in 0.05s
+Sample 579: generated in 0.05s
+
+✅ Generation complete. Output saved to: out/quantum_circuits_output_20250807_104506_quantum_3b.json
