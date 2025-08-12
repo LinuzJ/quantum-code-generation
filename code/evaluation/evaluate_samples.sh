@@ -1,6 +1,6 @@
 uid="$(date +%Y%m%d_%H%M%S)"
 
-path="../generation/out/quantum_circuits_output_20250404_163313_DeepSeek-R1-Distill-Qwen-1.5B_few_shot.json"
+path="../generation/out/quantum_circuits_output_20250807_104506_quantum_3b.json"
 model="quantum_circuit"
 out_path="./out"
 

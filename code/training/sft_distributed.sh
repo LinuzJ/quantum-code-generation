@@ -1,17 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=sft_quantum_circuit_gen_multigpu
-#SBATCH --time=04:00:00
+#SBATCH --time=10:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=6
-#SBATCH --output=../../logs/sft_%A_%a.out
-#SBATCH --error=../../logs/sft_%A_%a.err
-#SBATCH --cpus-per-task=4
 #SBATCH --mem=400GB
-#SBATCH --gpus=6
-#SBATCH --partition=gpu-h200-141g-short
-#SBATCH --mail-type=BEGIN
-#SBATCH --mail-user=linus.jern@aalto.fi
-##SBATCH --partition=gpu-debug
+#SBATCH --cpus-per-task=32
+#SBATCH --gpus=8
+#SBATCH --partition=gpu-h200-141g-ellis
+
 
 module purge
 module load scicomp-python-env/2024-01
@@ -26,11 +21,11 @@ pip install -r requirements.txt
 
 uid="$(date +%Y%m%d_%H%M%S)"
 
-gpus=6
+gpus=8
 nodes=1
 
-base_model_name="Qwen/Qwen2.5-7B-Instruct"
-output_dir_name="linuzj/quantum-circuit-qubo-7B"
+base_model_name="Qwen/Qwen3-8B"
+output_dir_name="cong/sft_quantum_circuit_gen_8B_${uid}"
 
 epochs=15
 block_size=16384

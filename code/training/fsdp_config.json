@@ -1,4 +1,10 @@
 {
-    "backward_prefetch": "backward_pre",
-    "auto_wrap_policy": "TRANSFORMER_BASED_WRAP"
+  "fsdp_auto_wrap_policy": "TRANSFORMER_BASED_WRAP",
+  "xla": false,
+  "enable_forward_prefetch": true,
+  "limit_all_gathers": true,
+  "activation_checkpointing": true,
+  "activation_offload": false,
+  "state_dict_type": "FULL_STATE_DICT",
+  "use_orig_params": true
 }

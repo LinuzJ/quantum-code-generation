@@ -1,0 +1,1229 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) triton/2024.1-gcc
+Requirement already satisfied: numpy==2.0.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (2.0.0)
+Requirement already satisfied: PennyLane==0.40.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (0.40.0)
+Requirement already satisfied: pennylane-qiskit==0.40.0 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (0.40.0)
+Requirement already satisfied: qiskit==1.2.4 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 4)) (1.2.4)
+Requirement already satisfied: qiskit_aer==0.16.1 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 5)) (0.16.1)
+Requirement already satisfied: qiskit_algorithms==0.3.1 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 6)) (0.3.1)
+Requirement already satisfied: qiskit_qasm3_import==0.5.1 in ./.venv/lib/python3.12/site-packages (from -r requirements.txt (line 7)) (0.5.1)
+Requirement already satisfied: scipy in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (1.16.1)
+Requirement already satisfied: networkx in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (3.5)
+Requirement already satisfied: rustworkx>=0.14.0 in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (0.16.0)
+Requirement already satisfied: autograd in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (1.8.0)
+Requirement already satisfied: tomlkit in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (0.13.3)
+Requirement already satisfied: appdirs in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (1.4.4)
+Requirement already satisfied: autoray>=0.6.11 in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (0.7.2)
+Requirement already satisfied: cachetools in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (6.1.0)
+Requirement already satisfied: pennylane-lightning>=0.40 in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (0.40.0)
+Requirement already satisfied: requests in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (2.32.4)
+Requirement already satisfied: typing-extensions in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (4.14.1)
+Requirement already satisfied: packaging in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (25.0)
+Requirement already satisfied: diastatic-malt in ./.venv/lib/python3.12/site-packages (from PennyLane==0.40.0->-r requirements.txt (line 2)) (2.15.2)
+Requirement already satisfied: qiskit-ibm-runtime<=0.29 in ./.venv/lib/python3.12/site-packages (from pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.29.0)
+Requirement already satisfied: qiskit-ibm-provider in ./.venv/lib/python3.12/site-packages (from pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.11.0)
+Requirement already satisfied: sympy<1.13 in ./.venv/lib/python3.12/site-packages (from pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (1.12.1)
+Requirement already satisfied: dill>=0.3 in ./.venv/lib/python3.12/site-packages (from qiskit==1.2.4->-r requirements.txt (line 4)) (0.4.0)
+Requirement already satisfied: python-dateutil>=2.8.0 in ./.venv/lib/python3.12/site-packages (from qiskit==1.2.4->-r requirements.txt (line 4)) (2.9.0.post0)
+Requirement already satisfied: stevedore>=3.0.0 in ./.venv/lib/python3.12/site-packages (from qiskit==1.2.4->-r requirements.txt (line 4)) (5.4.1)
+Requirement already satisfied: symengine<0.14,>=0.11 in ./.venv/lib/python3.12/site-packages (from qiskit==1.2.4->-r requirements.txt (line 4)) (0.13.0)
+Requirement already satisfied: psutil>=5 in ./.venv/lib/python3.12/site-packages (from qiskit_aer==0.16.1->-r requirements.txt (line 5)) (7.0.0)
+Requirement already satisfied: openqasm3<2.0,>=0.4 in ./.venv/lib/python3.12/site-packages (from openqasm3[parser]<2.0,>=0.4->qiskit_qasm3_import==0.5.1->-r requirements.txt (line 7)) (1.0.1)
+Requirement already satisfied: antlr4_python3_runtime<4.14,>=4.7 in ./.venv/lib/python3.12/site-packages (from openqasm3[parser]<2.0,>=0.4->qiskit_qasm3_import==0.5.1->-r requirements.txt (line 7)) (4.13.2)
+Requirement already satisfied: requests-ntlm>=1.1.0 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: urllib3>=1.21.1 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (2.5.0)
+Requirement already satisfied: websocket-client>=1.5.1 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (1.8.0)
+Requirement already satisfied: ibm-platform-services>=0.22.6 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.68.1)
+Requirement already satisfied: pydantic>=2.5.0 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (2.11.7)
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in ./.venv/lib/python3.12/site-packages (from sympy<1.13->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: ibm_cloud_sdk_core<4.0.0,>=3.24.2 in ./.venv/lib/python3.12/site-packages (from ibm-platform-services>=0.22.6->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (3.24.2)
+Requirement already satisfied: PyJWT<3.0.0,>=2.10.1 in ./.venv/lib/python3.12/site-packages (from ibm_cloud_sdk_core<4.0.0,>=3.24.2->ibm-platform-services>=0.22.6->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (2.10.1)
+Requirement already satisfied: six>=1.5 in ./.venv/lib/python3.12/site-packages (from python-dateutil>=2.8.0->qiskit==1.2.4->-r requirements.txt (line 4)) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.venv/lib/python3.12/site-packages (from requests->PennyLane==0.40.0->-r requirements.txt (line 2)) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in ./.venv/lib/python3.12/site-packages (from requests->PennyLane==0.40.0->-r requirements.txt (line 2)) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in ./.venv/lib/python3.12/site-packages (from requests->PennyLane==0.40.0->-r requirements.txt (line 2)) (2025.8.3)
+Requirement already satisfied: scipy-openblas32>=0.3.26 in ./.venv/lib/python3.12/site-packages (from pennylane-lightning>=0.40->PennyLane==0.40.0->-r requirements.txt (line 2)) (0.3.30.0.2)
+Requirement already satisfied: annotated-types>=0.6.0 in ./.venv/lib/python3.12/site-packages (from pydantic>=2.5.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in ./.venv/lib/python3.12/site-packages (from pydantic>=2.5.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./.venv/lib/python3.12/site-packages (from pydantic>=2.5.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.4.1)
+Requirement already satisfied: cryptography>=1.3 in ./.venv/lib/python3.12/site-packages (from requests-ntlm>=1.1.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (45.0.6)
+Requirement already satisfied: pyspnego>=0.4.0 in ./.venv/lib/python3.12/site-packages (from requests-ntlm>=1.1.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (0.11.2)
+Requirement already satisfied: cffi>=1.14 in ./.venv/lib/python3.12/site-packages (from cryptography>=1.3->requests-ntlm>=1.1.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (1.17.1)
+Requirement already satisfied: pycparser in ./.venv/lib/python3.12/site-packages (from cffi>=1.14->cryptography>=1.3->requests-ntlm>=1.1.0->qiskit-ibm-runtime<=0.29->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (2.22)
+Requirement already satisfied: pbr>=2.0.0 in ./.venv/lib/python3.12/site-packages (from stevedore>=3.0.0->qiskit==1.2.4->-r requirements.txt (line 4)) (6.1.1)
+Requirement already satisfied: setuptools in ./.venv/lib/python3.12/site-packages (from pbr>=2.0.0->stevedore>=3.0.0->qiskit==1.2.4->-r requirements.txt (line 4)) (80.9.0)
+Requirement already satisfied: astunparse in ./.venv/lib/python3.12/site-packages (from diastatic-malt->PennyLane==0.40.0->-r requirements.txt (line 2)) (1.6.3)
+Requirement already satisfied: gast in ./.venv/lib/python3.12/site-packages (from diastatic-malt->PennyLane==0.40.0->-r requirements.txt (line 2)) (0.6.0)
+Requirement already satisfied: termcolor in ./.venv/lib/python3.12/site-packages (from diastatic-malt->PennyLane==0.40.0->-r requirements.txt (line 2)) (3.1.0)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in ./.venv/lib/python3.12/site-packages (from astunparse->diastatic-malt->PennyLane==0.40.0->-r requirements.txt (line 2)) (0.45.1)
+Requirement already satisfied: websockets>=10.0 in ./.venv/lib/python3.12/site-packages (from qiskit-ibm-provider->pennylane-qiskit==0.40.0->-r requirements.txt (line 3)) (15.0.1)
+Processing quantum_circuits_output_20250811_143847_quantum_3b.json with model: quantum_3b
+[INFO] SUCCESS! Compile successful for circuit: 0
+Expectation value of solution: (-1.0311979370209843+0j), generated: (-15.287434237899957+0j), randomized: (-0.08228251867041196+0j)
+[INFO] SUCCESS! Compile successful for circuit: 1
+Expectation value of solution: (-2.5923615898025028+0j), generated: (-0.0013660876845825172+0j), randomized: (-0.02265506458385604+0j)
+[INFO] SUCCESS! Compile successful for circuit: 2
+Expectation value of solution: (-15.67700291443172+0j), generated: (-15.67700291443172+0j), randomized: (-0.07218015618903424+0j)
+[INFO] SUCCESS! Compile successful for circuit: 3
+Expectation value of solution: (0.3525341330154117+0j), generated: (0.06228533722758834+0j), randomized: (8.87333286322689e-05+0j)
+[INFO] SUCCESS! Compile successful for circuit: 4
+Expectation value of solution: (0.652306994927639+0j), generated: (0.47710001322590334+0j), randomized: (0.022741187884627898+0j)
+[INFO] SUCCESS! Compile successful for circuit: 5
+Expectation value of solution: (-8.074961266614176+0j), generated: (-23.47149152863832+0j), randomized: (0.1330673734909928+0j)
+[INFO] SUCCESS! Compile successful for circuit: 6
+Expectation value of solution: (-0.7662989940516716+0j), generated: (-0.8831481238634549+0j), randomized: (0.013786510218671702+0j)
+[INFO] SUCCESS! Compile successful for circuit: 7
+Expectation value of solution: (-4.5020730840172245+0j), generated: (-3.62477366595372+0j), randomized: (0.10252147918472256+0j)
+[INFO] SUCCESS! Compile successful for circuit: 8
+Expectation value of solution: (-1.7499755212055943+0j), generated: (-1.7419623513420475+0j), randomized: (-0.0016817572123850812+0j)
+[INFO] SUCCESS! Compile successful for circuit: 9
+Expectation value of solution: (-0.007242163138784894+0j), generated: (-0.4053503784571258+0j), randomized: (0.000999197614593176+0j)
+[INFO] SUCCESS! Compile successful for circuit: 10
+Expectation value of solution: (-0.11528423210634947+0j), generated: (-1.5019749123025965+0j), randomized: (0.003159643607636815+0j)
+[INFO] SUCCESS! Compile successful for circuit: 11
+Expectation value of solution: (-1.8704496506646833+0j), generated: (-0.02563759545790436+0j), randomized: (-0.011485233690026833+0j)
+[INFO] SUCCESS! Compile successful for circuit: 12
+Expectation value of solution: (-56.46113198252194+0j), generated: (-51.24909626417889+0j), randomized: (0.47441200118083193+0j)
+[INFO] SUCCESS! Compile successful for circuit: 13
+Expectation value of solution: (-2.342471992308787+0j), generated: (-2.8768822478402623+0j), randomized: (-0.04041045170393545+0j)
+[INFO] SUCCESS! Compile successful for circuit: 14
+Expectation value of solution: (1.2124409477910487+0j), generated: (0.06920438705365856+0j), randomized: (0.009486623157709418+0j)
+[INFO] SUCCESS! Compile successful for circuit: 15
+Expectation value of solution: (-0.7709214051847534+0j), generated: (-0.8688240997744875+0j), randomized: (-0.08839405057476334+0j)
+[INFO] SUCCESS! Compile successful for circuit: 16
+Expectation value of solution: (-2.3161808051364057+0j), generated: (-0.6166650466398497+0j), randomized: (0.02385304607554868+0j)
+[INFO] SUCCESS! Compile successful for circuit: 17
+Expectation value of solution: (-2.0128343444747454+0j), generated: (-2.012098328002269+0j), randomized: (-0.03715315078835954+0j)
+[INFO] SUCCESS! Compile successful for circuit: 18
+Expectation value of solution: (-27.283088373154055+0j), generated: (-15.207562633971563+0j), randomized: (0.1753975434179621+0j)
+[FAIL] Failed to compile circuit: 19
+[INFO] SUCCESS! Compile successful for circuit: 20
+Expectation value of solution: (40.49472151399867+0j), generated: (3.2172889449203685+0j), randomized: (-0.025447058185258043+0j)
+[INFO] SUCCESS! Compile successful for circuit: 21
+Expectation value of solution: (0.07150999622582936+0j), generated: (0.6144481993359263+0j), randomized: (-0.027082664629187635+0j)
+[INFO] SUCCESS! Compile successful for circuit: 22
+Expectation value of solution: (-0.5110969149139434+0j), generated: (-0.3483043563630848+0j), randomized: (-0.0024238912374700515+0j)
+[INFO] SUCCESS! Compile successful for circuit: 23
+Expectation value of solution: (-33.83759711632287+0j), generated: (-17.232098480661545+0j), randomized: (-0.04318389902630907+0j)
+[INFO] SUCCESS! Compile successful for circuit: 24
+Expectation value of solution: (-1.1275716430868266+0j), generated: (-0.7936261529918498+0j), randomized: (0.026751787284341272+0j)
+[INFO] SUCCESS! Compile successful for circuit: 25
+Expectation value of solution: (-0.014505386574775167+0j), generated: (-0.02227481529184662+0j), randomized: (0.015534307724787567+0j)
+[INFO] SUCCESS! Compile successful for circuit: 26
+Expectation value of solution: (2.539857058058986+0j), generated: (-2.2654134721347345+0j), randomized: (0.09006342011683276+0j)
+[INFO] SUCCESS! Compile successful for circuit: 27
+Expectation value of solution: (-1.249764134184877+0j), generated: (-0.4950309227109849+0j), randomized: (0.0027038906232001976+0j)
+[INFO] SUCCESS! Compile successful for circuit: 28
+Expectation value of solution: (-0.6833616049993617+0j), generated: (-2.7630428056810885+0j), randomized: (-0.04134577084348951+0j)
+[FAIL] Failed to compile circuit: 29
+[INFO] SUCCESS! Compile successful for circuit: 30
+Expectation value of solution: (-1.8175123480295694+0j), generated: (-0.29174602641369635+0j), randomized: (-0.01800865026470326+0j)
+[INFO] SUCCESS! Compile successful for circuit: 31
+Expectation value of solution: (-3.409167596235836+0j), generated: (-3.3146579495328936+0j), randomized: (0.022338193288183195+0j)
+[INFO] SUCCESS! Compile successful for circuit: 32
+Expectation value of solution: (-4.656046178297021+0j), generated: (-0.012213414945718301+0j), randomized: (-0.0010392041066515955+0j)
+line 125:10 no viable alternative at input 'rx(1.0244)'
+[FAIL] Failed to compile circuit: 33
+[INFO] SUCCESS! Compile successful for circuit: 34
+Expectation value of solution: (-0.5968297091114686+0j), generated: (-0.3607108167811056+0j), randomized: (-0.00460826450510183+0j)
+[INFO] SUCCESS! Compile successful for circuit: 35
+Expectation value of solution: (-1.0285131719503535+0j), generated: (-4.535175467952896+0j), randomized: (-0.027543989387933124+0j)
+[INFO] SUCCESS! Compile successful for circuit: 36
+Expectation value of solution: (-0.012584609461695331+0j), generated: (-1.331627657662496+0j), randomized: (-0.013144086814501566+0j)
+[INFO] SUCCESS! Compile successful for circuit: 37
+Expectation value of solution: (-1.9334851738058438+0j), generated: (0.6826664634739112+0j), randomized: (0.017581897367223022+0j)
+[INFO] SUCCESS! Compile successful for circuit: 38
+Expectation value of solution: (-6.851708110562597+0j), generated: (-1.271100630690176+0j), randomized: (-0.014332536866893508+0j)
+[INFO] SUCCESS! Compile successful for circuit: 39
+Expectation value of solution: (-0.2521248993703714+0j), generated: (-0.5268820910119132+0j), randomized: (-0.04726838260363722+0j)
+[INFO] SUCCESS! Compile successful for circuit: 40
+Expectation value of solution: (-0.07174182686797716+0j), generated: (-7.999999822104418+0j), randomized: (-0.10756840578699532+0j)
+[INFO] SUCCESS! Compile successful for circuit: 41
+Expectation value of solution: (-15.048659777459472+0j), generated: (-0.7151056241016751+0j), randomized: (0.0006285502124321507+0j)
+[INFO] SUCCESS! Compile successful for circuit: 42
+Expectation value of solution: (-1.6231924092234244+0j), generated: (-0.010831136587161717+0j), randomized: (-0.001913168483830633+0j)
+[INFO] SUCCESS! Compile successful for circuit: 43
+Expectation value of solution: (-22.827590311853427+0j), generated: (-22.827590311853427+0j), randomized: (0.11524819893554165+0j)
+[INFO] SUCCESS! Compile successful for circuit: 44
+Expectation value of solution: (-64.70170991606608+0j), generated: (-37.0297218230034+0j), randomized: (-0.13624251964917516+0j)
+[INFO] SUCCESS! Compile successful for circuit: 45
+Expectation value of solution: (-5.031878078259628+0j), generated: (-5.880042277878774+0j), randomized: (0.04165855216493896+0j)
+[INFO] SUCCESS! Compile successful for circuit: 46
+Expectation value of solution: (-1.7120583181334377+0j), generated: (-1.703224211843685+0j), randomized: (-0.012131848200601697+0j)
+[INFO] SUCCESS! Compile successful for circuit: 47
+Expectation value of solution: (-1.681470152931824+0j), generated: (-1.703265659681061+0j), randomized: (-0.002888257359044923+0j)
+[INFO] SUCCESS! Compile successful for circuit: 48
+Expectation value of solution: (-0.0455390587585716+0j), generated: (-2.1123785962649313+0j), randomized: (-0.02290672056250062+0j)
+[INFO] SUCCESS! Compile successful for circuit: 49
+Expectation value of solution: (1.31980973253002+0j), generated: (-11.083762450354468+0j), randomized: (0.005725465657658613+0j)
+[INFO] SUCCESS! Compile successful for circuit: 50
+Expectation value of solution: (-1.6575690757975972+0j), generated: (-0.8689221061552498+0j), randomized: (0.0073057963055542996+0j)
+line 133:11 no viable alternative at input 'crx(0.2342)'
+[FAIL] Failed to compile circuit: 51
+[INFO] SUCCESS! Compile successful for circuit: 52
+Expectation value of solution: (-8.000179988820607+0j), generated: (-7.166702203534427+0j), randomized: (0.01464171154012906+0j)
+[INFO] SUCCESS! Compile successful for circuit: 53
+Expectation value of solution: (-5.6106944286180855+0j), generated: (-0.3720008421382297+0j), randomized: (0.0013109110843321555+0j)
+[INFO] SUCCESS! Compile successful for circuit: 54
+Expectation value of solution: (-1.9924345568158366+0j), generated: (3.8650092004324947+0j), randomized: (0.0009000357297629679+0j)
+[INFO] SUCCESS! Compile successful for circuit: 55
+Expectation value of solution: (0.6435964607852148+0j), generated: (0.6566007839334586+0j), randomized: (0.016852508592920687+0j)
+[INFO] SUCCESS! Compile successful for circuit: 56
+Expectation value of solution: (-0.24899488484654025+0j), generated: (-0.49850387344271896+0j), randomized: (-0.005829320054113621+0j)
+[INFO] SUCCESS! Compile successful for circuit: 57
+Expectation value of solution: (-33.43956738815848+0j), generated: (-1.1605111546678781+0j), randomized: (0.0795072459013843+0j)
+[INFO] SUCCESS! Compile successful for circuit: 58
+Expectation value of solution: (-0.8585869371244271+0j), generated: (0.5501706709713033+0j), randomized: (0.00046138641463835944+0j)
+[INFO] SUCCESS! Compile successful for circuit: 59
+Expectation value of solution: (-2.183629068586365+0j), generated: (0.39086797733595535+0j), randomized: (-0.03689230103898998+0j)
+[INFO] SUCCESS! Compile successful for circuit: 60
+Expectation value of solution: (0.6936639452312936+0j), generated: (-1.8042796062107889+0j), randomized: (0.00852035035937679+0j)
+[INFO] SUCCESS! Compile successful for circuit: 61
+Expectation value of solution: (-1.4352278580276625+0j), generated: (-1.5946578614606794+0j), randomized: (0.02735469228208476+0j)
+[INFO] SUCCESS! Compile successful for circuit: 62
+Expectation value of solution: (-1.6907576530967794+0j), generated: (-1.6579368713547196+0j), randomized: (0.0024128584237494695+0j)
+[INFO] SUCCESS! Compile successful for circuit: 63
+Expectation value of solution: (-1.4060024804914808+0j), generated: (-0.14541061021459245+0j), randomized: (-0.015507985596479075+0j)
+[INFO] SUCCESS! Compile successful for circuit: 64
+Expectation value of solution: (-1.063689080018127+0j), generated: (-5.835189809067024+0j), randomized: (0.004084680664568956+0j)
+[INFO] SUCCESS! Compile successful for circuit: 65
+Expectation value of solution: (-1.3282970502808626+0j), generated: (-1.455740151262315+0j), randomized: (-0.04720297693165922+0j)
+[INFO] SUCCESS! Compile successful for circuit: 66
+Expectation value of solution: (-0.9902575894933014+0j), generated: (-0.4962800907587331+0j), randomized: (0.04233425280616927+0j)
+[INFO] SUCCESS! Compile successful for circuit: 67
+Expectation value of solution: (0.12508977891635892+0j), generated: (0.5000637560700829+0j), randomized: (0.011978268217885005+0j)
+[INFO] SUCCESS! Compile successful for circuit: 68
+Expectation value of solution: (-10.0345535446851+0j), generated: (-9.148576387671596+0j), randomized: (-0.2159284167456746+0j)
+[FAIL] Failed to compile circuit: 69
+[INFO] SUCCESS! Compile successful for circuit: 70
+Expectation value of solution: (-0.9683537051075345+0j), generated: (-0.015322698966586008+0j), randomized: (-0.0028972999028208982+0j)
+[INFO] SUCCESS! Compile successful for circuit: 71
+Expectation value of solution: (-14.887016919198045+0j), generated: (-2.588704360264337+0j), randomized: (0.12113868178732834+0j)
+[INFO] SUCCESS! Compile successful for circuit: 72
+Expectation value of solution: (-0.2355009727802997+0j), generated: (-0.8134588491474875+0j), randomized: (-0.055261707998376174+0j)
+[INFO] SUCCESS! Compile successful for circuit: 73
+Expectation value of solution: (-0.22167839601289369+0j), generated: (-5.710710252696529+0j), randomized: (-0.0914318074591471+0j)
+[INFO] SUCCESS! Compile successful for circuit: 74
+Expectation value of solution: (-0.01361869523351858+0j), generated: (-1.737040224112018+0j), randomized: (0.011195681961613323+0j)
+[INFO] SUCCESS! Compile successful for circuit: 75
+Expectation value of solution: (-11.999938866180607+0j), generated: (-0.8193475974540156+0j), randomized: (0.01960879262548968+0j)
+[INFO] SUCCESS! Compile successful for circuit: 76
+Expectation value of solution: (-0.6545303010372534+0j), generated: (-0.9920880545772034+0j), randomized: (0.038547588589150854+0j)
+[INFO] SUCCESS! Compile successful for circuit: 77
+Expectation value of solution: (0.0001524760660727995+0j), generated: (0.00021576919737594088+0j), randomized: (0.0011659309125284381+0j)
+[INFO] SUCCESS! Compile successful for circuit: 78
+Expectation value of solution: (-2.24060924517357+0j), generated: (-1.7790799439056473+0j), randomized: (-0.007767556192623737+0j)
+[INFO] SUCCESS! Compile successful for circuit: 79
+Expectation value of solution: (-33.80095689539481+0j), generated: (-24.36481198307188+0j), randomized: (1.097886961164472+0j)
+[INFO] SUCCESS! Compile successful for circuit: 80
+Expectation value of solution: (-11.950377875682939+0j), generated: (-15.482563195018626+0j), randomized: (0.03758236500926129+0j)
+[INFO] SUCCESS! Compile successful for circuit: 81
+Expectation value of solution: (-13.997125514000148+0j), generated: (-13.997125514000148+0j), randomized: (-0.1459111953687712+0j)
+[INFO] SUCCESS! Compile successful for circuit: 82
+Expectation value of solution: (-0.05579078681455503+0j), generated: (-0.06093808870090169+0j), randomized: (-0.0025841348320892114+0j)
+[INFO] SUCCESS! Compile successful for circuit: 83
+Expectation value of solution: (-0.05099115089306284+0j), generated: (-0.035653095137629986+0j), randomized: (0.011610600750079718+0j)
+[INFO] SUCCESS! Compile successful for circuit: 84
+Expectation value of solution: (0.15928018926870163+0j), generated: (0.002226557931114717+0j), randomized: (0.0011843559607385493+0j)
+[INFO] SUCCESS! Compile successful for circuit: 85
+Expectation value of solution: (-3.29823140050193+0j), generated: (-0.3315924484621009+0j), randomized: (-0.0020978369257370895+0j)
+[INFO] SUCCESS! Compile successful for circuit: 86
+Expectation value of solution: (-0.5108706047237278+0j), generated: (0.22614457313276976+0j), randomized: (0.009885096313627932+0j)
+[INFO] SUCCESS! Compile successful for circuit: 87
+Expectation value of solution: (-0.0009653003229809565+0j), generated: (-0.14366243524849365+0j), randomized: (-0.03310422578282201+0j)
+[INFO] SUCCESS! Compile successful for circuit: 88
+Expectation value of solution: (-2.5624889725086977+0j), generated: (-2.544914505544666+0j), randomized: (0.01317412872562865+0j)
+[INFO] SUCCESS! Compile successful for circuit: 89
+Expectation value of solution: (-0.08573437517370538+0j), generated: (-0.13834697874325647+0j), randomized: (0.0058765636246509755+0j)
+[INFO] SUCCESS! Compile successful for circuit: 90
+Expectation value of solution: (-0.7499724326738629+0j), generated: (0.8300182775681152+0j), randomized: (0.01813819051462069+0j)
+[INFO] SUCCESS! Compile successful for circuit: 91
+Expectation value of solution: (-1.0686046043095274+0j), generated: (-7.0874709679446175+0j), randomized: (0.00757678617772921+0j)
+[INFO] SUCCESS! Compile successful for circuit: 92
+Expectation value of solution: (-0.29526535604261595+0j), generated: (-1.5001164578722221+0j), randomized: (0.1260367144230113+0j)
+[INFO] SUCCESS! Compile successful for circuit: 93
+Expectation value of solution: (-3.273665757675606+0j), generated: (-3.6003026098584234+0j), randomized: (0.0078766048333267+0j)
+[INFO] SUCCESS! Compile successful for circuit: 94
+Expectation value of solution: (-0.17594283168517794+0j), generated: (-0.10827949333984996+0j), randomized: (-0.0033154372759485497+0j)
+[INFO] SUCCESS! Compile successful for circuit: 95
+Expectation value of solution: (19.04414456696218+0j), generated: (11.815723186451574+0j), randomized: (0.7701390744163464+0j)
+[INFO] SUCCESS! Compile successful for circuit: 96
+Expectation value of solution: (-0.27847781738238164+0j), generated: (-1.8332110743579442+0j), randomized: (0.041368149635275894+0j)
+[INFO] SUCCESS! Compile successful for circuit: 97
+Expectation value of solution: (-3.010727481066964+0j), generated: (-3.010727481066964+0j), randomized: (-0.018645464876440237+0j)
+[INFO] SUCCESS! Compile successful for circuit: 98
+Expectation value of solution: (-53.657140813980774+0j), generated: (-6.576051902631023+0j), randomized: (-0.11849600135147721+0j)
+[INFO] SUCCESS! Compile successful for circuit: 99
+Expectation value of solution: (-8.999947893121009+0j), generated: (0.9974218396581345+0j), randomized: (0.007217801700734943+0j)
+[INFO] SUCCESS! Compile successful for circuit: 100
+Expectation value of solution: (1.6699124527370965+0j), generated: (0.12256317159306952+0j), randomized: (0.026900311955033687+0j)
+[INFO] SUCCESS! Compile successful for circuit: 101
+Expectation value of solution: (-0.24176106561288518+0j), generated: (-0.011247590097060414+0j), randomized: (0.003778376988592056+0j)
+[FAIL] Failed to compile circuit: 102
+[INFO] SUCCESS! Compile successful for circuit: 103
+Expectation value of solution: (-24.745096882875316+0j), generated: (-25.622098618832+0j), randomized: (-0.026953022996295223+0j)
+[INFO] SUCCESS! Compile successful for circuit: 104
+Expectation value of solution: (-2.2520851239876616+0j), generated: (-2.2520851239876616+0j), randomized: (0.03587734311295757+0j)
+[INFO] SUCCESS! Compile successful for circuit: 105
+Expectation value of solution: (-2.2480947201523036+0j), generated: (-0.3986691606874456+0j), randomized: (0.00527578752713013+0j)
+[INFO] SUCCESS! Compile successful for circuit: 106
+Expectation value of solution: (-1.2638593703635235+0j), generated: (-1.8566786987526185+0j), randomized: (-0.0004383975017861419+0j)
+line 132:10 no viable alternative at input 'crz(-0.124'
+[FAIL] Failed to compile circuit: 107
+[INFO] SUCCESS! Compile successful for circuit: 108
+Expectation value of solution: (-3.8414296118775617+0j), generated: (-3.4804855289365917+0j), randomized: (-0.08636960914073899+0j)
+[INFO] SUCCESS! Compile successful for circuit: 109
+Expectation value of solution: (-1.718691603550158+0j), generated: (-0.021486285292360928+0j), randomized: (-0.006414179839452184+0j)
+[INFO] SUCCESS! Compile successful for circuit: 110
+Expectation value of solution: (-8.427088911991213+0j), generated: (-9.50055299640474+0j), randomized: (0.1660940076926704+0j)
+line 127:2 no viable alternative at input 'rx'
+[FAIL] Failed to compile circuit: 111
+[INFO] SUCCESS! Compile successful for circuit: 112
+Expectation value of solution: (-0.4008662027142007+0j), generated: (0.48887014578841764+0j), randomized: (-0.021013099897207954+0j)
+[INFO] SUCCESS! Compile successful for circuit: 113
+Expectation value of solution: (0.5951688499035916+0j), generated: (-0.09110280418803134+0j), randomized: (-0.0068101038229152035+0j)
+[INFO] SUCCESS! Compile successful for circuit: 114
+Expectation value of solution: (-0.014024908961143698+0j), generated: (-0.03859648816356091+0j), randomized: (0.004518746062880111+0j)
+[INFO] SUCCESS! Compile successful for circuit: 115
+Expectation value of solution: (-3.1551318734230653+0j), generated: (-3.3260089778031157+0j), randomized: (0.025201652521336257+0j)
+[INFO] SUCCESS! Compile successful for circuit: 116
+Expectation value of solution: (-0.12102549179747266+0j), generated: (-2.973041507257039+0j), randomized: (-0.03574836364583831+0j)
+[INFO] SUCCESS! Compile successful for circuit: 117
+Expectation value of solution: (-0.009460686561446496+0j), generated: (-1.4485240072436258+0j), randomized: (0.006550537959409205+0j)
+[INFO] SUCCESS! Compile successful for circuit: 118
+Expectation value of solution: (-2.5977724410306005+0j), generated: (-4.33338646616328+0j), randomized: (-0.13567412722829322+0j)
+line 216:5 no viable alternative at input '7'
+[FAIL] Failed to compile circuit: 119
+[INFO] SUCCESS! Compile successful for circuit: 120
+Expectation value of solution: (-0.8584534557063993+0j), generated: (-0.007035701253382556+0j), randomized: (0.013841882034765522+0j)
+[INFO] SUCCESS! Compile successful for circuit: 121
+Expectation value of solution: (-9.759453295020586+0j), generated: (-10.133643807018426+0j), randomized: (-0.22164110921411936+0j)
+line 20:4 no viable alternative at input 'ry26.9543'
+[FAIL] Failed to compile circuit: 122
+[INFO] SUCCESS! Compile successful for circuit: 123
+Expectation value of solution: (15.333065236182447+0j), generated: (21.00262846478129+0j), randomized: (-1.9015543678052462+0j)
+[INFO] SUCCESS! Compile successful for circuit: 124
+Expectation value of solution: (-1.6514797528863525+0j), generated: (-2.7686959266855657+0j), randomized: (0.09616567951978214+0j)
+[INFO] SUCCESS! Compile successful for circuit: 125
+Expectation value of solution: (-0.030340456253526132+0j), generated: (-0.021426408022005867+0j), randomized: (-0.008280793445781092+0j)
+[INFO] SUCCESS! Compile successful for circuit: 126
+Expectation value of solution: (-4.163473969860797+0j), generated: (-12.229386697252009+0j), randomized: (0.016707636306178445+0j)
+[INFO] SUCCESS! Compile successful for circuit: 127
+Expectation value of solution: (-0.06587153366136501+0j), generated: (-0.07637499537433186+0j), randomized: (-0.014721879244177574+0j)
+[INFO] SUCCESS! Compile successful for circuit: 128
+Expectation value of solution: (-0.01069854195216278+0j), generated: (-0.0055970510115789015+0j), randomized: (-0.003128367949570446+0j)
+[INFO] SUCCESS! Compile successful for circuit: 129
+Expectation value of solution: (-0.6120473206494436+0j), generated: (-0.01613845438789866+0j), randomized: (-0.005699286979338933+0j)
+[INFO] SUCCESS! Compile successful for circuit: 130
+Expectation value of solution: (0.7589738306623633+0j), generated: (2.500002680781284+0j), randomized: (0.0359678036315523+0j)
+[INFO] SUCCESS! Compile successful for circuit: 131
+Expectation value of solution: (-0.521683220347648+0j), generated: (0.642688454085044+0j), randomized: (0.00557568690678895+0j)
+[INFO] SUCCESS! Compile successful for circuit: 132
+Expectation value of solution: (-6.980293069231683+0j), generated: (-5.913659066804106+0j), randomized: (0.0935703270849872+0j)
+[INFO] SUCCESS! Compile successful for circuit: 133
+Expectation value of solution: (-0.18106216751402798+0j), generated: (-0.006620631739195748+0j), randomized: (0.019570033502347445+0j)
+[INFO] SUCCESS! Compile successful for circuit: 134
+Expectation value of solution: (-1.7280559038466177+0j), generated: (-1.72847189889068+0j), randomized: (0.005767876660587278+0j)
+[FAIL] Failed to compile circuit: 135
+[INFO] SUCCESS! Compile successful for circuit: 136
+Expectation value of solution: (-2.440863011244837+0j), generated: (-2.499967236447719+0j), randomized: (0.043356279147892376+0j)
+[INFO] SUCCESS! Compile successful for circuit: 137
+Expectation value of solution: (-0.40211241038583595+0j), generated: (-2.249999999981448+0j), randomized: (0.043811600142748645+0j)
+[INFO] SUCCESS! Compile successful for circuit: 138
+Expectation value of solution: (0.6396586110092344+0j), generated: (0.8641239733522389+0j), randomized: (0.010049113842276804+0j)
+[FAIL] Failed to compile circuit: 139
+[INFO] SUCCESS! Compile successful for circuit: 140
+Expectation value of solution: (-0.7969995131182068+0j), generated: (-0.572359939621338+0j), randomized: (-0.0010304932743021781+0j)
+[INFO] SUCCESS! Compile successful for circuit: 141
+Expectation value of solution: (0.7616840817083365+0j), generated: (3.9984843374745704+0j), randomized: (0.016446345365262675+0j)
+[INFO] SUCCESS! Compile successful for circuit: 142
+Expectation value of solution: (-1.0016608824050608+0j), generated: (-0.9650095664850931+0j), randomized: (0.0006057848788542206+0j)
+[INFO] SUCCESS! Compile successful for circuit: 143
+Expectation value of solution: (-2.5112043649667743+0j), generated: (-5.431221983190352+0j), randomized: (0.10877349037477692+0j)
+[INFO] SUCCESS! Compile successful for circuit: 144
+Expectation value of solution: (-25.63029933602798+0j), generated: (-25.63029933602798+0j), randomized: (-0.17855977455185473+0j)
+[INFO] SUCCESS! Compile successful for circuit: 145
+Expectation value of solution: (-0.03619828253855981+0j), generated: (-0.027172156588970223+0j), randomized: (0.022509500673357424+0j)
+[INFO] SUCCESS! Compile successful for circuit: 146
+Expectation value of solution: (-13.183484993735574+0j), generated: (-10.480470586156946+0j), randomized: (-0.018097656669073616+0j)
+[FAIL] Failed to compile circuit: 147
+[INFO] SUCCESS! Compile successful for circuit: 148
+Expectation value of solution: (-5.911945187784841+0j), generated: (-5.911945187784841+0j), randomized: (0.01812126597510677+0j)
+[INFO] SUCCESS! Compile successful for circuit: 149
+Expectation value of solution: (-28.53491425221365+0j), generated: (-31.480377267204183+0j), randomized: (-0.2418138673180973+0j)
+[INFO] SUCCESS! Compile successful for circuit: 150
+Expectation value of solution: (-4.911624351443811+0j), generated: (-4.911624351443811+0j), randomized: (-0.0932182692863298+0j)
+[INFO] SUCCESS! Compile successful for circuit: 151
+Expectation value of solution: (-1.3167685147243544+0j), generated: (0.6347764919451241+0j), randomized: (0.031077478341790574+0j)
+[INFO] SUCCESS! Compile successful for circuit: 152
+Expectation value of solution: (-10.071134893875945+0j), generated: (-5.988510523517478+0j), randomized: (-0.20403732368812375+0j)
+[INFO] SUCCESS! Compile successful for circuit: 153
+Expectation value of solution: (-1.0176995107520073+0j), generated: (-0.27844046011992757+0j), randomized: (0.004304710243874952+0j)
+[INFO] SUCCESS! Compile successful for circuit: 154
+Expectation value of solution: (-2.5023456576566483+0j), generated: (-2.5023456576566483+0j), randomized: (-0.0611208564602417+0j)
+[INFO] SUCCESS! Compile successful for circuit: 155
+Expectation value of solution: (-7.031089512203214+0j), generated: (-6.309795553784345+0j), randomized: (0.0009482788617076486+0j)
+[INFO] SUCCESS! Compile successful for circuit: 156
+Expectation value of solution: (-1.2777490406439176+0j), generated: (-4.730546936805698+0j), randomized: (-0.03444877607499331+0j)
+[FAIL] Failed to compile circuit: 157
+[INFO] SUCCESS! Compile successful for circuit: 158
+Expectation value of solution: (-4.5224806863959985+0j), generated: (-2.231125650869238+0j), randomized: (0.04789761450778337+0j)
+[INFO] SUCCESS! Compile successful for circuit: 159
+Expectation value of solution: (-1.5556918171565168+0j), generated: (-0.31032905490603363+0j), randomized: (-0.052473207615823234+0j)
+line 13:6 no viable alternative at input 'ry(0.('
+[FAIL] Failed to compile circuit: 160
+[INFO] SUCCESS! Compile successful for circuit: 161
+Expectation value of solution: (3.499830651403662+0j), generated: (3.499830651403662+0j), randomized: (0.01480272248667228+0j)
+[INFO] SUCCESS! Compile successful for circuit: 162
+Expectation value of solution: (-0.3383489501974703+0j), generated: (-1.126298483460272+0j), randomized: (-0.050275530201120244+0j)
+[INFO] SUCCESS! Compile successful for circuit: 163
+Expectation value of solution: (-1.3698585623194317+0j), generated: (-0.5000623548016873+0j), randomized: (0.005067758900348847+0j)
+[INFO] SUCCESS! Compile successful for circuit: 164
+Expectation value of solution: (-17.736939782472625+0j), generated: (-19.032979622280333+0j), randomized: (0.11583315335817053+0j)
+[INFO] SUCCESS! Compile successful for circuit: 165
+Expectation value of solution: (-1.3465411629829567+0j), generated: (-0.24710242473782462+0j), randomized: (-0.007679616211507995+0j)
+[INFO] SUCCESS! Compile successful for circuit: 166
+Expectation value of solution: (-0.49999691007370156+0j), generated: (-0.49999691007370156+0j), randomized: (0.04257393476358911+0j)
+[INFO] SUCCESS! Compile successful for circuit: 167
+Expectation value of solution: (-27.409548458637566+0j), generated: (-18.889461504839964+0j), randomized: (-0.16643394468910264+0j)
+[INFO] SUCCESS! Compile successful for circuit: 168
+Expectation value of solution: (-0.32907182416116393+0j), generated: (-0.27658722396263025+0j), randomized: (0.007074494538214256+0j)
+line 215:11 no viable alternative at input '<EOF>'
+[FAIL] Failed to compile circuit: 169
+[INFO] SUCCESS! Compile successful for circuit: 170
+Expectation value of solution: (-3.479923952740914+0j), generated: (-2.9536003462615428+0j), randomized: (0.015594182273815597+0j)
+[INFO] SUCCESS! Compile successful for circuit: 171
+Expectation value of solution: (-5.255847346131658+0j), generated: (-1.8577441760179052+0j), randomized: (-0.006091659048671534+0j)
+[INFO] SUCCESS! Compile successful for circuit: 172
+Expectation value of solution: (-3.4999329271172113+0j), generated: (1.898119517766879+0j), randomized: (-0.02807485263930726+0j)
+[INFO] SUCCESS! Compile successful for circuit: 173
+Expectation value of solution: (-0.5178537795775349+0j), generated: (-1.0030868842981506+0j), randomized: (-0.05307771930400567+0j)
+[INFO] SUCCESS! Compile successful for circuit: 174
+Expectation value of solution: (-0.3906993539200324+0j), generated: (-0.1592766863005291+0j), randomized: (-0.0025127853652115568+0j)
+[INFO] SUCCESS! Compile successful for circuit: 175
+Expectation value of solution: (-1.1201571171480609+0j), generated: (0.5000000442316355+0j), randomized: (0.053848817107531005+0j)
+[INFO] SUCCESS! Compile successful for circuit: 176
+Expectation value of solution: (-4.922467071845963+0j), generated: (-5.002984333382634+0j), randomized: (-0.010214003423264251+0j)
+[INFO] SUCCESS! Compile successful for circuit: 177
+Expectation value of solution: (-0.01993476456896493+0j), generated: (-5.103795823000263+0j), randomized: (-0.04798340008163875+0j)
+[INFO] SUCCESS! Compile successful for circuit: 178
+Expectation value of solution: (0.2626138898672236+0j), generated: (-0.6358795903347089+0j), randomized: (0.0011342851751903367+0j)
+[INFO] SUCCESS! Compile successful for circuit: 179
+Expectation value of solution: (-7.654977487642012+0j), generated: (-11.072709656392071+0j), randomized: (0.2675523119216721+0j)
+[INFO] SUCCESS! Compile successful for circuit: 180
+Expectation value of solution: (-4.107677639736687+0j), generated: (-4.937588916639224+0j), randomized: (0.02962805164333073+0j)
+[INFO] SUCCESS! Compile successful for circuit: 181
+Expectation value of solution: (0.7500000000134934+0j), generated: (0.7500000000134934+0j), randomized: (-0.038727386591015954+0j)
+[INFO] SUCCESS! Compile successful for circuit: 182
+Expectation value of solution: (0.5427267707341813+0j), generated: (-0.3627371998244684+0j), randomized: (-0.055434543240339695+0j)
+[INFO] SUCCESS! Compile successful for circuit: 183
+Expectation value of solution: (-12.740248965887199+0j), generated: (-4.409257951921653+0j), randomized: (0.012169215831738158+0j)
+[INFO] SUCCESS! Compile successful for circuit: 184
+Expectation value of solution: (-2.4999672364609147+0j), generated: (-2.4999672364609147+0j), randomized: (0.05033467310003448+0j)
+[FAIL] Failed to compile circuit: 185
+[INFO] SUCCESS! Compile successful for circuit: 186
+Expectation value of solution: (-2.160404339605744+0j), generated: (-0.11225345004613739+0j), randomized: (-0.0009988085661065225+0j)
+[INFO] SUCCESS! Compile successful for circuit: 187
+Expectation value of solution: (-0.23806878338215529+0j), generated: (-0.22299444780662303+0j), randomized: (-0.002952271609411156+0j)
+[INFO] SUCCESS! Compile successful for circuit: 188
+Expectation value of solution: (-0.6233521548277592+0j), generated: (-4.321797419943725+0j), randomized: (0.02628548268194354+0j)
+[INFO] SUCCESS! Compile successful for circuit: 189
+Expectation value of solution: (-0.028797248787951934+0j), generated: (-0.17952443271248353+0j), randomized: (0.050804267533090225+0j)
+[INFO] SUCCESS! Compile successful for circuit: 190
+Expectation value of solution: (-14.926098271766673+0j), generated: (-16.76689584054245+0j), randomized: (-0.06059481342766414+0j)
+[INFO] SUCCESS! Compile successful for circuit: 191
+Expectation value of solution: (-0.14581014697049038+0j), generated: (-0.13401805638513126+0j), randomized: (-0.035413472876356815+0j)
+[INFO] SUCCESS! Compile successful for circuit: 192
+Expectation value of solution: (-1.4960409277583828+0j), generated: (-1.4960409277583828+0j), randomized: (-0.03395855881128294+0j)
+[INFO] SUCCESS! Compile successful for circuit: 193
+Expectation value of solution: (-9.633680705578739+0j), generated: (-9.95935084238314+0j), randomized: (-0.09666633630601783+0j)
+[INFO] SUCCESS! Compile successful for circuit: 194
+Expectation value of solution: (7.200047858957927+0j), generated: (5.820444057730844+0j), randomized: (-0.011767747581786501+0j)
+[INFO] SUCCESS! Compile successful for circuit: 195
+Expectation value of solution: (-0.1478430192786485+0j), generated: (-0.10302785357101533+0j), randomized: (0.0002841871552937415+0j)
+[INFO] SUCCESS! Compile successful for circuit: 196
+Expectation value of solution: (0.3092697354512841+0j), generated: (-0.9055167487202395+0j), randomized: (0.031184594771925714+0j)
+[INFO] SUCCESS! Compile successful for circuit: 197
+Expectation value of solution: (-0.06372337702851047+0j), generated: (-0.5294180808477583+0j), randomized: (0.00046620480624210445+0j)
+[INFO] SUCCESS! Compile successful for circuit: 198
+Expectation value of solution: (-2.0386645682175355+0j), generated: (-1.0025279214179037+0j), randomized: (-0.014415960436045722+0j)
+[INFO] SUCCESS! Compile successful for circuit: 199
+Expectation value of solution: (-0.28554593084207863+0j), generated: (-0.43822168751246765+0j), randomized: (0.0025992576363827466+0j)
+[INFO] SUCCESS! Compile successful for circuit: 200
+Expectation value of solution: (-40.715888136733795+0j), generated: (-29.88141376356195+0j), randomized: (-0.686969743953985+0j)
+[INFO] SUCCESS! Compile successful for circuit: 201
+Expectation value of solution: (-10.35090863324594+0j), generated: (-4.851053903245123+0j), randomized: (-0.005217090055739194+0j)
+[INFO] SUCCESS! Compile successful for circuit: 202
+Expectation value of solution: (-0.6518072117812947+0j), generated: (1.5334635929493536+0j), randomized: (0.012954190483727682+0j)
+[INFO] SUCCESS! Compile successful for circuit: 203
+Expectation value of solution: (-0.38977415410608635+0j), generated: (-0.8944558656006403+0j), randomized: (-0.037518166490818385+0j)
+[INFO] SUCCESS! Compile successful for circuit: 204
+Expectation value of solution: (-2.655601193005834+0j), generated: (-2.96397159873358+0j), randomized: (-0.01603920230173538+0j)
+[INFO] SUCCESS! Compile successful for circuit: 205
+Expectation value of solution: (-23.08873848205641+0j), generated: (-17.88018531016793+0j), randomized: (-0.12003857295081762+0j)
+[FAIL] Failed to compile circuit: 206
+[INFO] SUCCESS! Compile successful for circuit: 207
+Expectation value of solution: (-10.982654027417148+0j), generated: (-19.215866419269165+0j), randomized: (-0.0486225587947885+0j)
+[INFO] SUCCESS! Compile successful for circuit: 208
+Expectation value of solution: (-0.11141654697682593+0j), generated: (3.4998234520556113+0j), randomized: (-0.000746216869633407+0j)
+[INFO] SUCCESS! Compile successful for circuit: 209
+Expectation value of solution: (-0.35806528144530747+0j), generated: (-0.009112016610223867+0j), randomized: (6.202116582112889e-05+0j)
+[INFO] SUCCESS! Compile successful for circuit: 210
+Expectation value of solution: (-6.368265544906901+0j), generated: (-10.131011198441623+0j), randomized: (0.07966529499528316+0j)
+[INFO] SUCCESS! Compile successful for circuit: 211
+Expectation value of solution: (-1.3111266474090655+0j), generated: (-0.20932945556223892+0j), randomized: (-0.024573427662615874+0j)
+[INFO] SUCCESS! Compile successful for circuit: 212
+Expectation value of solution: (-4.9961068445921075+0j), generated: (-4.9961068445921075+0j), randomized: (-0.13529846148011884+0j)
+line 151:8 no viable alternative at input 'rx(0.096'
+[FAIL] Failed to compile circuit: 213
+[INFO] SUCCESS! Compile successful for circuit: 214
+Expectation value of solution: (-7.040648172509176+0j), generated: (-9.729188583442063+0j), randomized: (0.12551840448585744+0j)
+[INFO] SUCCESS! Compile successful for circuit: 215
+Expectation value of solution: (-1.3802271692031027+0j), generated: (-5.880042277878774+0j), randomized: (0.09138143640302038+0j)
+[INFO] SUCCESS! Compile successful for circuit: 216
+Expectation value of solution: (-0.11366949766277355+0j), generated: (-1.5095522367989997+0j), randomized: (-0.0270170722133902+0j)
+[INFO] SUCCESS! Compile successful for circuit: 217
+Expectation value of solution: (-4.395443916509678+0j), generated: (-4.395443916509678+0j), randomized: (-0.0034135177581850556+0j)
+[INFO] SUCCESS! Compile successful for circuit: 218
+Expectation value of solution: (-0.09499334282825031+0j), generated: (-1.0706475044942336+0j), randomized: (0.001399523773339562+0j)
+[INFO] SUCCESS! Compile successful for circuit: 219
+Expectation value of solution: (0.2990069860071324+0j), generated: (-0.7570860205209419+0j), randomized: (0.0548234908607648+0j)
+[INFO] SUCCESS! Compile successful for circuit: 220
+Expectation value of solution: (-0.5510633080329586+0j), generated: (-0.043240867688477645+0j), randomized: (0.0014612528741969246+0j)
+[INFO] SUCCESS! Compile successful for circuit: 221
+Expectation value of solution: (-0.14073070711419286+0j), generated: (-0.2435529063779871+0j), randomized: (-0.008625524991668876+0j)
+[INFO] SUCCESS! Compile successful for circuit: 222
+Expectation value of solution: (-38.59352600575467+0j), generated: (-38.59352600575467+0j), randomized: (-0.06549660680780775+0j)
+[INFO] SUCCESS! Compile successful for circuit: 223
+Expectation value of solution: (-1.9142740444178892+0j), generated: (-4.264250062599666+0j), randomized: (0.04949138141576448+0j)
+[INFO] SUCCESS! Compile successful for circuit: 224
+Expectation value of solution: (-8.431269646889014+0j), generated: (-0.15234602172327116+0j), randomized: (0.017539000391818337+0j)
+[INFO] SUCCESS! Compile successful for circuit: 225
+Expectation value of solution: (-2.9296862832545747+0j), generated: (-6.346775681097925+0j), randomized: (0.2512657272885469+0j)
+[INFO] SUCCESS! Compile successful for circuit: 226
+Expectation value of solution: (-9.249794839042512+0j), generated: (-2.4047867076537077+0j), randomized: (-0.024767578224792464+0j)
+[INFO] SUCCESS! Compile successful for circuit: 227
+Expectation value of solution: (0.1958002877218329+0j), generated: (-1.2694132363025352+0j), randomized: (-0.001783699166909715+0j)
+line 62:6 no viable alternative at input 'rz(0.2.6124'
+[FAIL] Failed to compile circuit: 228
+[INFO] SUCCESS! Compile successful for circuit: 229
+Expectation value of solution: (-1.2217313064648399+0j), generated: (-0.019032684138879614+0j), randomized: (-0.00295080870288964+0j)
+[INFO] SUCCESS! Compile successful for circuit: 230
+Expectation value of solution: (-11.113969904543483+0j), generated: (-15.890729272141243+0j), randomized: (0.08791774183794186+0j)
+[INFO] SUCCESS! Compile successful for circuit: 231
+Expectation value of solution: (-5.021323253199704+0j), generated: (0.0866311624444895+0j), randomized: (-0.033801997592818635+0j)
+[INFO] SUCCESS! Compile successful for circuit: 232
+Expectation value of solution: (0.19367728168181872+0j), generated: (-0.26164900463769836+0j), randomized: (0.02050199200383425+0j)
+line 158:7 no viable alternative at input 'rx(0.19'
+[FAIL] Failed to compile circuit: 233
+[INFO] SUCCESS! Compile successful for circuit: 234
+Expectation value of solution: (0.34608402567904356+0j), generated: (0.34608402567904356+0j), randomized: (0.008155581241162377+0j)
+[INFO] SUCCESS! Compile successful for circuit: 235
+Expectation value of solution: (-0.2513610943333485+0j), generated: (-1.2499997105363008+0j), randomized: (0.010137452268152705+0j)
+[INFO] SUCCESS! Compile successful for circuit: 236
+Expectation value of solution: (-17.93100306129267+0j), generated: (35.91869489720776+0j), randomized: (0.9339050491416931+0j)
+[INFO] SUCCESS! Compile successful for circuit: 237
+Expectation value of solution: (-1.0590836038974363+0j), generated: (-0.681827400293574+0j), randomized: (0.007593312012934161+0j)
+[INFO] SUCCESS! Compile successful for circuit: 238
+Expectation value of solution: (-0.9768982849752605+0j), generated: (-4.561191441792843+0j), randomized: (0.01952768892573058+0j)
+[INFO] SUCCESS! Compile successful for circuit: 239
+Expectation value of solution: (-2.460201412441585+0j), generated: (-2.460201412441585+0j), randomized: (-0.00697247089948372+0j)
+[INFO] SUCCESS! Compile successful for circuit: 240
+Expectation value of solution: (-9.784919771220675+0j), generated: (-6.453182165022972+0j), randomized: (0.07854207426254947+0j)
+[FAIL] Failed to compile circuit: 241
+[INFO] SUCCESS! Compile successful for circuit: 242
+Expectation value of solution: (-0.3671718278287256+0j), generated: (-0.3671718278287256+0j), randomized: (-0.00975348493096542+0j)
+[INFO] SUCCESS! Compile successful for circuit: 243
+Expectation value of solution: (-0.284715692850542+0j), generated: (-1.5915306410776329+0j), randomized: (0.02484176712845498+0j)
+[INFO] SUCCESS! Compile successful for circuit: 244
+Expectation value of solution: (2.857061170014673+0j), generated: (2.857061170014673+0j), randomized: (-0.02755345749739348+0j)
+[INFO] SUCCESS! Compile successful for circuit: 245
+Expectation value of solution: (-0.3691923176557511+0j), generated: (-0.3691923176557511+0j), randomized: (-0.028071927936144637+0j)
+[INFO] SUCCESS! Compile successful for circuit: 246
+Expectation value of solution: (-0.01557371125590632+0j), generated: (-2.7011432948584493+0j), randomized: (-0.01782532464285328+0j)
+[INFO] SUCCESS! Compile successful for circuit: 247
+Expectation value of solution: (-4.306922412833187+0j), generated: (-6.516731218983621+0j), randomized: (0.018513182926206653+0j)
+[INFO] SUCCESS! Compile successful for circuit: 248
+Expectation value of solution: (-2.047378787875505+0j), generated: (-1.1519006726718848+0j), randomized: (-0.012408156120490477+0j)
+[INFO] SUCCESS! Compile successful for circuit: 249
+Expectation value of solution: (-4.385523323142421+0j), generated: (-4.385523323142421+0j), randomized: (0.04114062668744105+0j)
+[INFO] SUCCESS! Compile successful for circuit: 250
+Expectation value of solution: (-0.326117455850049+0j), generated: (0.5981470254718235+0j), randomized: (0.00944147832166112+0j)
+[INFO] SUCCESS! Compile successful for circuit: 251
+Expectation value of solution: (-5.589553763794277+0j), generated: (-24.83855297888072+0j), randomized: (0.24527504489719196+0j)
+[INFO] SUCCESS! Compile successful for circuit: 252
+Expectation value of solution: (-0.3036591207561907+0j), generated: (-0.37152726463513097+0j), randomized: (-0.0002210529105315761+0j)
+[INFO] SUCCESS! Compile successful for circuit: 253
+Expectation value of solution: (-12.648288377583846+0j), generated: (47.754349082390554+0j), randomized: (-0.41694280319350446+0j)
+[INFO] SUCCESS! Compile successful for circuit: 254
+Expectation value of solution: (-0.11525945585379845+0j), generated: (-0.11641382970640776+0j), randomized: (-0.009493124392905793+0j)
+[INFO] SUCCESS! Compile successful for circuit: 255
+Expectation value of solution: (-17.728097438975066+0j), generated: (-17.708575382570366+0j), randomized: (-0.16462454900451184+0j)
+[INFO] SUCCESS! Compile successful for circuit: 256
+Expectation value of solution: (-0.624998361821629+0j), generated: (-0.624998361821629+0j), randomized: (-0.018150080443634874+0j)
+[INFO] SUCCESS! Compile successful for circuit: 257
+Expectation value of solution: (-6.2007666875221075+0j), generated: (-6.2007666875221075+0j), randomized: (-0.036787337318455175+0j)
+[FAIL] Failed to compile circuit: 258
+[INFO] SUCCESS! Compile successful for circuit: 259
+Expectation value of solution: (0.2500000001143967+0j), generated: (0.2500000001143967+0j), randomized: (-0.027950564240676067+0j)
+[INFO] SUCCESS! Compile successful for circuit: 260
+Expectation value of solution: (-0.8529613171473436+0j), generated: (-0.8529613171473436+0j), randomized: (-0.11491502687555767+0j)
+[INFO] SUCCESS! Compile successful for circuit: 261
+Expectation value of solution: (-1.2053893427645743+0j), generated: (-1.0133357838415171+0j), randomized: (0.0027669322782123773+0j)
+[INFO] SUCCESS! Compile successful for circuit: 262
+Expectation value of solution: (-7.895472691415306+0j), generated: (-8.027546765132815+0j), randomized: (0.018715919273789933+0j)
+[INFO] SUCCESS! Compile successful for circuit: 263
+Expectation value of solution: (-1.4730830959385341+0j), generated: (-5.3723238272933465+0j), randomized: (-0.10796206797677048+0j)
+[INFO] SUCCESS! Compile successful for circuit: 264
+Expectation value of solution: (-2.118120511545481+0j), generated: (-1.78230704477041+0j), randomized: (-0.04333205533131645+0j)
+[INFO] SUCCESS! Compile successful for circuit: 265
+Expectation value of solution: (-1.4510519054727893+0j), generated: (-0.30028204763194566+0j), randomized: (-0.006248013782707017+0j)
+[INFO] SUCCESS! Compile successful for circuit: 266
+Expectation value of solution: (0.25344353593613095+0j), generated: (-5.284357505238106+0j), randomized: (-0.013073154200470498+0j)
+[INFO] SUCCESS! Compile successful for circuit: 267
+Expectation value of solution: (-2.798262121820602+0j), generated: (-2.226533278800115+0j), randomized: (-0.0016159620942890213+0j)
+[INFO] SUCCESS! Compile successful for circuit: 268
+Expectation value of solution: (-0.6736806035364287+0j), generated: (-0.012447996611291062+0j), randomized: (-0.009335787995282018+0j)
+[INFO] SUCCESS! Compile successful for circuit: 269
+Expectation value of solution: (-3.1759062794496793+0j), generated: (0.999964440679202+0j), randomized: (-0.00854320384653548+0j)
+[INFO] SUCCESS! Compile successful for circuit: 270
+Expectation value of solution: (-4.865402390643896+0j), generated: (-0.01848616686503384+0j), randomized: (0.020337974763594453+0j)
+[INFO] SUCCESS! Compile successful for circuit: 271
+Expectation value of solution: (-0.1516681092508989+0j), generated: (-0.00878138802618952+0j), randomized: (-0.004126401981100831+0j)
+[INFO] SUCCESS! Compile successful for circuit: 272
+Expectation value of solution: (-27.160388190810814+0j), generated: (-4.6835730246638025+0j), randomized: (0.3820071434005741+0j)
+[INFO] SUCCESS! Compile successful for circuit: 273
+Expectation value of solution: (2.107679399459755+0j), generated: (1.8964847120654926+0j), randomized: (0.0007365975484545417+0j)
+[INFO] SUCCESS! Compile successful for circuit: 274
+Expectation value of solution: (-20.851994858984728+0j), generated: (-44.42193618071933+0j), randomized: (0.15770467898259746+0j)
+[INFO] SUCCESS! Compile successful for circuit: 275
+Expectation value of solution: (-0.6025322084626733+0j), generated: (-15.499774530058538+0j), randomized: (-0.025438354058942254+0j)
+[INFO] SUCCESS! Compile successful for circuit: 276
+Expectation value of solution: (-2.4232339881117957+0j), generated: (-0.7412471025570937+0j), randomized: (-0.0008686981376558634+0j)
+[INFO] SUCCESS! Compile successful for circuit: 277
+Expectation value of solution: (-14.422107878766477+0j), generated: (-18.72415495372544+0j), randomized: (-0.05452615105605667+0j)
+[INFO] SUCCESS! Compile successful for circuit: 278
+Expectation value of solution: (1.115003664937247+0j), generated: (6.887568554851727+0j), randomized: (-0.014485934854419465+0j)
+[INFO] SUCCESS! Compile successful for circuit: 279
+Expectation value of solution: (-0.17403875797035526+0j), generated: (-1.436186697751468+0j), randomized: (0.004977931593037581+0j)
+[INFO] SUCCESS! Compile successful for circuit: 280
+Expectation value of solution: (-0.0009423293401045335+0j), generated: (-8.999945103734015+0j), randomized: (-0.05260059849304461+0j)
+[INFO] SUCCESS! Compile successful for circuit: 281
+Expectation value of solution: (-0.0018400942324378368+0j), generated: (-0.2837332719639236+0j), randomized: (-0.004395986035945197+0j)
+[INFO] SUCCESS! Compile successful for circuit: 282
+Expectation value of solution: (-0.03461749903924192+0j), generated: (-0.037026988676351104+0j), randomized: (0.0027804427323206223+0j)
+[INFO] SUCCESS! Compile successful for circuit: 283
+Expectation value of solution: (-0.011242844588622647+0j), generated: (-0.678223399400239+0j), randomized: (0.0019168377992441255+0j)
+[INFO] SUCCESS! Compile successful for circuit: 284
+Expectation value of solution: (-2.499909629296165+0j), generated: (-5.249993916465604+0j), randomized: (0.005694691836076179+0j)
+[INFO] SUCCESS! Compile successful for circuit: 285
+Expectation value of solution: (-8.59006261124328+0j), generated: (-3.805931725456393+0j), randomized: (-0.00675337355001747+0j)
+[INFO] SUCCESS! Compile successful for circuit: 286
+Expectation value of solution: (-34.784053115588875+0j), generated: (-7.363673932917611+0j), randomized: (-0.2272484345742084+0j)
+[INFO] SUCCESS! Compile successful for circuit: 287
+Expectation value of solution: (-0.3461682996759098+0j), generated: (-0.13620669489384238+0j), randomized: (0.009178118866319753+0j)
+[INFO] SUCCESS! Compile successful for circuit: 288
+Expectation value of solution: (-1.4675137321494909+0j), generated: (-0.5211846542466044+0j), randomized: (0.001451413966053989+0j)
+[INFO] SUCCESS! Compile successful for circuit: 289
+Expectation value of solution: (-10.984854504961291+0j), generated: (-0.10842403083068465+0j), randomized: (-0.03215666221133192+0j)
+[INFO] SUCCESS! Compile successful for circuit: 290
+Expectation value of solution: (-0.005791285506642525+0j), generated: (-0.026067515345537185+0j), randomized: (-0.0004671708493678113+0j)
+[INFO] SUCCESS! Compile successful for circuit: 291
+Expectation value of solution: (0.1909551305572933+0j), generated: (0.6202004896647733+0j), randomized: (-0.03828599154286382+0j)
+[INFO] SUCCESS! Compile successful for circuit: 292
+Expectation value of solution: (-24.23812451813222+0j), generated: (-3.9990031840156544e-05+0j), randomized: (0.00033795894659417763+0j)
+[INFO] SUCCESS! Compile successful for circuit: 293
+Expectation value of solution: (-0.021938095203902063+0j), generated: (-0.025962197257339142+0j), randomized: (-0.011282596729278768+0j)
+[INFO] SUCCESS! Compile successful for circuit: 294
+Expectation value of solution: (1.2261230185269314+0j), generated: (1.2261230185269314+0j), randomized: (0.011501084447435465+0j)
+[INFO] SUCCESS! Compile successful for circuit: 295
+Expectation value of solution: (-1.9671841743500567+0j), generated: (-4.93157391713541+0j), randomized: (0.07748330075320177+0j)
+[INFO] SUCCESS! Compile successful for circuit: 296
+Expectation value of solution: (-0.6117155561679319+0j), generated: (-1.871362755067202+0j), randomized: (-0.03411007587062133+0j)
+[INFO] SUCCESS! Compile successful for circuit: 297
+Expectation value of solution: (-1.0000276880252013+0j), generated: (-1.0000276880252013+0j), randomized: (0.012599540182363391+0j)
+[INFO] SUCCESS! Compile successful for circuit: 298
+Expectation value of solution: (-15.658955606661037+0j), generated: (3.6514994701671752+0j), randomized: (0.006630497017670413+0j)
+[INFO] SUCCESS! Compile successful for circuit: 299
+Expectation value of solution: (-0.36165415700247816+0j), generated: (-0.30971653877146943+0j), randomized: (0.006034942950719076+0j)
+line 218:13 no viable alternative at input '<EOF>'
+[FAIL] Failed to compile circuit: 300
+[INFO] SUCCESS! Compile successful for circuit: 301
+Expectation value of solution: (-0.10024438320443327+0j), generated: (-2.0037436500718186+0j), randomized: (-0.057796983190380596+0j)
+[INFO] SUCCESS! Compile successful for circuit: 302
+Expectation value of solution: (-0.7899813495926097+0j), generated: (-0.5517662127921563+0j), randomized: (0.0022398632301210922+0j)
+[INFO] SUCCESS! Compile successful for circuit: 303
+Expectation value of solution: (-0.4189275845838878+0j), generated: (-5.352023627214295+0j), randomized: (-0.0164029766358053+0j)
+[INFO] SUCCESS! Compile successful for circuit: 304
+Expectation value of solution: (-0.8633159750848913+0j), generated: (-1.0824870439439283+0j), randomized: (0.0017871945136585278+0j)
+[INFO] SUCCESS! Compile successful for circuit: 305
+Expectation value of solution: (-4.999999959301075+0j), generated: (-3.1575218112613976+0j), randomized: (-0.01780314915493503+0j)
+[INFO] SUCCESS! Compile successful for circuit: 306
+Expectation value of solution: (-0.27857954560032305+0j), generated: (-9.555449813833862+0j), randomized: (0.013132875835249105+0j)
+[INFO] SUCCESS! Compile successful for circuit: 307
+Expectation value of solution: (-2.633839482975247+0j), generated: (-2.633839482975247+0j), randomized: (-0.06832504137251304+0j)
+[INFO] SUCCESS! Compile successful for circuit: 308
+Expectation value of solution: (0.4746788742720135+0j), generated: (1.0428824066973683+0j), randomized: (0.012459141921587506+0j)
+[INFO] SUCCESS! Compile successful for circuit: 309
+Expectation value of solution: (-0.1748999331795033+0j), generated: (-0.1748999331795033+0j), randomized: (0.03174084334848003+0j)
+[INFO] SUCCESS! Compile successful for circuit: 310
+Expectation value of solution: (-1.4153533870622075+0j), generated: (-0.8936213952040688+0j), randomized: (-0.001346663583387374+0j)
+[INFO] SUCCESS! Compile successful for circuit: 311
+Expectation value of solution: (-0.5519117886205339+0j), generated: (-3.501801479566789+0j), randomized: (-0.02199587583494743+0j)
+[INFO] SUCCESS! Compile successful for circuit: 312
+Expectation value of solution: (-0.07994962654187743+0j), generated: (-0.23166410271684287+0j), randomized: (0.0009247814866907248+0j)
+[INFO] SUCCESS! Compile successful for circuit: 313
+Expectation value of solution: (1.2248465288910182+0j), generated: (-1.8701186277612685+0j), randomized: (-0.031518231340969025+0j)
+[INFO] SUCCESS! Compile successful for circuit: 314
+Expectation value of solution: (-1.4628563357869988+0j), generated: (-2.8177141030793322+0j), randomized: (-0.0649822692115332+0j)
+line 125:11 no viable alternative at input 'rx(-0.0225)'
+[FAIL] Failed to compile circuit: 315
+[INFO] SUCCESS! Compile successful for circuit: 316
+Expectation value of solution: (-23.921955769550813+0j), generated: (-23.921821236996927+0j), randomized: (-0.21087985969444206+0j)
+[INFO] SUCCESS! Compile successful for circuit: 317
+Expectation value of solution: (-0.025545294401887034+0j), generated: (-0.013578494612328317+0j), randomized: (-0.008966781071974966+0j)
+[INFO] SUCCESS! Compile successful for circuit: 318
+Expectation value of solution: (-1.0651130783399818+0j), generated: (0.36273871779091593+0j), randomized: (-0.017300499236660237+0j)
+[INFO] SUCCESS! Compile successful for circuit: 319
+Expectation value of solution: (-0.7766945298336079+0j), generated: (-0.033289912334837295+0j), randomized: (-0.0014212780307835025+0j)
+[INFO] SUCCESS! Compile successful for circuit: 320
+Expectation value of solution: (0.05415725041722598+0j), generated: (-0.0007247873618915351+0j), randomized: (-0.000291018326608985+0j)
+[FAIL] Failed to compile circuit: 321
+[INFO] SUCCESS! Compile successful for circuit: 322
+Expectation value of solution: (-3.6680743644476657+0j), generated: (-3.6680743644476657+0j), randomized: (0.09842698554711164+0j)
+[INFO] SUCCESS! Compile successful for circuit: 323
+Expectation value of solution: (-0.12406041748592601+0j), generated: (-1.0009924394830958+0j), randomized: (0.023506618918337583+0j)
+[INFO] SUCCESS! Compile successful for circuit: 324
+Expectation value of solution: (-0.03886509447089243+0j), generated: (-0.5901350245009628+0j), randomized: (-0.004414228169324127+0j)
+[INFO] SUCCESS! Compile successful for circuit: 325
+Expectation value of solution: (-0.044254957681978374+0j), generated: (-0.002090063109450745+0j), randomized: (-0.003400759916937485+0j)
+[INFO] SUCCESS! Compile successful for circuit: 326
+Expectation value of solution: (-6.233146679415656+0j), generated: (-8.708005903026459+0j), randomized: (0.035863246074661445+0j)
+[INFO] SUCCESS! Compile successful for circuit: 327
+Expectation value of solution: (-0.16499713390680418+0j), generated: (2.999680193220429+0j), randomized: (-0.005759100952061528+0j)
+[INFO] SUCCESS! Compile successful for circuit: 328
+Expectation value of solution: (-12.60762389154989+0j), generated: (-36.16266732507919+0j), randomized: (-0.011419634527388246+0j)
+[INFO] SUCCESS! Compile successful for circuit: 329
+Expectation value of solution: (-1.2495683008876446+0j), generated: (-1.2495683008876446+0j), randomized: (-0.1481054616659352+0j)
+[INFO] SUCCESS! Compile successful for circuit: 330
+Expectation value of solution: (-1.8607826827839606+0j), generated: (-1.5916181355139145+0j), randomized: (-0.03441822319427373+0j)
+[INFO] SUCCESS! Compile successful for circuit: 331
+Expectation value of solution: (-0.24743144743974219+0j), generated: (-0.31727595638313666+0j), randomized: (0.04384044654793472+0j)
+line 211:5 no viable alternative at input '3'
+[FAIL] Failed to compile circuit: 332
+[INFO] SUCCESS! Compile successful for circuit: 333
+Expectation value of solution: (-0.45315110212050874+0j), generated: (0.8686171474381873+0j), randomized: (0.045704904620738604+0j)
+[INFO] SUCCESS! Compile successful for circuit: 334
+Expectation value of solution: (-3.014747684960056+0j), generated: (-3.133189889858229+0j), randomized: (0.09311400985213138+0j)
+[INFO] SUCCESS! Compile successful for circuit: 335
+Expectation value of solution: (-0.4413829664727317+0j), generated: (-5.016701841083562e-06+0j), randomized: (-0.011240252058899787+0j)
+[INFO] SUCCESS! Compile successful for circuit: 336
+Expectation value of solution: (-0.24999932814835635+0j), generated: (-0.24999932814835635+0j), randomized: (-0.0850928291546721+0j)
+[INFO] SUCCESS! Compile successful for circuit: 337
+Expectation value of solution: (57.29565482590363+0j), generated: (61.12922471045408+0j), randomized: (-0.42076422876686187+0j)
+[INFO] SUCCESS! Compile successful for circuit: 338
+Expectation value of solution: (-0.761563868730876+0j), generated: (-0.01722520358249746+0j), randomized: (0.009127390749183973+0j)
+[INFO] SUCCESS! Compile successful for circuit: 339
+Expectation value of solution: (-0.9650095664850931+0j), generated: (-0.9650095664850931+0j), randomized: (0.01729785031004725+0j)
+[INFO] SUCCESS! Compile successful for circuit: 340
+Expectation value of solution: (-0.44993714055806905+0j), generated: (-1.0422049159700897+0j), randomized: (0.012459034920782373+0j)
+[INFO] SUCCESS! Compile successful for circuit: 341
+Expectation value of solution: (-1.584415369394056+0j), generated: (-1.584415369394056+0j), randomized: (0.0016634586489352727+0j)
+[INFO] SUCCESS! Compile successful for circuit: 342
+Expectation value of solution: (-43.956985289481416+0j), generated: (-40.65535896065565+0j), randomized: (-1.122933089266245+0j)
+[INFO] SUCCESS! Compile successful for circuit: 343
+Expectation value of solution: (-1.9922705632731241+0j), generated: (0.4159032110500556+0j), randomized: (-0.006435904989258221+0j)
+[INFO] SUCCESS! Compile successful for circuit: 344
+Expectation value of solution: (-3.15819680745832+0j), generated: (-2.3398571209142984+0j), randomized: (0.03325468011713661+0j)
+[INFO] SUCCESS! Compile successful for circuit: 345
+Expectation value of solution: (-2.6326316503966094+0j), generated: (-20.891858355408015+0j), randomized: (-0.14568640821995507+0j)
+[INFO] SUCCESS! Compile successful for circuit: 346
+Expectation value of solution: (-16.835372021420987+0j), generated: (-22.68331799921256+0j), randomized: (0.02116677307224122+0j)
+[INFO] SUCCESS! Compile successful for circuit: 347
+Expectation value of solution: (-0.7005952514012541+0j), generated: (1.6045983787246423+0j), randomized: (-0.0007762311835022835+0j)
+[INFO] SUCCESS! Compile successful for circuit: 348
+Expectation value of solution: (-0.1909811268328478+0j), generated: (-3.6680743644476657+0j), randomized: (0.10949439929685925+0j)
+[INFO] SUCCESS! Compile successful for circuit: 349
+Expectation value of solution: (-0.8717203159859501+0j), generated: (-0.601990903434034+0j), randomized: (0.003607534167271979+0j)
+[INFO] SUCCESS! Compile successful for circuit: 350
+Expectation value of solution: (-1.9740262829031732+0j), generated: (-0.8663468175817237+0j), randomized: (-0.0022672035796610208+0j)
+[INFO] SUCCESS! Compile successful for circuit: 351
+Expectation value of solution: (-4.162246479902025+0j), generated: (-1.320346674991444+0j), randomized: (-0.022742272331370814+0j)
+[INFO] SUCCESS! Compile successful for circuit: 352
+Expectation value of solution: (-2.983904970943761+0j), generated: (-5.431221983190352+0j), randomized: (-0.0045370216886651835+0j)
+[INFO] SUCCESS! Compile successful for circuit: 353
+Expectation value of solution: (-0.07326572005487364+0j), generated: (-0.023101501851345806+0j), randomized: (-0.016110851568491166+0j)
+[INFO] SUCCESS! Compile successful for circuit: 354
+Expectation value of solution: (-0.022080365434222867+0j), generated: (1.2502269698143254+0j), randomized: (-0.016470538087578732+0j)
+[INFO] SUCCESS! Compile successful for circuit: 355
+Expectation value of solution: (-0.8010446835694087+0j), generated: (0.49996985313985476+0j), randomized: (0.0052078164803159585+0j)
+[INFO] SUCCESS! Compile successful for circuit: 356
+Expectation value of solution: (-40.08129797576638+0j), generated: (-1.2306664438010604+0j), randomized: (-0.0025438317039173652+0j)
+[INFO] SUCCESS! Compile successful for circuit: 357
+Expectation value of solution: (-22.032104032550084+0j), generated: (-26.260715443641416+0j), randomized: (-0.353444984624319+0j)
+[INFO] SUCCESS! Compile successful for circuit: 358
+Expectation value of solution: (-0.046553455128968496+0j), generated: (-0.516348191081851+0j), randomized: (0.0009417629214154491+0j)
+[INFO] SUCCESS! Compile successful for circuit: 359
+Expectation value of solution: (-9.145215284440212+0j), generated: (-4.443034420501164+0j), randomized: (-0.046461876385244655+0j)
+[INFO] SUCCESS! Compile successful for circuit: 360
+Expectation value of solution: (2.7445899408565535+0j), generated: (0.8619666066627882+0j), randomized: (-0.03676804834623811+0j)
+[INFO] SUCCESS! Compile successful for circuit: 361
+Expectation value of solution: (-3.535055951801449+0j), generated: (-3.535055951801449+0j), randomized: (-0.006326808596683785+0j)
+line 210:14 no viable alternative at input '7'
+[FAIL] Failed to compile circuit: 362
+[INFO] SUCCESS! Compile successful for circuit: 363
+Expectation value of solution: (-0.010557438777038096+0j), generated: (-0.11419373978042299+0j), randomized: (-0.003207868071238887+0j)
+[INFO] SUCCESS! Compile successful for circuit: 364
+Expectation value of solution: (-0.30683633477938044+0j), generated: (0.08935242425408305+0j), randomized: (0.00400784536271403+0j)
+[INFO] SUCCESS! Compile successful for circuit: 365
+Expectation value of solution: (-3.5122790120280474+0j), generated: (-0.02776088046507383+0j), randomized: (-0.004254617206655569+0j)
+[INFO] SUCCESS! Compile successful for circuit: 366
+Expectation value of solution: (-2.3579141515016993+0j), generated: (-0.6383328492273965+0j), randomized: (-0.17732810392152065+0j)
+[INFO] SUCCESS! Compile successful for circuit: 367
+Expectation value of solution: (-10.379590958110251+0j), generated: (-8.48688908991962+0j), randomized: (-0.0009138244784400523+0j)
+[INFO] SUCCESS! Compile successful for circuit: 368
+Expectation value of solution: (-21.478518033156767+0j), generated: (-22.496541385737643+0j), randomized: (0.07576040295321175+0j)
+[INFO] SUCCESS! Compile successful for circuit: 369
+Expectation value of solution: (-0.3821543911409443+0j), generated: (-0.03522269910464437+0j), randomized: (-0.0055480895860919935+0j)
+[INFO] SUCCESS! Compile successful for circuit: 370
+Expectation value of solution: (-0.3111344710791928+0j), generated: (0.03222096526710487+0j), randomized: (-0.009286838425519051+0j)
+[INFO] SUCCESS! Compile successful for circuit: 371
+Expectation value of solution: (-1.9426520401565677+0j), generated: (-1.8396708120628655+0j), randomized: (0.041749353075361685+0j)
+[INFO] SUCCESS! Compile successful for circuit: 372
+Expectation value of solution: (-0.013962156900519936+0j), generated: (-0.7031424917021838+0j), randomized: (0.0054183955983175104+0j)
+[INFO] SUCCESS! Compile successful for circuit: 373
+Expectation value of solution: (-1.9188885179891213+0j), generated: (-1.2379516569598554+0j), randomized: (0.07126050639957293+0j)
+[INFO] SUCCESS! Compile successful for circuit: 374
+Expectation value of solution: (-9.249345944336866+0j), generated: (-6.896811175683105+0j), randomized: (-0.029301060616654905+0j)
+[INFO] SUCCESS! Compile successful for circuit: 375
+Expectation value of solution: (-31.61735534090701+0j), generated: (7.905896558161395+0j), randomized: (-0.5852706554916588+0j)
+[INFO] SUCCESS! Compile successful for circuit: 376
+Expectation value of solution: (-1.03840186978095+0j), generated: (-1.1241255515233657+0j), randomized: (-0.002550200334061464+0j)
+line 186:18 no viable alternative at input '5'
+[FAIL] Failed to compile circuit: 377
+[INFO] SUCCESS! Compile successful for circuit: 378
+Expectation value of solution: (-0.2599805280846624+0j), generated: (-0.516348191081851+0j), randomized: (-0.016985378149976176+0j)
+[INFO] SUCCESS! Compile successful for circuit: 379
+Expectation value of solution: (0.3010266224619973+0j), generated: (-0.4999999999696425+0j), randomized: (-0.03488691908730418+0j)
+[INFO] SUCCESS! Compile successful for circuit: 380
+Expectation value of solution: (-0.2969165130585849+0j), generated: (-2.2520851239876616+0j), randomized: (-0.010064850911916971+0j)
+[INFO] SUCCESS! Compile successful for circuit: 381
+Expectation value of solution: (-0.17810194600162282+0j), generated: (-0.6268636019457217+0j), randomized: (0.0018029263503876833+0j)
+[INFO] SUCCESS! Compile successful for circuit: 382
+Expectation value of solution: (-4.622006887716486+0j), generated: (-3.1857121481665716+0j), randomized: (0.023678530226303736+0j)
+[INFO] SUCCESS! Compile successful for circuit: 383
+Expectation value of solution: (-2.249311733021338+0j), generated: (-2.249311733021338+0j), randomized: (0.09459777214468118+0j)
+[INFO] SUCCESS! Compile successful for circuit: 384
+Expectation value of solution: (-0.49999691007370156+0j), generated: (-0.49999691007370156+0j), randomized: (-0.03385226655347776+0j)
+[INFO] SUCCESS! Compile successful for circuit: 385
+Expectation value of solution: (-9.248059133131505+0j), generated: (-9.555178507218898+0j), randomized: (0.02360806791022808+0j)
+[INFO] SUCCESS! Compile successful for circuit: 386
+Expectation value of solution: (-0.04549366109299069+0j), generated: (-2.1251427921159465+0j), randomized: (0.06010958301973995+0j)
+[INFO] SUCCESS! Compile successful for circuit: 387
+Expectation value of solution: (-0.05158738826180707+0j), generated: (-0.11998434741747821+0j), randomized: (0.03635576765036772+0j)
+[INFO] SUCCESS! Compile successful for circuit: 388
+Expectation value of solution: (-0.167420311260115+0j), generated: (1.718891323143258+0j), randomized: (0.03344100984800041+0j)
+[INFO] SUCCESS! Compile successful for circuit: 389
+Expectation value of solution: (-0.026391369731161816+0j), generated: (-0.41251659937756147+0j), randomized: (0.003160118379801144+0j)
+[INFO] SUCCESS! Compile successful for circuit: 390
+Expectation value of solution: (-20.05555767005199+0j), generated: (-42.47228395141875+0j), randomized: (-0.045279015966651785+0j)
+[INFO] SUCCESS! Compile successful for circuit: 391
+Expectation value of solution: (-10.449010633178887+0j), generated: (-6.167652261065159+0j), randomized: (0.027427079917125348+0j)
+[INFO] SUCCESS! Compile successful for circuit: 392
+Expectation value of solution: (-0.7134560132019828+0j), generated: (-0.0374774343685213+0j), randomized: (-0.002961625916958772+0j)
+[INFO] SUCCESS! Compile successful for circuit: 393
+Expectation value of solution: (1.5264415377377345+0j), generated: (-5.14146812267874e-08+0j), randomized: (0.0001632579719036623+0j)
+[INFO] SUCCESS! Compile successful for circuit: 394
+Expectation value of solution: (-0.006650430607592309+0j), generated: (-0.11634302647152045+0j), randomized: (0.012319617546184517+0j)
+[INFO] SUCCESS! Compile successful for circuit: 395
+Expectation value of solution: (7.493577392358683+0j), generated: (-3.5385804320310736+0j), randomized: (-0.9945230933142063+0j)
+[INFO] SUCCESS! Compile successful for circuit: 396
+Expectation value of solution: (-0.04289155825469723+0j), generated: (0.4965159325687468+0j), randomized: (0.010578739540109697+0j)
+[INFO] SUCCESS! Compile successful for circuit: 397
+Expectation value of solution: (-0.09727627185522508+0j), generated: (-0.35722387273646344+0j), randomized: (0.016246486150617127+0j)
+[INFO] SUCCESS! Compile successful for circuit: 398
+Expectation value of solution: (-21.77701054992381+0j), generated: (-25.93803464294245+0j), randomized: (-0.14545884505515708+0j)
+line 212:14 no viable alternative at input '<EOF>'
+[FAIL] Failed to compile circuit: 399
+[INFO] SUCCESS! Compile successful for circuit: 400
+Expectation value of solution: (-10.761702506740832+0j), generated: (-11.526956638347112+0j), randomized: (-0.06369734622556258+0j)
+[INFO] SUCCESS! Compile successful for circuit: 401
+Expectation value of solution: (-2.3829819524478824+0j), generated: (-3.341682921988063+0j), randomized: (-0.030688506259176993+0j)
+[INFO] SUCCESS! Compile successful for circuit: 402
+Expectation value of solution: (-0.5228060032265046+0j), generated: (-6.715781219465339+0j), randomized: (0.010258931016290909+0j)
+line 132:5 no viable alternative at input 'crx(0'
+[FAIL] Failed to compile circuit: 403
+[INFO] SUCCESS! Compile successful for circuit: 404
+Expectation value of solution: (-9.529755182716197+0j), generated: (-9.686376104282216+0j), randomized: (0.019108386239972637+0j)
+[INFO] SUCCESS! Compile successful for circuit: 405
+Expectation value of solution: (-0.30519669611361055+0j), generated: (-7.257661687830009+0j), randomized: (0.009349313204623837+0j)
+[INFO] SUCCESS! Compile successful for circuit: 406
+Expectation value of solution: (-0.42591178719525663+0j), generated: (-0.04310379321295556+0j), randomized: (0.0017934817183974095+0j)
+[INFO] SUCCESS! Compile successful for circuit: 407
+Expectation value of solution: (-0.413017711074031+0j), generated: (-0.013273564533004621+0j), randomized: (0.007313558448123013+0j)
+[INFO] SUCCESS! Compile successful for circuit: 408
+Expectation value of solution: (-26.611980484555627+0j), generated: (-21.811860989772782+0j), randomized: (0.40905106113506445+0j)
+[INFO] SUCCESS! Compile successful for circuit: 409
+Expectation value of solution: (-2.7406127471812303+0j), generated: (-0.10129037502357904+0j), randomized: (0.004706243422610917+0j)
+[INFO] SUCCESS! Compile successful for circuit: 410
+Expectation value of solution: (-3.9116244956562407+0j), generated: (-3.9116244956562407+0j), randomized: (-0.043888378382570176+0j)
+line 186:18 no viable alternative at input '5'
+[FAIL] Failed to compile circuit: 411
+[INFO] SUCCESS! Compile successful for circuit: 412
+Expectation value of solution: (-2.760631827638672+0j), generated: (-2.070737990271256+0j), randomized: (0.05553945677975222+0j)
+[INFO] SUCCESS! Compile successful for circuit: 413
+Expectation value of solution: (0.014587184006533804+0j), generated: (2.0923266284339145e-06+0j), randomized: (0.0001092257550810177+0j)
+[INFO] SUCCESS! Compile successful for circuit: 414
+Expectation value of solution: (-17.71720142417845+0j), generated: (-9.115526740684755+0j), randomized: (-0.1334610996090394+0j)
+[INFO] SUCCESS! Compile successful for circuit: 415
+Expectation value of solution: (-10.872885527141719+0j), generated: (-1.3873172758110457+0j), randomized: (-0.01261280719714237+0j)
+[INFO] SUCCESS! Compile successful for circuit: 416
+Expectation value of solution: (-1.8894394158539018+0j), generated: (-1.8894394158539018+0j), randomized: (-0.025123175699092018+0j)
+[INFO] SUCCESS! Compile successful for circuit: 417
+Expectation value of solution: (-0.014809179683450805+0j), generated: (3.4997765289483573+0j), randomized: (-0.05393688158664214+0j)
+[INFO] SUCCESS! Compile successful for circuit: 418
+Expectation value of solution: (-9.431030725607393+0j), generated: (-2.410817006594352+0j), randomized: (0.02679137542818036+0j)
+[INFO] SUCCESS! Compile successful for circuit: 419
+Expectation value of solution: (-0.09492160196455657+0j), generated: (0.8464111110138033+0j), randomized: (0.03548746573116423+0j)
+[INFO] SUCCESS! Compile successful for circuit: 420
+Expectation value of solution: (-5.699099335420809+0j), generated: (-6.720809253091075+0j), randomized: (0.04604651900740235+0j)
+[INFO] SUCCESS! Compile successful for circuit: 421
+Expectation value of solution: (-1.8139508957220951+0j), generated: (-1.6879173383848158+0j), randomized: (0.030345763353000484+0j)
+[INFO] SUCCESS! Compile successful for circuit: 422
+Expectation value of solution: (-0.4999999999696425+0j), generated: (-0.4999999999696425+0j), randomized: (-0.16917956100652745+0j)
+line 131:3 no viable alternative at input 'crz'
+[FAIL] Failed to compile circuit: 423
+[INFO] SUCCESS! Compile successful for circuit: 424
+Expectation value of solution: (-0.647901153019122+0j), generated: (-0.3788627223567465+0j), randomized: (0.0040234460972575605+0j)
+[INFO] SUCCESS! Compile successful for circuit: 425
+Expectation value of solution: (-22.726122447269063+0j), generated: (-29.300098156050115+0j), randomized: (0.17561005226200432+0j)
+[INFO] SUCCESS! Compile successful for circuit: 426
+Expectation value of solution: (-15.576650017265049+0j), generated: (-3.8500027357729167+0j), randomized: (0.971485031465242+0j)
+[INFO] SUCCESS! Compile successful for circuit: 427
+Expectation value of solution: (-11.601730165531748+0j), generated: (-0.27665146569351606+0j), randomized: (0.0038009292129695125+0j)
+[INFO] SUCCESS! Compile successful for circuit: 428
+Expectation value of solution: (9.836484132411083+0j), generated: (9.127978107515975+0j), randomized: (0.6047565145371046+0j)
+[INFO] SUCCESS! Compile successful for circuit: 429
+Expectation value of solution: (-0.006094624638920198+0j), generated: (-0.8631308949854457+0j), randomized: (-0.007105723981274471+0j)
+[INFO] SUCCESS! Compile successful for circuit: 430
+Expectation value of solution: (-1.9999329565268744+0j), generated: (-1.9999329565268744+0j), randomized: (0.0670772812205479+0j)
+[INFO] SUCCESS! Compile successful for circuit: 431
+Expectation value of solution: (-2.24990545141255+0j), generated: (-2.24990545141255+0j), randomized: (0.04476527361851148+0j)
+[INFO] SUCCESS! Compile successful for circuit: 432
+Expectation value of solution: (2.9997862288175625+0j), generated: (2.9997862288175625+0j), randomized: (0.01021937636513443+0j)
+[INFO] SUCCESS! Compile successful for circuit: 433
+Expectation value of solution: (-0.005919073622228199+0j), generated: (-0.003943957032454797+0j), randomized: (-0.0004590059298573447+0j)
+[INFO] SUCCESS! Compile successful for circuit: 434
+Expectation value of solution: (-4.68125283197254+0j), generated: (-8.962461739780817+0j), randomized: (0.0028348126796529987+0j)
+[INFO] SUCCESS! Compile successful for circuit: 435
+Expectation value of solution: (0.011891738765168913+0j), generated: (-0.8130657617834283+0j), randomized: (-0.010624310033658161+0j)
+[INFO] SUCCESS! Compile successful for circuit: 436
+Expectation value of solution: (-0.07288281059301485+0j), generated: (0.4999346013366008+0j), randomized: (0.02289867052358804+0j)
+line 217:4 no viable alternative at input '<EOF>'
+[FAIL] Failed to compile circuit: 437
+[INFO] SUCCESS! Compile successful for circuit: 438
+Expectation value of solution: (0.3930516160274997+0j), generated: (0.5954167165232503+0j), randomized: (-0.00013179289586611763+0j)
+[INFO] SUCCESS! Compile successful for circuit: 439
+Expectation value of solution: (-0.4939929719690877+0j), generated: (-0.1779949992883813+0j), randomized: (0.0010846124708765157+0j)
+[INFO] SUCCESS! Compile successful for circuit: 440
+Expectation value of solution: (-0.6552888859774278+0j), generated: (-0.21886422890183813+0j), randomized: (0.000586075471674781+0j)
+[INFO] SUCCESS! Compile successful for circuit: 441
+Expectation value of solution: (-3.17315444010966+0j), generated: (-4.509505992532028+0j), randomized: (0.011981527625001098+0j)
+[INFO] SUCCESS! Compile successful for circuit: 442
+Expectation value of solution: (-1.5725129302483873+0j), generated: (-1.1600434950486167+0j), randomized: (0.002244795112488291+0j)
+[INFO] SUCCESS! Compile successful for circuit: 443
+Expectation value of solution: (-2.640487929450828+0j), generated: (-5.615318870358883+0j), randomized: (-0.11066603611845449+0j)
+[INFO] SUCCESS! Compile successful for circuit: 444
+Expectation value of solution: (-0.359248197064094+0j), generated: (-0.3559959822512815+0j), randomized: (0.0067450494002516655+0j)
+[INFO] SUCCESS! Compile successful for circuit: 445
+Expectation value of solution: (-7.433692568807363+0j), generated: (-6.877377081390557+0j), randomized: (-0.014594369601419646+0j)
+[INFO] SUCCESS! Compile successful for circuit: 446
+Expectation value of solution: (-1.7499827264260888+0j), generated: (-1.7419623513420475+0j), randomized: (-0.004542094785756094+0j)
+[INFO] SUCCESS! Compile successful for circuit: 447
+Expectation value of solution: (-0.3501869443296292+0j), generated: (-0.4637862890717673+0j), randomized: (-0.006448135404848478+0j)
+line 213:9 no viable alternative at input 'rz(-0.096'
+[FAIL] Failed to compile circuit: 448
+[INFO] SUCCESS! Compile successful for circuit: 449
+Expectation value of solution: (-1.3413770229127893+0j), generated: (-0.008202228562463708+0j), randomized: (0.004090567033316974+0j)
+[INFO] SUCCESS! Compile successful for circuit: 450
+Expectation value of solution: (-1.5557316097254312+0j), generated: (0.0625036545705619+0j), randomized: (0.023208764039377692+0j)
+[INFO] SUCCESS! Compile successful for circuit: 451
+Expectation value of solution: (-0.041925421825347337+0j), generated: (2.4998564453490033+0j), randomized: (-0.0014731443298887283+0j)
+[INFO] SUCCESS! Compile successful for circuit: 452
+Expectation value of solution: (-0.03353275766119907+0j), generated: (-4.975304023373765+0j), randomized: (-0.017173290817654556+0j)
+[INFO] SUCCESS! Compile successful for circuit: 453
+Expectation value of solution: (-3.5000275570300783+0j), generated: (-3.5000275570300783+0j), randomized: (0.05079085519556114+0j)
+[INFO] SUCCESS! Compile successful for circuit: 454
+Expectation value of solution: (-3.2717757439357116+0j), generated: (-3.9741079930051315+0j), randomized: (0.011342198849277589+0j)
+[INFO] SUCCESS! Compile successful for circuit: 455
+Expectation value of solution: (0.24982752687679638+0j), generated: (-0.4070493679171098+0j), randomized: (0.016234716002767352+0j)
+[INFO] SUCCESS! Compile successful for circuit: 456
+Expectation value of solution: (0.0902465653461754+0j), generated: (3.530951346748595+0j), randomized: (-0.01999046021458729+0j)
+[INFO] SUCCESS! Compile successful for circuit: 457
+Expectation value of solution: (-0.5989418492686552+0j), generated: (-1.0163373041987338+0j), randomized: (-0.022934273940938183+0j)
+[INFO] SUCCESS! Compile successful for circuit: 458
+Expectation value of solution: (-0.15018206335153816+0j), generated: (0.34608402567904356+0j), randomized: (0.020534067483299747+0j)
+[INFO] SUCCESS! Compile successful for circuit: 459
+Expectation value of solution: (25.7869012210148+0j), generated: (-20.468771522944365+0j), randomized: (-0.030061330465447476+0j)
+[INFO] SUCCESS! Compile successful for circuit: 460
+Expectation value of solution: (-0.38198788214749346+0j), generated: (0.19474791395916524+0j), randomized: (0.0015132163536673022+0j)
+[INFO] SUCCESS! Compile successful for circuit: 461
+Expectation value of solution: (-3.1003459443538812+0j), generated: (-1.551080745452258+0j), randomized: (0.07019865845808904+0j)
+[INFO] SUCCESS! Compile successful for circuit: 462
+Expectation value of solution: (-12.499923164294579+0j), generated: (-1.53250218175001+0j), randomized: (-0.014578606175778556+0j)
+[INFO] SUCCESS! Compile successful for circuit: 463
+Expectation value of solution: (-36.727327697723425+0j), generated: (-33.935037047967235+0j), randomized: (-0.1092668730266319+0j)
+[INFO] SUCCESS! Compile successful for circuit: 464
+Expectation value of solution: (-0.24025816059439073+0j), generated: (-4.9239202949335334+0j), randomized: (0.023506603980520725+0j)
+[INFO] SUCCESS! Compile successful for circuit: 465
+Expectation value of solution: (-0.49700958445211085+0j), generated: (-0.027086881092869153+0j), randomized: (-0.002598968643255814+0j)
+[INFO] SUCCESS! Compile successful for circuit: 466
+Expectation value of solution: (-0.17507664381288876+0j), generated: (-0.08557215752958224+0j), randomized: (0.03972785370399308+0j)
+[INFO] SUCCESS! Compile successful for circuit: 467
+Expectation value of solution: (0.11987128222799631+0j), generated: (-0.10333810222693551+0j), randomized: (0.0065644309313750105+0j)
+[INFO] SUCCESS! Compile successful for circuit: 468
+Expectation value of solution: (-9.246491766444809+0j), generated: (-5.89708390790979+0j), randomized: (-0.03679680939216388+0j)
+[INFO] SUCCESS! Compile successful for circuit: 469
+Expectation value of solution: (-15.215002867816725+0j), generated: (-14.391785517215027+0j), randomized: (-0.05585359209277223+0j)
+[INFO] SUCCESS! Compile successful for circuit: 470
+Expectation value of solution: (0.5462208797921524+0j), generated: (-0.4231354196612578+0j), randomized: (-0.07148401434746948+0j)
+[INFO] SUCCESS! Compile successful for circuit: 471
+Expectation value of solution: (-2.992315250733525+0j), generated: (-3.585917917998076+0j), randomized: (0.09618931526121555+0j)
+[INFO] SUCCESS! Compile successful for circuit: 472
+Expectation value of solution: (-3.4999672487670384+0j), generated: (-3.4999672487670384+0j), randomized: (-0.18466032709554414+0j)
+[INFO] SUCCESS! Compile successful for circuit: 473
+Expectation value of solution: (-0.25218091088886085+0j), generated: (-2.7499244638326594+0j), randomized: (0.0020379607109818148+0j)
+[INFO] SUCCESS! Compile successful for circuit: 474
+Expectation value of solution: (-1.508642292131263+0j), generated: (-0.009111649961000678+0j), randomized: (-0.0006036829006223814+0j)
+[INFO] SUCCESS! Compile successful for circuit: 475
+Expectation value of solution: (-47.07412439964321+0j), generated: (-49.50908910172296+0j), randomized: (-0.9580640928839548+0j)
+line 213:3 no viable alternative at input 'rz('
+[FAIL] Failed to compile circuit: 476
+[INFO] SUCCESS! Compile successful for circuit: 477
+Expectation value of solution: (-12.80664964341284+0j), generated: (-12.087205194711286+0j), randomized: (-0.013785889351170418+0j)
+[FAIL] Failed to compile circuit: 478
+[INFO] SUCCESS! Compile successful for circuit: 479
+Expectation value of solution: (-3.622030721947258+0j), generated: (-3.622030721947258+0j), randomized: (-0.017018181557600383+0j)
+[INFO] SUCCESS! Compile successful for circuit: 480
+Expectation value of solution: (-3.017016645941673+0j), generated: (-3.017016645941673+0j), randomized: (0.03710705956476938+0j)
+[INFO] SUCCESS! Compile successful for circuit: 481
+Expectation value of solution: (-0.48140728846999215+0j), generated: (1.6568834103918877+0j), randomized: (0.0029627295249855536+0j)
+[INFO] SUCCESS! Compile successful for circuit: 482
+Expectation value of solution: (-12.385488277590106+0j), generated: (-11.73485329555818+0j), randomized: (-0.041599991095758834+0j)
+[INFO] SUCCESS! Compile successful for circuit: 483
+Expectation value of solution: (-0.30837567669180493+0j), generated: (-0.14050333996167363+0j), randomized: (-0.00456271599426567+0j)
+[INFO] SUCCESS! Compile successful for circuit: 484
+Expectation value of solution: (-0.8962332941414393+0j), generated: (-8.006431752127778+0j), randomized: (-0.03982194387130005+0j)
+[INFO] SUCCESS! Compile successful for circuit: 485
+Expectation value of solution: (-2.6190939967843345+0j), generated: (-5.615318870358883+0j), randomized: (0.026257228689617905+0j)
+line 7:8 no viable alternative at input 'rx(0.567]'
+[FAIL] Failed to compile circuit: 486
+[INFO] SUCCESS! Compile successful for circuit: 487
+Expectation value of solution: (-0.36933894914710796+0j), generated: (-0.36933894914710796+0j), randomized: (0.010086936511492008+0j)
+[INFO] SUCCESS! Compile successful for circuit: 488
+Expectation value of solution: (0.3834825808742649+0j), generated: (0.15905650192427503+0j), randomized: (0.006242415526655482+0j)
+[INFO] SUCCESS! Compile successful for circuit: 489
+Expectation value of solution: (-0.8622997520077149+0j), generated: (-2.499967236447719+0j), randomized: (-0.04623902164650755+0j)
+[INFO] SUCCESS! Compile successful for circuit: 490
+Expectation value of solution: (-1.4266072627071746+0j), generated: (-0.06445307515493015+0j), randomized: (-0.024233714379631274+0j)
+[INFO] SUCCESS! Compile successful for circuit: 491
+Expectation value of solution: (-0.03653953321785924+0j), generated: (-0.567038244508792+0j), randomized: (0.004914705501704752+0j)
+[INFO] SUCCESS! Compile successful for circuit: 492
+Expectation value of solution: (0.005613271082490545+0j), generated: (2.392960085813375+0j), randomized: (-0.12889533392377747+0j)
+[INFO] SUCCESS! Compile successful for circuit: 493
+Expectation value of solution: (-14.412919095214091+0j), generated: (-22.108189702210115+0j), randomized: (-0.07728325752012781+0j)
+[INFO] SUCCESS! Compile successful for circuit: 494
+Expectation value of solution: (-0.10623774291474314+0j), generated: (-5.799839045291984+0j), randomized: (-0.014353963693154875+0j)
+[INFO] SUCCESS! Compile successful for circuit: 495
+Expectation value of solution: (-1.367320581826307+0j), generated: (-1.367320581826307+0j), randomized: (-0.002503291264924813+0j)
+[INFO] SUCCESS! Compile successful for circuit: 496
+Expectation value of solution: (-22.00759274976794+0j), generated: (-28.523381558262663+0j), randomized: (-0.029860152141156983+0j)
+[INFO] SUCCESS! Compile successful for circuit: 497
+Expectation value of solution: (-0.5000295482628395+0j), generated: (-0.5000295482628395+0j), randomized: (0.06037883566138587+0j)
+[INFO] SUCCESS! Compile successful for circuit: 498
+Expectation value of solution: (-0.6914260693320246+0j), generated: (-0.7315534179464929+0j), randomized: (0.004811537932259793+0j)
+[INFO] SUCCESS! Compile successful for circuit: 499
+Expectation value of solution: (1.4622037129829497+0j), generated: (4.6536641463558286e-05+0j), randomized: (0.002388296871571181+0j)
+[INFO] SUCCESS! Compile successful for circuit: 500
+Expectation value of solution: (-2.0944452671069698+0j), generated: (-6.779910949141634+0j), randomized: (-0.036313690036380346+0j)
+[INFO] SUCCESS! Compile successful for circuit: 501
+Expectation value of solution: (-0.8624954368578188+0j), generated: (-1.0668057623273701+0j), randomized: (0.012123942255576557+0j)
+[INFO] SUCCESS! Compile successful for circuit: 502
+Expectation value of solution: (3.4986489613815235+0j), generated: (-0.03323279805672648+0j), randomized: (0.025193362543138198+0j)
+[INFO] SUCCESS! Compile successful for circuit: 503
+Expectation value of solution: (-1.557636702962092+0j), generated: (-1.360260090935641+0j), randomized: (0.018322149116837206+0j)
+[INFO] SUCCESS! Compile successful for circuit: 504
+Expectation value of solution: (-1.7093135762217364+0j), generated: (-1.679683931912114+0j), randomized: (0.001330300996619161+0j)
+[INFO] SUCCESS! Compile successful for circuit: 505
+Expectation value of solution: (-6.5799325835625195+0j), generated: (-0.08502811338018929+0j), randomized: (0.03085154271645873+0j)
+[INFO] SUCCESS! Compile successful for circuit: 506
+Expectation value of solution: (-2.9962153835472574+0j), generated: (-0.5247044711774227+0j), randomized: (0.0025743144107259063+0j)
+[INFO] SUCCESS! Compile successful for circuit: 507
+Expectation value of solution: (1.1332304727940112e-07+0j), generated: (1.1332304727940112e-07+0j), randomized: (-0.024729106800882656+0j)
+line 149:10 no viable alternative at input 'rz(0.0012)'
+[FAIL] Failed to compile circuit: 508
+[INFO] SUCCESS! Compile successful for circuit: 509
+Expectation value of solution: (-0.14247407045661223+0j), generated: (-0.3388950576093782+0j), randomized: (0.0029533744015263434+0j)
+[INFO] SUCCESS! Compile successful for circuit: 510
+Expectation value of solution: (-0.08004244728029702+0j), generated: (-1.4741129189323132+0j), randomized: (-0.004026110596740193+0j)
+[INFO] SUCCESS! Compile successful for circuit: 511
+Expectation value of solution: (-0.2851541925440459+0j), generated: (-0.7020748623386543+0j), randomized: (-0.0019707735046429354+0j)
+[INFO] SUCCESS! Compile successful for circuit: 512
+Expectation value of solution: (-0.46086535269405005+0j), generated: (-0.4226821508353097+0j), randomized: (0.0063971666708739225+0j)
+[INFO] SUCCESS! Compile successful for circuit: 513
+Expectation value of solution: (1.3297445246602462+0j), generated: (-0.02956818342483921+0j), randomized: (0.0021003701100057565+0j)
+[INFO] SUCCESS! Compile successful for circuit: 514
+Expectation value of solution: (-0.005829719522911727+0j), generated: (2.499189267657547+0j), randomized: (0.050937432582558895+0j)
+[INFO] SUCCESS! Compile successful for circuit: 515
+Expectation value of solution: (-0.7111618623219165+0j), generated: (-0.31337316361526996+0j), randomized: (-0.007676703303748092+0j)
+[INFO] SUCCESS! Compile successful for circuit: 516
+Expectation value of solution: (-2.4658863783079195+0j), generated: (-2.5024968586340988+0j), randomized: (-0.06360116885985077+0j)
+[INFO] SUCCESS! Compile successful for circuit: 517
+Expectation value of solution: (-3.1353625310679014+0j), generated: (-0.08650717007483007+0j), randomized: (0.0005583020864619857+0j)
+[INFO] SUCCESS! Compile successful for circuit: 518
+Expectation value of solution: (-0.6401504956811863+0j), generated: (-1.1819440176096656+0j), randomized: (7.331524706062792e-05+0j)
+[INFO] SUCCESS! Compile successful for circuit: 519
+Expectation value of solution: (-1.5000125893820049+0j), generated: (-0.06130795390173961+0j), randomized: (0.002036678031084789+0j)
+[INFO] SUCCESS! Compile successful for circuit: 520
+Expectation value of solution: (-9.580774336841552+0j), generated: (-12.898028130027637+0j), randomized: (-0.02129351968964591+0j)
+[INFO] SUCCESS! Compile successful for circuit: 521
+Expectation value of solution: (-0.5696207891546939+0j), generated: (-1.0163373041987338+0j), randomized: (-0.012516134813388896+0j)
+[INFO] SUCCESS! Compile successful for circuit: 522
+Expectation value of solution: (-26.304250257917666+0j), generated: (-20.521262543052103+0j), randomized: (0.06182379128330099+0j)
+[INFO] SUCCESS! Compile successful for circuit: 523
+Expectation value of solution: (-0.04147013901314721+0j), generated: (-1.1900902604312305+0j), randomized: (-0.00992133045727591+0j)
+[INFO] SUCCESS! Compile successful for circuit: 524
+Expectation value of solution: (-3.1318964713742794+0j), generated: (-1.3444734738124948+0j), randomized: (0.09674992515988906+0j)
+[INFO] SUCCESS! Compile successful for circuit: 525
+Expectation value of solution: (-15.27359588962884+0j), generated: (-15.27359588962884+0j), randomized: (-0.0757037198048554+0j)
+line 213:7 no viable alternative at input 'rz(-0.0'
+[FAIL] Failed to compile circuit: 526
+[INFO] SUCCESS! Compile successful for circuit: 527
+Expectation value of solution: (-0.9938038960852361+0j), generated: (-0.22922424878123893+0j), randomized: (0.0032437558770547783+0j)
+[INFO] SUCCESS! Compile successful for circuit: 528
+Expectation value of solution: (-11.17048008866023+0j), generated: (-0.11588555939735648+0j), randomized: (0.00580150401730631+0j)
+[INFO] SUCCESS! Compile successful for circuit: 529
+Expectation value of solution: (-0.8996315818870204+0j), generated: (-0.022555842010544842+0j), randomized: (-0.007912916329507273+0j)
+[INFO] SUCCESS! Compile successful for circuit: 530
+Expectation value of solution: (-6.885387421827519+0j), generated: (-0.1641550597891372+0j), randomized: (0.00011874133598506786+0j)
+[INFO] SUCCESS! Compile successful for circuit: 531
+Expectation value of solution: (-12.497150422359766+0j), generated: (-23.492517768050675+0j), randomized: (0.23825859207170616+0j)
+[INFO] SUCCESS! Compile successful for circuit: 532
+Expectation value of solution: (-6.328649408006268+0j), generated: (1.2488657843999056+0j), randomized: (-0.0008552060399411638+0j)
+[INFO] SUCCESS! Compile successful for circuit: 533
+Expectation value of solution: (0.6009792854642091+0j), generated: (0.6009792854642091+0j), randomized: (0.010434966643070528+0j)
+[INFO] SUCCESS! Compile successful for circuit: 534
+Expectation value of solution: (-0.09922709463636317+0j), generated: (-2.7299297591440457+0j), randomized: (-0.01576117498487399+0j)
+[INFO] SUCCESS! Compile successful for circuit: 535
+Expectation value of solution: (-6.362469381991821+0j), generated: (-6.362469381991821+0j), randomized: (-0.009799051630115995+0j)
+[INFO] SUCCESS! Compile successful for circuit: 536
+Expectation value of solution: (-9.0044713906812+0j), generated: (-9.0044713906812+0j), randomized: (-0.011105393659753207+0j)
+[INFO] SUCCESS! Compile successful for circuit: 537
+Expectation value of solution: (-0.09825335625423175+0j), generated: (-0.05787209754033767+0j), randomized: (0.0017608558440379346+0j)
+[INFO] SUCCESS! Compile successful for circuit: 538
+Expectation value of solution: (-2.939268653652376+0j), generated: (-2.939268653652376+0j), randomized: (-0.0022675861794488757+0j)
+[INFO] SUCCESS! Compile successful for circuit: 539
+Expectation value of solution: (-1.0851933188442844+0j), generated: (-0.014039901690265729+0j), randomized: (0.01566647144180282+0j)
+[INFO] SUCCESS! Compile successful for circuit: 540
+Expectation value of solution: (-0.021059480379282035+0j), generated: (-0.05214104318186265+0j), randomized: (-0.03464760595307287+0j)
+[INFO] SUCCESS! Compile successful for circuit: 541
+Expectation value of solution: (-1.8629427954852287+0j), generated: (-1.0000341387956941+0j), randomized: (-0.0026311960446524264+0j)
+[INFO] SUCCESS! Compile successful for circuit: 542
+Expectation value of solution: (-0.07001066335156468+0j), generated: (-0.08749705873109154+0j), randomized: (0.0020810018553041954+0j)
+line 70:7 no viable alternative at input 'cry(0.0.5543'
+[FAIL] Failed to compile circuit: 543
+[INFO] SUCCESS! Compile successful for circuit: 544
+Expectation value of solution: (-23.492517768050675+0j), generated: (-23.492517768050675+0j), randomized: (-0.22256963416729952+0j)
+[INFO] SUCCESS! Compile successful for circuit: 545
+Expectation value of solution: (-11.099794620684206+0j), generated: (-0.24279089112431534+0j), randomized: (0.01691800016155579+0j)
+[INFO] SUCCESS! Compile successful for circuit: 546
+Expectation value of solution: (-3.0624453044325666+0j), generated: (-3.5561533821908586+0j), randomized: (0.08581208436631473+0j)
+line 183:8 no viable alternative at input 'ry(0.002'
+[FAIL] Failed to compile circuit: 547
+[INFO] SUCCESS! Compile successful for circuit: 548
+Expectation value of solution: (-4.092651396944013+0j), generated: (-5.456648184694749+0j), randomized: (-0.00495062117662907+0j)
+[INFO] SUCCESS! Compile successful for circuit: 549
+Expectation value of solution: (-2.406978998306513+0j), generated: (-0.04112529417393841+0j), randomized: (0.006721834289913123+0j)
+[INFO] SUCCESS! Compile successful for circuit: 550
+Expectation value of solution: (-14.265512017187396+0j), generated: (-11.810168122907092+0j), randomized: (-0.12695890469943352+0j)
+[INFO] SUCCESS! Compile successful for circuit: 551
+Expectation value of solution: (-2.6341016390962837+0j), generated: (-2.6341016390962837+0j), randomized: (0.007288436012552097+0j)
+[INFO] SUCCESS! Compile successful for circuit: 552
+Expectation value of solution: (0.7333023855692474+0j), generated: (-0.0634193206926035+0j), randomized: (0.02004742786941929+0j)
+line 136:15 no viable alternative at input '4'
+[FAIL] Failed to compile circuit: 553
+line 186:18 no viable alternative at input '5'
+[FAIL] Failed to compile circuit: 554
+[INFO] SUCCESS! Compile successful for circuit: 555
+Expectation value of solution: (-0.06408417145991767+0j), generated: (-0.06540669756012972+0j), randomized: (-4.186364975295298e-05+0j)
+[INFO] SUCCESS! Compile successful for circuit: 556
+Expectation value of solution: (-0.6765901500308324+0j), generated: (-1.4003170418502455+0j), randomized: (-0.008021944311838763+0j)
+[INFO] SUCCESS! Compile successful for circuit: 557
+Expectation value of solution: (-0.916804820576389+0j), generated: (-0.02424710714544845+0j), randomized: (0.008291503108279296+0j)
+[INFO] SUCCESS! Compile successful for circuit: 558
+Expectation value of solution: (-10.748876525198687+0j), generated: (-8.55661660631112+0j), randomized: (0.017331417707029492+0j)
+[INFO] SUCCESS! Compile successful for circuit: 559
+Expectation value of solution: (-4.74731080365962+0j), generated: (-4.74731080365962+0j), randomized: (0.010970419421599726+0j)
+[INFO] SUCCESS! Compile successful for circuit: 560
+Expectation value of solution: (-9.775332115075562+0j), generated: (-2.823978877083974+0j), randomized: (-0.02470220280341671+0j)
+[INFO] SUCCESS! Compile successful for circuit: 561
+Expectation value of solution: (-0.10426869471882043+0j), generated: (-2.0787246810819853+0j), randomized: (-0.003388610311891873+0j)
+[INFO] SUCCESS! Compile successful for circuit: 562
+Expectation value of solution: (-0.10333810222693551+0j), generated: (-0.10333810222693551+0j), randomized: (0.0017927661755882663+0j)
+[INFO] SUCCESS! Compile successful for circuit: 563
+Expectation value of solution: (-0.11491416655037986+0j), generated: (-0.12320080344233625+0j), randomized: (-0.01854766991579931+0j)
+[INFO] SUCCESS! Compile successful for circuit: 564
+Expectation value of solution: (-6.356265631435434+0j), generated: (-2.4886683641015983+0j), randomized: (-0.020210014040492327+0j)
+[INFO] SUCCESS! Compile successful for circuit: 565
+Expectation value of solution: (49.18157751376043+0j), generated: (-12.614180653798883+0j), randomized: (0.32160661497449267+0j)
+[INFO] SUCCESS! Compile successful for circuit: 566
+Expectation value of solution: (-9.042590073190777+0j), generated: (-0.38530123658343324+0j), randomized: (-0.003527469437404951+0j)
+[INFO] SUCCESS! Compile successful for circuit: 567
+Expectation value of solution: (62.28022879616328+0j), generated: (75.78038277881372+0j), randomized: (-0.5224868495398611+0j)
+[INFO] SUCCESS! Compile successful for circuit: 568
+Expectation value of solution: (-14.391785517215027+0j), generated: (-14.391785517215027+0j), randomized: (-0.10702307281578052+0j)
+[INFO] SUCCESS! Compile successful for circuit: 569
+Expectation value of solution: (-0.021658297739295878+0j), generated: (-0.2551096887685703+0j), randomized: (0.008837334706772754+0j)
+[INFO] SUCCESS! Compile successful for circuit: 570
+Expectation value of solution: (-13.322429948772763+0j), generated: (-9.307842297595549+0j), randomized: (0.0009153788266508862+0j)
+[INFO] SUCCESS! Compile successful for circuit: 571
+Expectation value of solution: (-6.994458119027211+0j), generated: (-0.06759085721435364+0j), randomized: (-0.07386014841399766+0j)
+[INFO] SUCCESS! Compile successful for circuit: 572
+Expectation value of solution: (-1.1616039925813688+0j), generated: (-0.03296003324717862+0j), randomized: (-0.004916831359081921+0j)
+[INFO] SUCCESS! Compile successful for circuit: 573
+Expectation value of solution: (-0.25260076915116336+0j), generated: (-2.9100650013636726+0j), randomized: (0.04129330569246234+0j)
+[INFO] SUCCESS! Compile successful for circuit: 574
+Expectation value of solution: (-1.9519002129852923+0j), generated: (-3.6700015550267726+0j), randomized: (-0.013520689155457451+0j)
+line 215:17 no viable alternative at input '<EOF>'
+[FAIL] Failed to compile circuit: 575
+[INFO] SUCCESS! Compile successful for circuit: 576
+Expectation value of solution: (0.009456347334803536+0j), generated: (-1.0047855569291155+0j), randomized: (-0.004883465643409471+0j)
+[INFO] SUCCESS! Compile successful for circuit: 577
+Expectation value of solution: (-6.1924664623487455+0j), generated: (-2.5551220963298658+0j), randomized: (0.1232740961126635+0j)
+[INFO] SUCCESS! Compile successful for circuit: 578
+Expectation value of solution: (-0.08897368977026981+0j), generated: (-0.8831481238634549+0j), randomized: (0.005890932511529343+0j)
+[INFO] SUCCESS! Compile successful for circuit: 579
+Expectation value of solution: (-0.061668337200769016+0j), generated: (-0.0911498599566402+0j), randomized: (-0.008743089846405006+0j)
+
+Summary Statistics:
+total_samples: 580
+compiled_successfully: 535
+correct_state_count: 31
+correct_samples: [36, 46, 65, 103, 120, 127, 131, 136, 209, 216, 221, 224, 235, 243, 244, 281, 282, 288, 311, 330, 340, 372, 379, 422, 427, 464, 483, 489, 520, 548, 572]
+relative_entropy_threshold: 0.1
+samples_below_entropy_threshold: {'count': 119, 'sample_indexes': [2, 8, 17, 25, 31, 43, 52, 61, 65, 68, 72, 77, 80, 81, 82, 83, 87, 97, 104, 110, 114, 125, 127, 128, 132, 144, 145, 146, 148, 150, 154, 161, 166, 181, 184, 189, 191, 192, 193, 197, 199, 212, 217, 222, 234, 239, 242, 243, 244, 245, 249, 252, 254, 255, 256, 257, 259, 260, 262, 264, 271, 282, 290, 294, 297, 299, 307, 309, 316, 317, 322, 329, 336, 339, 340, 341, 361, 369, 376, 383, 384, 397, 404, 410, 416, 422, 430, 431, 432, 433, 444, 446, 453, 466, 472, 477, 479, 480, 487, 495, 497, 507, 512, 525, 533, 535, 536, 537, 538, 542, 544, 550, 551, 555, 559, 562, 563, 568, 579]}
+average_relative_entropy: 12.403366433364468
+median_relative_entropy: 4.661423091718718
+std_relative_entropy: 21.425117546548172
+average_random_initial_relative_entropy: 21.396697771613734
+average_relative_entropy_ratio: 0.579686013503429
+average_expectation_value: -3.3805773351506505
+median_expectation_value: -1.0025279214179037
+std_expectation_value: 9.451633445474442
+average_solution_expectation_value: -3.8824509313304256
+average_random_expectation_value: -0.0074162949105636596
+success_rate_expectation_value: 25.344827586206897
+Summary statistics saved to ./out/summary_stats_quantum_3b.json
+Raw data saved to ./out/summary_quantum_3b_raw_data.csv

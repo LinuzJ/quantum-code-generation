@@ -19,7 +19,8 @@ uid="$(date +%Y%m%d_%H%M%S)"
 
 n_samples=580
 
-model_path="Benyucong/quantum_3b"
+# model_path="Benyucong/quantum_3b"
+model_path="linuzj/quantum-circuit-qubo-3B"
 dataset="linuzj/graph-data-quantum-tokenized_sft"  
 
 python3 -u generate_samples_vllm.py \
