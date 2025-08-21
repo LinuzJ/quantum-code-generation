@@ -3,7 +3,7 @@
 #SBATCH --time=10:00:00
 #SBATCH --cpus-per-task=3
 #SBATCH --mem=20GB
-#SBATCH --gpus=1
+#SBATCH --gpus=4
 ##SBATCH --partition=gpu-h200-141g-ellis
 #SBATCH --partition=gpu-h200-141g-ellis,gpu-h200-141g-short,gpu-a100-80g,gpu-h100-80g
 
@@ -16,17 +16,16 @@ source .venv/bin/activate
 
 
 uid="$(date +%Y%m%d_%H%M%S)"
+ 
 
-n_samples=580
-
-# model_path="Benyucong/quantum_3b"
-# model_path="linuzj/quantum-circuit-qubo-3B"
-model_path="Benyucong/sft_quantum_circuit_gen_3B"
-dataset="linuzj/graph-data-quantum-tokenized_sft"  
-
-python3 -u generate_samples_vllm.py \
-    --uid=${uid} \
-    --model_path=${model_path} \
-    --n_samples=${n_samples} \
-    --dataset=${dataset}
+python3 generate_samples_pass@k.py \
+  --uid run_p10_tp4 \
+  --model_path Benyucong/sft_quantum_circuit_gen_8B \
+  --dataset Benyucong/graph-data-quantum-tokenized_sft \
+  --split test \
+  --n_per_prompt 10 \
+  --temperature 0.7 \
+  --top_p 0.95 \
+  --tensor_parallel_size 4 \
+  --gpu_mem_util 0.92
 
