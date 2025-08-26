@@ -16,6 +16,8 @@ module load gcc cuda cmake openmpi
 module load scicomp-python-env/2024-01
 module load scicomp-llm-env
 
+export HF_HOME=$(pwd)/hf_cache
+
 source .venv/bin/activate
 
 pip install -r requirements.txt
