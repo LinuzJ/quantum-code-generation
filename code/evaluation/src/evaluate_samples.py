@@ -194,7 +194,7 @@ def process_circuits(
     all_solution_expectation_values = []
     all_random_expectation_values = []
 
-    for idx, sample in enumerate(data):
+    for idx, sample in enumerate(data['results']):
         # Because json.loads is not recursive parse
         sample["dataset_metrics"]["solution"] = json.loads(
             sample["dataset_metrics"]["solution"]
