@@ -100,7 +100,7 @@ def main():
     parser.add_argument("--split", type=str, default="test", help="Dataset split (default: test)")
     parser.add_argument("--n_samples", type=int, default=None, help="Optional subsample size")
     parser.add_argument("--few_shot_learning", action="store_true", help="Enable few-shot examples")
-    parser.add_argument("--max_tokens", type=int, default=2048, help="Max new tokens to generate")
+    parser.add_argument("--max_tokens", type=int, default=32000, help="Max new tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.2, help="Sampling temperature")
     parser.add_argument("--top_p", type=float, default=0.9, help="Top-p nucleus sampling")
     parser.add_argument("--n_per_prompt", type=int, default=10, help="Number of candidates per prompt")

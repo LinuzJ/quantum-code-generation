@@ -21,12 +21,12 @@ uid="$(date +%Y%m%d_%H%M%S)"
 n_samples=580
 
 # model_path="Benyucong/rl_quantum_4b"
-# model_path="linuzj/quantum-circuit-qubo-3B"
-model_path="Benyucong/sft_quantum_circuit_gen_4B"
-# dataset="linuzj/graph-data-quantum-tokenized_sft"
-dataset="Benyucong/graph-data-quantum-tokenized-4B_sft"
+model_path="linuzj/quantum-circuit-qubo-3B"
+# model_path="Benyucong/sft_quantum_circuit_gen_4B"
+dataset="linuzj/graph-data-quantum-tokenized_sft"
+# dataset="Benyucong/graph-data-quantum-tokenized-4B_sft"
 
-python3 -u generate_samples_pass@k.py \
+python3 -u generate_samples_vllm.py \
     --uid=${uid} \
     --model_path=${model_path} \
     --n_samples=${n_samples} \

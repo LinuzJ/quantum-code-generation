@@ -85,7 +85,7 @@ def main():
     parser.add_argument("--split", type=str, default="test", help="Dataset split (default: test)")
     parser.add_argument("--n_samples", type=int, default=None, help="Number of samples")
     parser.add_argument("--few_shot_learning", action="store_true", help="Enable few-shot prompting")
-    parser.add_argument("--max_tokens", type=int, default=2048, help="Max tokens to generate")
+    parser.add_argument("--max_tokens", type=int, default=32000, help="Max tokens to generate")
     parser.add_argument("--temperature", type=float, default=0.0, help="Sampling temperature")
     # Optional vLLM engine knobs
     parser.add_argument("--tensor_parallel_size", type=int, default=None)

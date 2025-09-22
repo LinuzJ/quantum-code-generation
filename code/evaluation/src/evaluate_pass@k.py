@@ -408,7 +408,7 @@ def main():
     ap.add_argument("out_dir", type=str, help="Directory to write outputs")
     ap.add_argument("model", type=str, help="Model name tag for filenames")
     # New options
-    ap.add_argument("--k", type=int, default=1, help="k for pass@k aggregation (per-sample)")
+    ap.add_argument("--k", type=int, default=10, help="k for pass@k aggregation (per-sample)")
     ap.add_argument("--rel_entropy_threshold", type=float, default=0.1, help="Threshold for relative entropy success")
     ap.add_argument(
         "--ev_diff_threshold",

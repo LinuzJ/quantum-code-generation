@@ -14,7 +14,7 @@ source .venv/bin/activate
 uid="$(date +%Y%m%d_%H%M%S)"
 
 
-path="../generation/out/quantum_circuits_output_20250826_212403_sft_quantum_circuit_gen_4B.json"
+path="../generation/out/quantum_circuits_output_20250913_155538_quantum-circuit-qubo-3B.json"
 out_path="./out"
 
 filename=$(basename "$path")
@@ -25,4 +25,5 @@ model=$(echo "$base" | cut -d'_' -f3-)
 echo "Processing $filename with model: $model"
 
 python3 -u src/evaluate_samples.py $path $out_path $model
+# python3 -u src/evaluation_old.py $path $out_path $model
 
