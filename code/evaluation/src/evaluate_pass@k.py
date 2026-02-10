@@ -7,7 +7,7 @@ import sys
 import time
 import os
 from math import comb
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple, Optional
 
 import numpy as np
 
@@ -35,6 +35,7 @@ def int_to_bitstring(i: int, n_qubits: int) -> str:
 def get_probability_distribution_and_expectation_value(
     circuit: QuantumCircuit, simulator: AerSimulator, hamiltonian: str
 ) -> Tuple[List[float], complex]:
+    """Return (probabilities, expectation_value) for a circuit and Hamiltonian."""
     sim_circuit = circuit.remove_final_measurements(inplace=False)
     sim_circuit.save_statevector()
     result = simulator.run(sim_circuit).result()
@@ -62,14 +63,18 @@ def is_most_probable_state_correct(sample: Dict[str, Any], most_probable_state: 
 
 
 def parse_qasm_from_str(qasm_str: str) -> QuantumCircuit:
-    # Trim trailing code fenced blocks if any
-    potential_code_split = qasm_str.split("```")
-    potential_code = potential_code_split[0].strip()
-    if "OPENQASM 3.0" in potential_code:
-        qasm_str = potential_code
+    """Robustly parse a QASM 3.0 string, trimming chat wrappers / code fences."""
+    # If triple fences exist, prefer the first fenced chunk that contains OPENQASM
+    if "```" in qasm_str:
+        parts = qasm_str.split("```")
+        # try the first chunk that looks like QASM
+        for chunk in parts:
+            if "OPENQASM 3.0" in chunk:
+                qasm_str = chunk
+                break
 
     # Remove stray backticks
-    qasm_str = re.sub("`", "", qasm_str)
+    qasm_str = re.sub(r"`", "", qasm_str).strip()
 
     # Trim assistant role wrappers if present
     if qasm_str.startswith(ASSISTANT_START_STRING) and qasm_str.endswith(ASSISTANT_END_STRING):
@@ -86,6 +91,7 @@ def parse_qasm_from_str(qasm_str: str) -> QuantumCircuit:
 
 
 def randomize_circuit(circuit: QuantumCircuit) -> QuantumCircuit:
+    """Create a randomized-parameter variant of a circuit (structure preserved)."""
     new_circ = QuantumCircuit(circuit.num_qubits, circuit.num_clbits)
     for instr in circuit.data:
         op = instr.operation
@@ -108,21 +114,27 @@ def compare_solution(
     circuit: QuantumCircuit,
     simulator: AerSimulator,
 ) -> Dict[str, float]:
+    """Compare generated vs solution: relative entropy + EV metrics (+ randomized baseline)."""
     relative_entropy = compute_relative_entropy(sim_probs, solution_probs)
-    expectation_value_difference = float(np.real(expectation_value - solution_expectation_value))
+    ev_diff_signed = float(np.real(expectation_value - solution_expectation_value))
+    ev_diff_abs = float(abs(ev_diff_signed))
 
     cumulative_random_entropy = 0.0
     cumulative_expectation_value = 0.0
-    for _ in range(RANDOM_SAMPLING_AMOUNT):
-        randomized_circuit = randomize_circuit(circuit)
-        randomized_probs, randomized_expectation_value = get_probability_distribution_and_expectation_value(
-            randomized_circuit, simulator, hamiltonian
-        )
-        cumulative_random_entropy += compute_relative_entropy(randomized_probs, solution_probs)
-        cumulative_expectation_value += randomized_expectation_value
+    if RANDOM_SAMPLING_AMOUNT > 0:
+        for _ in range(RANDOM_SAMPLING_AMOUNT):
+            randomized_circuit = randomize_circuit(circuit)
+            randomized_probs, randomized_expectation_value = get_probability_distribution_and_expectation_value(
+                randomized_circuit, simulator, hamiltonian
+            )
+            cumulative_random_entropy += compute_relative_entropy(randomized_probs, solution_probs)
+            cumulative_expectation_value += randomized_expectation_value
 
-    cumulative_expectation_value /= RANDOM_SAMPLING_AMOUNT
-    random_relative_entropy = cumulative_random_entropy / RANDOM_SAMPLING_AMOUNT
+        cumulative_expectation_value /= RANDOM_SAMPLING_AMOUNT
+        random_relative_entropy = cumulative_random_entropy / RANDOM_SAMPLING_AMOUNT
+    else:
+        cumulative_expectation_value = float("nan")
+        random_relative_entropy = float("nan")
 
     return {
         "relative_entropy": float(relative_entropy),
@@ -130,7 +142,8 @@ def compare_solution(
         "solution_expectation_value": float(np.real(solution_expectation_value)),
         "generated_expectation_value": float(np.real(expectation_value)),
         "randomized_expectation_value": float(np.real(cumulative_expectation_value)),
-        "expectation_value_difference": float(expectation_value_difference),
+        "expectation_value_difference": ev_diff_signed,      # keep signed for diagnostics
+        "expectation_value_difference_abs": ev_diff_abs,     # used for thresholding
     }
 
 
@@ -187,8 +200,12 @@ def process_circuits(
     k: int = 1,
     relative_entropy_threshold: float = 0.1,
     ev_diff_threshold: float = EXPECTATION_VALUE_DIFFERENCE_THRESHOLD,
-) -> Tuple[Dict[str, Any], Dict[str, List[float]]]:
+) -> Tuple[Dict[str, Any], Dict[str, List[float]], List[Dict[str, Any]]]:
+    """Evaluate all samples and aggregate pass@k, EV, and RE metrics.
 
+    Returns:
+        summary_stats, raw_data_arrays, per_sample_summaries
+    """
     results_in = _load_results(json_file)
     simulator = AerSimulator(method="statevector")
 
@@ -199,13 +216,18 @@ def process_circuits(
     all_solution_expectation_values: List[float] = []
     all_random_expectation_values: List[float] = []
 
-    # For aggregated pass@k summaries
+    # For aggregated pass@k summaries (per-sample then averaged)
     passk_syntactic: List[float] = []
     passk_correct_state: List[float] = []
     passk_relent: List[float] = []
     passk_evd: List[float] = []
 
-    # Process each sample (problem)
+    # Also track pass@1 alongside the chosen k
+    pass1_syntactic: List[float] = []
+    pass1_correct_state: List[float] = []
+    pass1_relent: List[float] = []
+    pass1_evd: List[float] = []
+
     processed_samples: List[Dict[str, Any]] = []
 
     for idx, sample in enumerate(results_in):
@@ -216,6 +238,22 @@ def process_circuits(
         hamiltonian = sample["dataset_metrics"]["cost_hamiltonian"]
         generations = _get_generations(sample)
         n = len(generations)
+
+        # Precompute solution circuit and stats once per sample
+        solution_probs: Optional[List[float]] = None
+        sol_expectation_value: Optional[complex] = None
+        try:
+            solution_circuit = parse_qasm_from_str(sample["dataset_metrics"]["optimal_circuit"])
+            solution_probs, sol_expectation_value = get_probability_distribution_and_expectation_value(
+                solution_circuit, simulator, hamiltonian
+            )
+        except Exception as err:
+            # If the solution fails to parse/simulate, we can still compute syntax & most-probable-state metrics
+            solution_parse_or_sim_error = str(err)
+            solution_probs = None
+            sol_expectation_value = None
+        else:
+            solution_parse_or_sim_error = None
 
         per_cand = []
         c_syntactic = 0
@@ -260,30 +298,31 @@ def process_circuits(
                 per_cand.append(cand_res)
                 continue
 
-            # 3) Compare with solution (relative entropy + EV diff)
-            try:
-                solution_circuit = parse_qasm_from_str(sample["dataset_metrics"]["optimal_circuit"])
-                solution_probs, sol_expectation_value = get_probability_distribution_and_expectation_value(
-                    solution_circuit, simulator, hamiltonian
-                )
-                comp = compare_solution(
-                    probs,
-                    solution_probs,
-                    expectation_value,
-                    sol_expectation_value,
-                    hamiltonian,
-                    circuit,
-                    simulator,
-                )
-                cand_res["comparison"] = comp
+            # 3) Compare with solution (relative entropy + EV diff), if solution is available
+            if solution_probs is not None and sol_expectation_value is not None:
+                try:
+                    comp = compare_solution(
+                        probs,
+                        solution_probs,
+                        expectation_value,
+                        sol_expectation_value,
+                        hamiltonian,
+                        circuit,
+                        simulator,
+                    )
+                    cand_res["comparison"] = comp
 
-                if comp["relative_entropy"] < relative_entropy_threshold:
-                    c_relent += 1
-                if abs(comp["expectation_value_difference"]) <= ev_diff_threshold:
-                    c_evd += 1
+                    if comp["relative_entropy"] < relative_entropy_threshold:
+                        c_relent += 1
+                    if comp["expectation_value_difference_abs"] <= ev_diff_threshold:
+                        c_evd += 1
 
-            except Exception as err:
-                cand_res["simulation_error"] = f"Solution comparison failed: {err}"
+                except Exception as err:
+                    cand_res["simulation_error"] = f"Solution comparison failed: {err}"
+            else:
+                cand_res["simulation_error"] = (
+                    f"Solution unavailable for comparison: {solution_parse_or_sim_error}"
+                )
 
             per_cand.append(cand_res)
 
@@ -312,7 +351,14 @@ def process_circuits(
         passk_relent.append(pass_at_k(c_relent, n, k_eff))
         passk_evd.append(pass_at_k(c_evd, n, k_eff))
 
-        # Store processed sample summary (optional to write later)
+        # pass@1 per-sample
+        k1 = 1 if n > 0 else 0
+        pass1_syntactic.append(pass_at_k(c_syntactic, n, k1))
+        pass1_correct_state.append(pass_at_k(c_correct_state, n, k1))
+        pass1_relent.append(pass_at_k(c_relent, n, k1))
+        pass1_evd.append(pass_at_k(c_evd, n, k1))
+
+        # Store processed sample summary
         processed_samples.append(
             {
                 "sample_index": sample.get("sample_index", idx),
@@ -330,6 +376,15 @@ def process_circuits(
                     "relative_entropy": passk_relent[-1],
                     "expectation_value_diff": passk_evd[-1],
                 },
+                "pass_at_1": {
+                    "syntactic": pass1_syntactic[-1],
+                    "correct_state": pass1_correct_state[-1],
+                    "relative_entropy": pass1_relent[-1],
+                    "expectation_value_diff": pass1_evd[-1],
+                },
+                "notes": {
+                    "solution_error": solution_parse_or_sim_error,
+                },
             }
         )
 
@@ -339,7 +394,7 @@ def process_circuits(
     def _mean(xs: List[float]) -> float:
         return float(np.mean(xs)) if xs else 0.0
 
-    summary_stats = {
+    summary_stats: Dict[str, Any] = {
         "total_samples": total_samples,
         "k": k,
         "mean_pass_at_k": {
@@ -347,6 +402,12 @@ def process_circuits(
             "correct_state": _mean(passk_correct_state),
             "relative_entropy": _mean(passk_relent),
             "expectation_value_diff": _mean(passk_evd),
+        },
+        "mean_pass_at_1": {
+            "syntactic": _mean(pass1_syntactic),
+            "correct_state": _mean(pass1_correct_state),
+            "relative_entropy": _mean(pass1_relent),
+            "expectation_value_diff": _mean(pass1_evd),
         },
         # Legacy-style aggregates (based on best-by-relative-entropy candidate per problem)
         "average_relative_entropy": float(np.mean(all_rel_entropies)) if all_rel_entropies else None,
@@ -441,7 +502,7 @@ def main():
         json.dump(processed_samples, f, indent=2)
     print(f"Per-sample pass@k details saved to {per_sample_file}")
 
-    if raw_data and raw_data["all_rel_entropies"]:
+    if raw_data and raw_data.get("all_rel_entropies"):
         write_raw_data_to_csv(raw_data, csv_output_file_raw_data)
     else:
         print("No raw data generated to save to CSV.")

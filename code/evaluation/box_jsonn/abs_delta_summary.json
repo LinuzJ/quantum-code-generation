@@ -1,0 +1,18 @@
+{
+  "quasar_response": {
+    "count": 576,
+    "mean_abs_delta": 4.054152868136869,
+    "median_abs_delta": 1.168202288476595,
+    "std_abs_delta": 8.73133097397041,
+    "min_abs_delta": 0.0,
+    "max_abs_delta": 109.67203004676671
+  },
+  "sft_response": {
+    "count": 565,
+    "mean_abs_delta": 3.938587687861783,
+    "median_abs_delta": 1.2280812696792127,
+    "std_abs_delta": 7.75863304541138,
+    "min_abs_delta": 0.0,
+    "max_abs_delta": 64.55602216125786
+  }
+}

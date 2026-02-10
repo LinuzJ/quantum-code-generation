@@ -1,0 +1,26 @@
+{
+  "deepseek": {
+    "count": 550,
+    "mean_abs_delta": 7.7146291872475015,
+    "median_abs_delta": 1.7660764301780185,
+    "std_abs_delta": 18.171728086888233,
+    "min_abs_delta": 1.1332304725251291e-07,
+    "max_abs_delta": 156.9961985570295
+  },
+  "gpt4o": {
+    "count": 510,
+    "mean_abs_delta": 13.519197470496282,
+    "median_abs_delta": 1.8627107973236945,
+    "std_abs_delta": 34.47491330954244,
+    "min_abs_delta": 1.133230469172776e-07,
+    "max_abs_delta": 211.95698528948137
+  },
+  "gpt5": {
+    "count": 505,
+    "mean_abs_delta": 10.399953033664278,
+    "median_abs_delta": 2.2768469733119487,
+    "std_abs_delta": 27.000001708533603,
+    "min_abs_delta": 5.210687898937749e-05,
+    "max_abs_delta": 195.81565978360004
+  }
+}

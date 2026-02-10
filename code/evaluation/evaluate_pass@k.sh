@@ -13,31 +13,34 @@ source .venv/bin/activate
 
 uid="$(date +%Y%m%d_%H%M%S)"
 
-
-# ---- Inputs ----
-# FIXED: added missing '/' after '..'
-path="../generation/out/quantum_circuits_output_20250916_130538_sft_quantum_circuit_gen_8B_n10.json"
+# ---- Batch over input/*.json ----
+in_dir="./input"
 out_path="./out_pass_at_k/${uid}"
-
 mkdir -p "$out_path" logs
 
-filename="$(basename "$path")"
-base="${filename%.json}"
-# Strip leading prefix to get a compact base
-base="${base#quantum_circuits_output_}"
-# Model tag from the 3rd field onward (e.g., sft_quantum_circuit_gen_4B_n10)
-model="$(echo "$base" | cut -d'_' -f3-)"
-
-echo "[$(date)] Processing: $filename"
-echo "[$(date)] Model tag : $model"
+echo "[$(date)] Input dir : $in_dir"
 echo "[$(date)] Output dir: $out_path"
 
-# Run evaluation with pass@10 (k=10)
-python3 -u src/evaluate_pass@k.py \
-  "$path" \
-  "$out_path" \
-  "$model" \
-  --k 10
+shopt -s nullglob
+for path in "$in_dir"/*.json; do
+  filename="$(basename "$path")"
+  base="${filename%.json}"
+  # Strip leading prefix to get a compact base
+  base="${base#quantum_circuits_output_}"
+  # Model tag from the 3rd field onward (e.g., sft_quantum_circuit_gen_4B_n10)
+  model="$(echo "$base" | cut -d'_' -f3-)"
 
-echo "[$(date)] Done."
+  echo "[$(date)] Processing: $filename"
+  echo "[$(date)] Model tag : $model"
+
+  # Evaluate with pass@k (k=10). Script also reports mean_pass_at_1.
+  python3 -u src/evaluate_pass@k.py \
+    "$path" \
+    "$out_path" \
+    "$model" \
+    --k 10
+done
+shopt -u nullglob
+
+echo "[$(date)] All inputs processed."
 
