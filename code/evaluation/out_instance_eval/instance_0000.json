@@ -30,13 +30,20 @@
     "scheduling_method": null,
     "approximation_degree": 1.0
   },
+  "simulation": {
+    "mode": "noisy",
+    "shots": 2000,
+    "seed_simulator": 0
+  },
   "hamiltonian_present": true,
   "reference": {
     "algorithmic": {
-      "energy": -1.031197937020902,
-      "solution_probability": 0.0003965329574357426,
+      "energy": -0.13900000000000043,
+      "solution_probability": 0.0,
       "solution_probability_mode": "exact",
-      "min_energy": -16.0
+      "min_energy": -16.0,
+      "shots": 2000,
+      "seed_simulator": 0
     },
     "hardware": {
       "num_qubits": 16,
@@ -57,10 +64,12 @@
   },
   "quasar": {
     "algorithmic": {
-      "energy": -15.073149632707713,
-      "solution_probability": 5.024831473871365e-06,
+      "energy": -0.021000000000000407,
+      "solution_probability": 0.001,
       "solution_probability_mode": "exact",
-      "min_energy": -16.0
+      "min_energy": -16.0,
+      "shots": 2000,
+      "seed_simulator": 0
     },
     "hardware": {
       "num_qubits": 16,

@@ -1,0 +1,12 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) triton/2024.1-gcc
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 61.33it/s]
+/scratch/cs/adis/yuc10/quantum-code-generation/code/training/save_only_repack.py:15: DeprecationWarning: `torch.distributed._shard.checkpoint` will be deprecated, use `torch.distributed.checkpoint` instead
+  import torch.distributed._shard.checkpoint as dist_cp
+/scratch/cs/adis/yuc10/quantum-code-generation/code/training/.venv/lib/python3.12/site-packages/torch/distributed/checkpoint/state_dict_loader.py:153: UserWarning: torch.distributed is disabled, unavailable or uninitialized, assuming the intent is to load in a single process.
+  warnings.warn(
+[2025-08-26 17:38:20,263] [INFO] [real_accelerator.py:254:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Warning: The cache directory for DeepSpeed Triton autotune, /home/yuc10/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+[2025-08-26 17:38:21,347] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False

@@ -18,11 +18,11 @@ logging.basicConfig(
 
 @dataclass
 class TrainingConfig:
-    model_name: str = field(default="Qwen/Qwen2.5-3B-Instruct")
+    model_name: str = field(default="Qwen/Qwen3-4B-Instruct-2507")
     block_size: int = field(default=10000)
-    wandb_project: Optional[str] = field(default="quantum-circuit-generation")
+    wandb_project: Optional[str] = field(default="sft-QASM-QWEN-4B")
     train_file_path: Optional[str] = field(
-        default="linuzj/graph-data-quantum-tokenized_sft"
+        default="Benyucong/graph-data-quantum-tokenized-4B_sft"
     )
     dagger: bool = field(default=False)
 
@@ -78,11 +78,13 @@ def train():
     )
 
     # ----- Train Model -----
-    trainer.train(resume_from_checkpoint = True)
+    trainer.train()
     trainer.accelerator.wait_for_everyone()
     
     if trainer.is_fsdp_enabled:
-        trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT")
+        trainer.accelerator.state.fsdp_plugin.set_state_dict_type(
+            "FULL_STATE_DICT"
+        )
 
     trainer.save_model(output_dir=args.output_dir)
     

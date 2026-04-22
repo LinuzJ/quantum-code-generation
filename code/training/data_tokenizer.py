@@ -222,15 +222,15 @@ if __name__ == "__main__":
     parser.add_argument(
         "--upload_data_path",
         type=str,
-        default="linuzj/graph-data-quantum-tokenized",
+        default="Benyucong/graph-data-quantum-tokenized-4B",
         help="Tokenized Dataset Path",
     )
     parser.add_argument("--num_proc", type=int, default=20, help="Processes num.")
     parser.add_argument(
         "--model",
         type=str,
-        default="Qwen/Qwen2.5-3B-Instruct",
-        help="(default: Qwen/Qwen2.5-3B-Instruct).",
+        default="Qwen/Qwen3-4B-Instruct-2507",
+        help="(default: Qwen/Qwen3-4B-Instruct-2507).",
     )
     args = parser.parse_args()
 

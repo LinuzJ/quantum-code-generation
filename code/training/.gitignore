@@ -2,3 +2,4 @@
 experiments/
 hf/
 wandb/
+.venv/

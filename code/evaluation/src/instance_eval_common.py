@@ -90,7 +90,7 @@ def get_fake_backend(fake_backend_name: str):
 	except AttributeError as e:
 		raise ValueError(
 			f"Unknown fake backend '{fake_backend_name}'. "
-			"Try e.g. FakeKyoto, FakeSherbrooke, FakeWashingtonV2, FakeBrisbane."
+			"Try e.g. FakeTorino, FakeKyoto, FakeSherbrooke, FakeWashingtonV2, FakeBrisbane."
 		) from e
 
 	return backend_cls()
@@ -117,6 +117,31 @@ def compile_to_backend(
 		circuit,
 		basis_gates=list(basis_gates) if basis_gates is not None else None,
 		coupling_map=coupling_map,
+		seed_transpiler=seed_transpiler,
+		optimization_level=optimization_level,
+		layout_method=layout_method,
+		routing_method=routing_method,
+		translation_method=translation_method,
+		scheduling_method=scheduling_method,
+		approximation_degree=approximation_degree,
+	)
+
+
+def compile_to_runtime_backend(
+	circuit: QuantumCircuit,
+	*,
+	backend,
+	seed_transpiler: int,
+	optimization_level: int,
+	layout_method: str,
+	routing_method: str,
+	translation_method: Optional[str] = None,
+	scheduling_method: Optional[str] = None,
+	approximation_degree: float = 1.0,
+) -> QuantumCircuit:
+	return transpile(
+		circuit,
+		backend=backend,
 		seed_transpiler=seed_transpiler,
 		optimization_level=optimization_level,
 		layout_method=layout_method,
@@ -189,6 +214,56 @@ def _duration_proxy_from_target(circuit: QuantumCircuit, backend) -> Optional[fl
 	return total
 
 
+def _scheduled_duration_dt(
+	circuit: QuantumCircuit,
+	backend,
+	*,
+	method: str = "alap",
+) -> Optional[float]:
+	"""Estimate scheduled circuit duration (in dt) from backend instruction durations.
+
+	This is a *physical gate execution time proxy* that accounts for parallelism
+	(via ASAP/ALAP scheduling) and backend-calibrated gate durations.
+
+	Returns None if scheduling information is unavailable.
+	"""
+	try:
+		from qiskit.transpiler import InstructionDurations, PassManager
+		from qiskit.transpiler.passes import ALAPScheduleAnalysis, ASAPScheduleAnalysis, PadDelay
+	except Exception:
+		return None
+
+	try:
+		durations = InstructionDurations.from_backend(backend)
+	except Exception:
+		return None
+
+	analysis = (
+		ALAPScheduleAnalysis(durations)
+		if str(method).lower() == "alap"
+		else ASAPScheduleAnalysis(durations)
+	)
+	pm = PassManager([analysis, PadDelay(durations)])
+	try:
+		out = pm.run(circuit.copy())
+	except Exception:
+		return None
+
+	dur = getattr(out, "duration", None)
+	unit = getattr(out, "unit", None)
+	if dur is None:
+		return None
+	# Qiskit durations are in dt when using backend durations.
+	# Some versions store unit as "dt".
+	if unit is not None and str(unit) not in ("dt", "s", "ns", "us", "ms"):
+		# Unexpected unit; still return numeric.
+		pass
+	try:
+		return float(dur)
+	except Exception:
+		return None
+
+
 def hardware_metrics(circuit: QuantumCircuit, *, backend=None) -> Dict[str, Any]:
 	count_ops = {str(k): int(v) for k, v in circuit.count_ops().items()}
 	metrics: Dict[str, Any] = {
@@ -199,7 +274,27 @@ def hardware_metrics(circuit: QuantumCircuit, *, backend=None) -> Dict[str, Any]
 		"two_qubit_gates": int(count_two_qubit_gates(circuit)),
 	}
 
-	# Runtime proxy: prefer scheduled duration, else estimate from backend target.
+	# Physical gate execution time proxy (scheduled) when backend durations exist.
+	if backend is not None:
+		dt_seconds = getattr(backend, "dt", None)
+		try:
+			dt_seconds_f = float(dt_seconds) if dt_seconds is not None else None
+		except Exception:
+			dt_seconds_f = None
+		sched_dt = _scheduled_duration_dt(circuit, backend, method="alap")
+		metrics["scheduled_duration_dt"] = float(sched_dt) if sched_dt is not None else None
+		metrics["dt_seconds"] = dt_seconds_f
+		metrics["scheduled_duration_s"] = (
+			float(sched_dt) * float(dt_seconds_f)
+			if (sched_dt is not None and dt_seconds_f is not None)
+			else None
+		)
+	else:
+		metrics["scheduled_duration_dt"] = None
+		metrics["scheduled_duration_s"] = None
+		metrics["dt_seconds"] = None
+
+	# Runtime proxy: prefer duration already present, else estimate from backend target.
 	if hasattr(circuit, "duration") and getattr(circuit, "duration") is not None:
 		metrics["runtime_proxy"] = float(getattr(circuit, "duration"))
 		metrics["runtime_proxy_unit"] = str(getattr(circuit, "unit", "dt"))
@@ -207,7 +302,7 @@ def hardware_metrics(circuit: QuantumCircuit, *, backend=None) -> Dict[str, Any]
 		dur = _duration_proxy_from_target(circuit, backend)
 		metrics["runtime_proxy"] = float(dur) if dur is not None else None
 		metrics["runtime_proxy_unit"] = "dt" if dur is not None else None
-		metrics["dt_seconds"] = float(getattr(backend, "dt", 0.0)) if dur is not None else None
+		# dt_seconds already set above.
 	else:
 		metrics["runtime_proxy"] = None
 		metrics["runtime_proxy_unit"] = None
@@ -239,6 +334,15 @@ def _ensure_measurements(circuit: QuantumCircuit) -> QuantumCircuit:
 	qc = circuit.copy()
 	qc.measure_all()
 	return qc
+
+
+def _prepare_for_sampling_before_transpile(circuit: QuantumCircuit) -> QuantumCircuit:
+	"""Ensure measurement ops exist prior to transpilation.
+
+	This is important: if we add measurements after transpilation, the classical bits no
+	longer track the *logical* qubit order, which can corrupt energy evaluation.
+	"""
+	return _ensure_measurements(circuit)
 
 
 def _counts_to_probabilities(counts: Dict[str, int], n_qubits: int) -> Dict[int, float]:
@@ -285,6 +389,140 @@ def simulate_counts_noisy(
 	qc = _ensure_measurements(circuit)
 	result = sim.run(qc, shots=int(shots), seed_simulator=int(seed_simulator)).result()
 	return result.get_counts(qc)
+
+
+def _get_runtime_service(*, channel: str, instance: Optional[str]) :
+	try:
+		from qiskit_ibm_runtime import QiskitRuntimeService
+	except Exception as e:
+		raise RuntimeError("qiskit-ibm-runtime is required for sim_mode=runtime") from e
+
+	# Prefer explicit env token if present, else rely on saved account.
+	token = (
+		os.environ.get("IBM_QUANTUM_TOKEN")
+		or os.environ.get("QISKIT_IBM_TOKEN")
+		or os.environ.get("QISKIT_IBM_RUNTIME_TOKEN")
+	)
+	try:
+		if token:
+			return QiskitRuntimeService(channel=channel, token=token, instance=instance)
+		return QiskitRuntimeService(channel=channel, instance=instance)
+	except Exception as e:
+		raise RuntimeError(
+			"Failed to initialize QiskitRuntimeService. "
+			"Set IBM_QUANTUM_TOKEN (or save_account) and ensure network access."
+		) from e
+
+
+def _auto_pick_runtime_backend_name(service, *, min_qubits: int) -> str:
+	# Pick an operational, non-simulator backend with enough qubits.
+	try:
+		candidates = service.backends(simulator=False, operational=True, min_num_qubits=int(min_qubits))
+	except Exception as e:
+		raise RuntimeError("Unable to list backends from IBM Runtime service") from e
+
+	if not candidates:
+		raise RuntimeError(f"No operational IBM backends found with >= {min_qubits} qubits")
+
+	best_name = None
+	best_pending = None
+	best_nq = None
+	for b in candidates:
+		name = getattr(b, "name", None) or getattr(b, "backend_name", None) or str(b)
+		try:
+			st = b.status()
+			pending = int(getattr(st, "pending_jobs", 10**9))
+		except Exception:
+			pending = 10**9
+		try:
+			nq = int(getattr(b, "num_qubits", 10**9))
+		except Exception:
+			nq = 10**9
+
+		if best_pending is None or pending < best_pending or (pending == best_pending and nq < (best_nq or 10**9)):
+			best_name = name
+			best_pending = pending
+			best_nq = nq
+
+	if not best_name:
+		raise RuntimeError("Failed to auto-pick a runtime backend")
+	return str(best_name)
+
+
+def _quasi_to_probs_dict(quasi: Any) -> Dict[int, float]:
+	# QuasiDistribution typically behaves like a dict[int,float].
+	if quasi is None:
+		return {}
+	if isinstance(quasi, dict):
+		items = quasi.items()
+	else:
+		try:
+			items = list(quasi.items())
+		except Exception:
+			return {}
+
+	probs: Dict[int, float] = {}
+	for k, v in items:
+		if v is None:
+			continue
+		try:
+			p = float(v)
+		except Exception:
+			continue
+		# Keys are usually ints; if strings appear, parse as bitstring.
+		if isinstance(k, int):
+			probs[int(k)] = probs.get(int(k), 0.0) + p
+		else:
+			ks = str(k).replace(" ", "")
+			if ks.startswith("0b"):
+				ks = ks[2:]
+			if ks and all(ch in "01" for ch in ks):
+				bit_int = 0
+				for i in range(len(ks)):
+					if ks[-1 - i] == "1":
+						bit_int |= (1 << i)
+				probs[int(bit_int)] = probs.get(int(bit_int), 0.0) + p
+	return probs
+
+
+def algorithmic_metrics_runtime(
+	circuit: QuantumCircuit,
+	*,
+	hamiltonian: Optional[str],
+	service,
+	backend_name: str,
+	shots: int,
+) -> Dict[str, Any]:
+	if not hamiltonian:
+		return {"energy": None, "solution_probability": None, "solution_probability_mode": None}
+	try:
+		from qiskit_ibm_runtime import SamplerV2
+	except Exception as e:
+		raise RuntimeError("qiskit-ibm-runtime is required for sim_mode=runtime") from e
+
+	# Open-plan accounts may not be authorized to create Runtime Sessions.
+	# Use "job mode" directly on a backend instead.
+	backend = service.backend(backend_name)
+	sampler = SamplerV2(mode=backend)
+	job = sampler.run([circuit], shots=int(shots))
+	res = job.result()
+	job_id = getattr(job, "job_id", None)
+	job_id = job_id() if callable(job_id) else job_id
+
+	# Extract quasi distribution
+	quasis = getattr(res, "quasi_dists", None)
+	if quasis is None:
+		quasis = getattr(res, "quasi_distributions", None)
+	if quasis is None and isinstance(res, list):
+		quasis = res
+	if not quasis:
+		return {"energy": None, "solution_probability": None, "solution_probability_mode": None, "shots": int(shots), "job_id": job_id}
+
+	probs = _quasi_to_probs_dict(quasis[0])
+	metrics = distribution_metrics_from_probs_dict(probs, hamiltonian)
+	metrics["shots"] = int(shots)
+	metrics["job_id"] = job_id
+	return metrics
 
 
 def apply_layout_to_operator(op: SparsePauliOp, circuit: QuantumCircuit) -> SparsePauliOp:
@@ -541,14 +779,26 @@ class EvalConfig:
 	translation_method: Optional[str] = None
 	scheduling_method: Optional[str] = None
 	approximation_degree: float = 1.0
-	sim_mode: str = "ideal"  # 'ideal' (statevector) or 'noisy' (shot-based)
+	sim_mode: str = "ideal"  # 'ideal' (statevector), 'noisy' (Aer+noise), 'runtime' (real hardware)
 	shots: int = 2000
 	seed_simulator: int = 0
+	runtime_channel: str = os.environ.get("RUNTIME_CHANNEL", "ibm_cloud")
+	runtime_instance: Optional[str] = None
+	runtime_backend: str = "ibm_torino"  # backend name or 'auto'
 	out_dir: str = "out_instance_eval"
 
 
 def evaluate_instance(cfg: EvalConfig) -> Dict[str, Any]:
-	backend = get_fake_backend(cfg.fake_backend)
+	backend = None
+	service = None
+	backend_name = None
+	if cfg.sim_mode == "runtime":
+		service = _get_runtime_service(channel=cfg.runtime_channel, instance=cfg.runtime_instance)
+		backend_name = str(cfg.runtime_backend)
+	else:
+		backend = get_fake_backend(cfg.fake_backend)
+		backend_name = cfg.fake_backend
+
 	data = load_json(cfg.quasar_json)
 	if cfg.index < 0 or cfg.index >= len(data):
 		raise IndexError(f"index {cfg.index} out of range (0..{len(data)-1})")
@@ -567,41 +817,90 @@ def evaluate_instance(cfg: EvalConfig) -> Dict[str, Any]:
 	q_circ = parse_qasm_from_str(quasar_qasm)
 
 	n_qubits = max(int(gt_circ.num_qubits), int(q_circ.num_qubits))
-	if n_qubits > int(getattr(backend, "num_qubits", n_qubits)):
-		raise ValueError(
-			f"Instance requires {n_qubits} qubits, but backend {cfg.fake_backend} has only {backend.num_qubits}"
-		)
+	if cfg.sim_mode == "runtime":
+		# Resolve backend after we know how many qubits are required.
+		if str(backend_name).lower() == "auto":
+			backend_name = _auto_pick_runtime_backend_name(service, min_qubits=n_qubits)
+		try:
+			backend = service.backend(backend_name)
+		except Exception as e:
+			raise ValueError(
+				f"Runtime backend '{backend_name}' not available. "
+				"Try --runtime-backend auto or a backend name returned by service.backends()."
+			) from e
+		if n_qubits > int(getattr(backend, "num_qubits", n_qubits)):
+			raise ValueError(
+				f"Instance requires {n_qubits} qubits, but runtime backend {backend_name} has only {backend.num_qubits}"
+			)
+	else:
+		if n_qubits > int(getattr(backend, "num_qubits", n_qubits)):
+			raise ValueError(
+				f"Instance requires {n_qubits} qubits, but backend {backend_name} has only {backend.num_qubits}"
+			)
 
-	cmap = fake_subdevice_coupling_map(backend, n_qubits)
-	basis_gates = list(getattr(backend, "operation_names", [])) or None
+	# For sampling-based modes, add measurements before transpiling so classical bits track logical qubits.
+	if cfg.sim_mode in ("noisy", "runtime"):
+		gt_circ = _prepare_for_sampling_before_transpile(gt_circ)
+		q_circ = _prepare_for_sampling_before_transpile(q_circ)
+
+	# Fake backend compilation uses an induced subdevice coupling map to avoid width inflation.
+	cmap = None
+	basis_gates = None
+	if cfg.sim_mode != "runtime":
+		cmap = fake_subdevice_coupling_map(backend, n_qubits)
+		basis_gates = list(getattr(backend, "operation_names", [])) or None
 
 	# Hamiltonian is stored in extra_info for quasar.json items
 	hamiltonian = (item.get("extra_info") or {}).get("cost_hamiltonian")
 
-	gt_compiled = compile_to_backend(
-		gt_circ,
-		basis_gates=basis_gates,
-		coupling_map=cmap,
-		seed_transpiler=cfg.seed_transpiler,
-		optimization_level=cfg.optimization_level,
-		layout_method=cfg.layout_method,
-		routing_method=cfg.routing_method,
-		translation_method=cfg.translation_method,
-		scheduling_method=cfg.scheduling_method,
-		approximation_degree=cfg.approximation_degree,
-	)
-	q_compiled = compile_to_backend(
-		q_circ,
-		basis_gates=basis_gates,
-		coupling_map=cmap,
-		seed_transpiler=cfg.seed_transpiler,
-		optimization_level=cfg.optimization_level,
-		layout_method=cfg.layout_method,
-		routing_method=cfg.routing_method,
-		translation_method=cfg.translation_method,
-		scheduling_method=cfg.scheduling_method,
-		approximation_degree=cfg.approximation_degree,
-	)
+	if cfg.sim_mode == "runtime":
+		gt_compiled = compile_to_runtime_backend(
+			gt_circ,
+			backend=backend,
+			seed_transpiler=cfg.seed_transpiler,
+			optimization_level=cfg.optimization_level,
+			layout_method=cfg.layout_method,
+			routing_method=cfg.routing_method,
+			translation_method=cfg.translation_method,
+			scheduling_method=cfg.scheduling_method,
+			approximation_degree=cfg.approximation_degree,
+		)
+		q_compiled = compile_to_runtime_backend(
+			q_circ,
+			backend=backend,
+			seed_transpiler=cfg.seed_transpiler,
+			optimization_level=cfg.optimization_level,
+			layout_method=cfg.layout_method,
+			routing_method=cfg.routing_method,
+			translation_method=cfg.translation_method,
+			scheduling_method=cfg.scheduling_method,
+			approximation_degree=cfg.approximation_degree,
+		)
+	else:
+		gt_compiled = compile_to_backend(
+			gt_circ,
+			basis_gates=basis_gates,
+			coupling_map=cmap,
+			seed_transpiler=cfg.seed_transpiler,
+			optimization_level=cfg.optimization_level,
+			layout_method=cfg.layout_method,
+			routing_method=cfg.routing_method,
+			translation_method=cfg.translation_method,
+			scheduling_method=cfg.scheduling_method,
+			approximation_degree=cfg.approximation_degree,
+		)
+		q_compiled = compile_to_backend(
+			q_circ,
+			basis_gates=basis_gates,
+			coupling_map=cmap,
+			seed_transpiler=cfg.seed_transpiler,
+			optimization_level=cfg.optimization_level,
+			layout_method=cfg.layout_method,
+			routing_method=cfg.routing_method,
+			translation_method=cfg.translation_method,
+			scheduling_method=cfg.scheduling_method,
+			approximation_degree=cfg.approximation_degree,
+		)
 
 	if cfg.sim_mode == "noisy":
 		gt_algo = algorithmic_metrics_noisy(
@@ -622,14 +921,30 @@ def evaluate_instance(cfg: EvalConfig) -> Dict[str, Any]:
 			shots=cfg.shots,
 			seed_simulator=cfg.seed_simulator,
 		)
+	elif cfg.sim_mode == "runtime":
+		gt_algo = algorithmic_metrics_runtime(
+			gt_compiled,
+			hamiltonian=hamiltonian,
+			service=service,
+			backend_name=backend_name,
+			shots=cfg.shots,
+		)
+		q_algo = algorithmic_metrics_runtime(
+			q_compiled,
+			hamiltonian=hamiltonian,
+			service=service,
+			backend_name=backend_name,
+			shots=cfg.shots,
+		)
 	else:
 		gt_algo = algorithmic_metrics(gt_compiled, hamiltonian)
 		q_algo = algorithmic_metrics(q_compiled, hamiltonian)
 
 	result = {
 		"index": int(cfg.index),
-		"fake_backend": cfg.fake_backend,
-		"subdevice": {"physical_qubits": list(range(n_qubits))},
+		"fake_backend": cfg.fake_backend if cfg.sim_mode != "runtime" else None,
+		"real_backend": backend_name if cfg.sim_mode == "runtime" else None,
+		"subdevice": {"physical_qubits": list(range(n_qubits))} if cfg.sim_mode != "runtime" else None,
 		"compile": {
 			"seed_transpiler": int(cfg.seed_transpiler),
 			"optimization_level": int(cfg.optimization_level),
@@ -641,8 +956,10 @@ def evaluate_instance(cfg: EvalConfig) -> Dict[str, Any]:
 		},
 		"simulation": {
 			"mode": cfg.sim_mode,
-			"shots": int(cfg.shots) if cfg.sim_mode == "noisy" else None,
+			"shots": int(cfg.shots) if cfg.sim_mode in ("noisy", "runtime") else None,
 			"seed_simulator": int(cfg.seed_simulator) if cfg.sim_mode == "noisy" else None,
+			"runtime_channel": cfg.runtime_channel if cfg.sim_mode == "runtime" else None,
+			"runtime_instance": cfg.runtime_instance if cfg.sim_mode == "runtime" else None,
 		},
 		"hamiltonian_present": bool(hamiltonian),
 		"reference": {
@@ -667,7 +984,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
 	p = argparse.ArgumentParser(description="Evaluate one Quasar instance vs reference on an IBM Fake backend")
 	p.add_argument("--quasar-json", required=True)
 	p.add_argument("--index", type=int, required=True)
-	p.add_argument("--fake-backend", default="FakeKyoto")
+	p.add_argument("--fake-backend", default="FakeTorino")
 	p.add_argument("--seed-transpiler", type=int, default=0)
 	p.add_argument("--optimization-level", type=int, default=3)
 	p.add_argument("--layout-method", default="sabre")
@@ -675,9 +992,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
 	p.add_argument("--translation-method", default=None)
 	p.add_argument("--scheduling-method", default=None)
 	p.add_argument("--approximation-degree", type=float, default=1.0)
-	p.add_argument("--sim-mode", choices=["ideal", "noisy"], default="ideal")
+	p.add_argument("--sim-mode", choices=["ideal", "noisy", "runtime"], default="ideal")
 	p.add_argument("--shots", type=int, default=2000)
 	p.add_argument("--seed-simulator", type=int, default=0)
+	p.add_argument("--runtime-channel", default=os.environ.get("RUNTIME_CHANNEL", "ibm_cloud"))
+	p.add_argument("--runtime-instance", default=None)
+	p.add_argument("--runtime-backend", default="ibm_torino", help="Backend name or 'auto' (sim_mode=runtime)")
 	p.add_argument("--out-dir", default="out_instance_eval")
 	return p
 
@@ -698,6 +1018,9 @@ def main():
 		sim_mode=args.sim_mode,
 		shots=args.shots,
 		seed_simulator=args.seed_simulator,
+		runtime_channel=args.runtime_channel,
+		runtime_instance=args.runtime_instance,
+		runtime_backend=args.runtime_backend,
 		out_dir=args.out_dir,
 	)
 	res = evaluate_instance(cfg)

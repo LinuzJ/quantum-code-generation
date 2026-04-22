@@ -1,0 +1,242 @@
+{
+  "created_utc": "20260212_110005",
+  "quasar_json": "generated_circuits/quasar.json",
+  "indices": [
+    41,
+    394,
+    430
+  ],
+  "compile_config": {
+    "quasar_json": "generated_circuits/quasar.json",
+    "index": 41,
+    "fake_backend": "FakeTorino",
+    "seed_transpiler": 0,
+    "optimization_level": 3,
+    "layout_method": "sabre",
+    "routing_method": "sabre",
+    "translation_method": null,
+    "scheduling_method": null,
+    "approximation_degree": 1.0,
+    "sim_mode": "noisy",
+    "shots": 100,
+    "seed_simulator": 0,
+    "runtime_channel": "ibm_cloud",
+    "runtime_instance": null,
+    "runtime_backend": "ibm_torino",
+    "out_dir": "out_speed"
+  },
+  "local": {
+    "fake_backend": "FakeTorino",
+    "shots": 100,
+    "seed_simulator": 0
+  },
+  "runtime": {
+    "runtime_channel": "ibm_cloud",
+    "runtime_instance": null,
+    "runtime_backend": "ibm_torino",
+    "shots": 100,
+    "num_circuits": 6,
+    "submitted": true,
+    "job_id": "d66r1pje4kfs73d12ugg",
+    "creation_date": "2026-02-12T12:52:22.870945+02:00",
+    "submit_to_result_s": 462.94833051087335,
+    "per_circuit_submit_to_result_s": 77.15805508514556,
+    "metrics": {
+      "timestamps": {
+        "created": "2026-02-12T10:52:22.870945Z",
+        "finished": "2026-02-12T11:00:04.429932Z",
+        "running": "2026-02-12T10:58:21.006012Z"
+      },
+      "bss": {
+        "seconds": 2
+      },
+      "usage": {
+        "quantum_seconds": 2,
+        "seconds": 2
+      },
+      "qiskit_version": "qiskit_ibm_runtime-0.29.0,qiskit-1.2.4*,qiskit_aer-0.16.1*",
+      "caller": "qiskit_ibm_runtime~sampler.py"
+    },
+    "metrics_extract": {
+      "timestamps": {
+        "created": "2026-02-12T10:52:22.870945Z",
+        "finished": "2026-02-12T11:00:04.429932Z",
+        "running": "2026-02-12T10:58:21.006012Z"
+      },
+      "usage": {
+        "quantum_seconds": 2,
+        "seconds": 2
+      }
+    }
+  },
+  "rows": [
+    {
+      "index": 41,
+      "variant": "ground_truth",
+      "n_qubits": 8,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.34269574913196266,
+      "run_s": 7.708637514151633,
+      "depth": 105,
+      "two_qubit_gates": 48,
+      "scheduled_duration_dt": 1638.0,
+      "scheduled_duration_s": 6.552e-06
+    },
+    {
+      "index": 41,
+      "variant": "vista",
+      "n_qubits": 8,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.08471307391300797,
+      "run_s": 7.3126034289598465,
+      "depth": 112,
+      "two_qubit_gates": 50,
+      "scheduled_duration_dt": 1566.0,
+      "scheduled_duration_s": 6.2640000000000005e-06
+    },
+    {
+      "index": 394,
+      "variant": "ground_truth",
+      "n_qubits": 9,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.056692917132750154,
+      "run_s": 7.391011791070923,
+      "depth": 25,
+      "two_qubit_gates": 16,
+      "scheduled_duration_dt": 566.0,
+      "scheduled_duration_s": 2.2640000000000003e-06
+    },
+    {
+      "index": 394,
+      "variant": "vista",
+      "n_qubits": 9,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.05637040617875755,
+      "run_s": 7.398237282177433,
+      "depth": 25,
+      "two_qubit_gates": 16,
+      "scheduled_duration_dt": 566.0,
+      "scheduled_duration_s": 2.2640000000000003e-06
+    },
+    {
+      "index": 430,
+      "variant": "ground_truth",
+      "n_qubits": 8,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.05152361490763724,
+      "run_s": 7.622271433006972,
+      "depth": 83,
+      "two_qubit_gates": 28,
+      "scheduled_duration_dt": 1226.0,
+      "scheduled_duration_s": 4.904e-06
+    },
+    {
+      "index": 430,
+      "variant": "vista",
+      "n_qubits": 8,
+      "backend": "FakeTorino",
+      "mode": "local_noisy",
+      "compile_s": 0.2122624139301479,
+      "run_s": 7.318409514147788,
+      "depth": 360,
+      "two_qubit_gates": 204,
+      "scheduled_duration_dt": 4475.0,
+      "scheduled_duration_s": 1.79e-05
+    },
+    {
+      "index": 41,
+      "variant": "ground_truth",
+      "n_qubits": 8,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.5597985920030624,
+      "run_s": null,
+      "depth": 84,
+      "two_qubit_gates": 40,
+      "scheduled_duration_dt": 1238.0,
+      "scheduled_duration_s": 4.952e-06,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    },
+    {
+      "index": 41,
+      "variant": "vista",
+      "n_qubits": 8,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.19375511002726853,
+      "run_s": null,
+      "depth": 109,
+      "two_qubit_gates": 42,
+      "scheduled_duration_dt": 1326.0,
+      "scheduled_duration_s": 5.304e-06,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    },
+    {
+      "index": 394,
+      "variant": "ground_truth",
+      "n_qubits": 9,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.08892626990564167,
+      "run_s": null,
+      "depth": 25,
+      "two_qubit_gates": 16,
+      "scheduled_duration_dt": 550.0,
+      "scheduled_duration_s": 2.2e-06,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    },
+    {
+      "index": 394,
+      "variant": "vista",
+      "n_qubits": 9,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.08952260692603886,
+      "run_s": null,
+      "depth": 25,
+      "two_qubit_gates": 16,
+      "scheduled_duration_dt": 550.0,
+      "scheduled_duration_s": 2.2e-06,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    },
+    {
+      "index": 430,
+      "variant": "ground_truth",
+      "n_qubits": 8,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.07940415083430707,
+      "run_s": null,
+      "depth": 88,
+      "two_qubit_gates": 27,
+      "scheduled_duration_dt": 1150.0,
+      "scheduled_duration_s": 4.6e-06,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    },
+    {
+      "index": 430,
+      "variant": "vista",
+      "n_qubits": 8,
+      "backend": "ibm_torino",
+      "mode": "runtime",
+      "compile_s": 0.24258280009962618,
+      "run_s": null,
+      "depth": 367,
+      "two_qubit_gates": 186,
+      "scheduled_duration_dt": 4246.0,
+      "scheduled_duration_s": 1.6984000000000002e-05,
+      "job_id": "d66r1pje4kfs73d12ugg",
+      "submit_to_result_s": 462.94833051087335
+    }
+  ]
+}

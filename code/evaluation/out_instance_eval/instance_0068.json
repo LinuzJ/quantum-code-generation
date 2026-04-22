@@ -1,0 +1,84 @@
+{
+  "index": 68,
+  "fake_backend": "FakeKyoto",
+  "subdevice": {
+    "physical_qubits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "compile": {
+    "seed_transpiler": 0,
+    "optimization_level": 3,
+    "layout_method": "sabre",
+    "routing_method": "sabre",
+    "translation_method": null,
+    "scheduling_method": null,
+    "approximation_degree": 1.0
+  },
+  "simulation": {
+    "mode": "noisy",
+    "shots": 2000,
+    "seed_simulator": 0
+  },
+  "hamiltonian_present": true,
+  "reference": {
+    "algorithmic": {
+      "energy": -1.1235000000000013,
+      "solution_probability": 0.0025,
+      "solution_probability_mode": "exact",
+      "min_energy": -88.0,
+      "shots": 2000,
+      "seed_simulator": 0
+    },
+    "hardware": {
+      "num_qubits": 9,
+      "depth": 123,
+      "size": 301,
+      "count_ops": {
+        "rz": 147,
+        "sx": 92,
+        "ecr": 48,
+        "measure": 9,
+        "x": 5
+      },
+      "two_qubit_gates": 48,
+      "runtime_proxy": 0.0,
+      "runtime_proxy_unit": "dt",
+      "dt_seconds": 5e-10
+    }
+  },
+  "quasar": {
+    "algorithmic": {
+      "energy": -0.006499999999999367,
+      "solution_probability": 0.001,
+      "solution_probability_mode": "exact",
+      "min_energy": -88.0,
+      "shots": 2000,
+      "seed_simulator": 0
+    },
+    "hardware": {
+      "num_qubits": 9,
+      "depth": 187,
+      "size": 360,
+      "count_ops": {
+        "rz": 175,
+        "sx": 107,
+        "ecr": 60,
+        "x": 9,
+        "measure": 9
+      },
+      "two_qubit_gates": 60,
+      "runtime_proxy": 0.0,
+      "runtime_proxy_unit": "dt",
+      "dt_seconds": 5e-10
+    }
+  }
+}

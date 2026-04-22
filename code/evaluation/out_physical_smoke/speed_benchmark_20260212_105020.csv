@@ -1,0 +1,5 @@
+index,variant,n_qubits,backend,mode,compile_s,run_s,depth,two_qubit_gates,scheduled_duration_dt,scheduled_duration_s,job_id,submit_to_result_s
+394,ground_truth,9,FakeTorino,local_noisy,0.3907731210347265,8.559083399944939,25,16,566.0,2.2640000000000003e-06,,
+394,vista,9,FakeTorino,local_noisy,0.0630940900882706,8.8425248619169,25,16,566.0,2.2640000000000003e-06,,
+394,ground_truth,9,ibm_torino,runtime_physical,0.6474988410482183,,25,16,550.0,2.2e-06,,
+394,vista,9,ibm_torino,runtime_physical,0.09721613395959139,,25,16,550.0,2.2e-06,,

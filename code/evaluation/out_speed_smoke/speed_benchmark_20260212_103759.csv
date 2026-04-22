@@ -1,0 +1,3 @@
+index,variant,n_qubits,backend,mode,compile_s,run_s,depth,two_qubit_gates
+394,ground_truth,9,FakeTorino,local_noisy,0.8488464140100405,9.522296651033685,25,16
+394,vista,9,FakeTorino,local_noisy,0.07227615697775036,8.414523691986687,25,16

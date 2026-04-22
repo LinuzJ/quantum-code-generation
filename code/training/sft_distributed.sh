@@ -1,12 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=sft_quantum_circuit_gen_multigpu
-#SBATCH --time=10:00:00
+#SBATCH --job-name=sft_qcg_multigpu
+#SBATCH --time=2-00:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=400GB
 #SBATCH --cpus-per-task=32
 #SBATCH --gpus=8
 #SBATCH --partition=gpu-h200-141g-ellis
-
 
 module purge
 module load scicomp-python-env/2024-01
@@ -14,7 +13,14 @@ module load scicomp-llm-env
 
 source .venv/bin/activate
 
-export WANDB_API_KEY=$(cat .wandb_api_key)
+export BASE_DIR="$(pwd)"
+export WANDB_API_KEY="$(cat .wandb_api_key)"
+export HF_TOKEN="${HF_TOKEN:-$(cat .hf_token 2>/dev/null || true)}"
+export HF_HOME="${BASE_DIR}/hf"
+
+# --- NCCL safety knobs (you can turn them off later for perf) ---
+export NCCL_DEBUG=INFO
+export TORCH_DISTRIBUTED_DEBUG=DETAIL
 
 pip install -r requirements.txt
 
@@ -24,8 +30,9 @@ uid="$(date +%Y%m%d_%H%M%S)"
 gpus=8
 nodes=1
 
-base_model_name="Qwen/Qwen3-8B"
-output_dir_name="cong/sft_quantum_circuit_gen_8B_${uid}"
+base_model_name="Qwen/Qwen3-4B-Instruct-2507"
+output_dir_name="Benyucong/quantum-circuit-qubo-4B"
+hub_model_id="Benyucong/sft_quantum_circuit_gen_4B"
 
 epochs=15
 block_size=16384
@@ -58,5 +65,6 @@ accelerate launch \
                 --bf16=True \
                 --save_strategy=${save_strategy} \
                 --save_steps=${save_steps} \
+                --hub_model_id=${hub_model_id} \
                 --push_to_hub=True \
                 --hub_strategy=all_checkpoints

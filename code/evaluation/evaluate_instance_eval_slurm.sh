@@ -22,13 +22,31 @@ fi
 mkdir -p logs out_instance_eval
 
 # You can override these via sbatch --export=ALL,FAKE_BACKEND=FakeSherbrooke,NUM_INSTANCES=580
-FAKE_BACKEND=${FAKE_BACKEND:-FakeKyoto}
+FAKE_BACKEND=${FAKE_BACKEND:-FakeTorino}
 SIM_MODE=${SIM_MODE:-noisy}
 SHOTS=${SHOTS:-2000}
 SEED_SIMULATOR=${SEED_SIMULATOR:-0}
+RUNTIME_CHANNEL=${RUNTIME_CHANNEL:-ibm_cloud}
+RUNTIME_BACKEND=${RUNTIME_BACKEND:-ibm_torino}
 NUM_INSTANCES=${NUM_INSTANCES:-580}
+INDICES_FILE=${INDICES_FILE:-}
 
 IDX=${SLURM_ARRAY_TASK_ID}
+
+if [ -n "$INDICES_FILE" ]; then
+  if [ ! -f "$INDICES_FILE" ]; then
+    echo "[ERROR] INDICES_FILE not found: $INDICES_FILE" >&2
+    exit 2
+  fi
+  # 1-based line number
+  LINE=$((SLURM_ARRAY_TASK_ID + 1))
+  IDX=$(sed -n "${LINE}p" "$INDICES_FILE" | tr -d ' \t\r')
+  if [ -z "$IDX" ]; then
+    echo "[INFO] No index at line $LINE in $INDICES_FILE; exiting.";
+    exit 0
+  fi
+fi
+
 if [ "$IDX" -ge "$NUM_INSTANCES" ]; then
   echo "[INFO] IDX=$IDX >= NUM_INSTANCES=$NUM_INSTANCES; exiting."
   exit 0
@@ -45,4 +63,6 @@ python3 -u -m src.instance_eval_common \
   --sim-mode "$SIM_MODE" \
   --shots "$SHOTS" \
   --seed-simulator "$SEED_SIMULATOR" \
+  --runtime-channel "$RUNTIME_CHANNEL" \
+  --runtime-backend "$RUNTIME_BACKEND" \
   --out-dir out_instance_eval

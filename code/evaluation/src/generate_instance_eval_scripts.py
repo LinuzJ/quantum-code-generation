@@ -35,7 +35,7 @@ def main():
     cfg = EvalConfig(
         quasar_json=os.path.join(ROOT_DIR, "generated_circuits", "quasar.json"),
         index={index},
-        fake_backend="FakeKyoto",
+        fake_backend="FakeTorino",
         seed_transpiler=0,
         optimization_level=3,
         layout_method="sabre",
